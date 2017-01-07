@@ -39,5 +39,7 @@
         map.setStreetView(panorama);
       }
     </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy0y-BGBgl6fjl1zDhcBpgHHo6ZR6PXvY&callback=initialize"></script>
+    
   </body>
 </html>

@@ -18,10 +18,7 @@
 <script type="text/javascript" src='<c:url value="chosen/chosen.proto.js"></c:url>'></script>
 <script type="text/javascript" src='<c:url value="chosen/chosen.proto.min.js"></c:url>'></script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy0y-BGBgl6fjl1zDhcBpgHHo6ZR6PXvY&libraries=places&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy0y-BGBgl6fjl1zDhcBpgHHo6ZR6PXvY&&libraries=places" async defer></script>
 
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy0y-BGBgl6fjl1zDhcBpgHHo6ZR6PXvY&&libraries=places" async defer></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy0y-BGBgl6fjl1zDhcBpgHHo6ZR6PXvY&callback=initialize"></script>
- -->
 <script type="text/javascript" src='<c:url value="bootstrap/js/bootstrap.js"></c:url>'></script>
 <script type="text/javascript" src='<c:url value="bootstrap/js/bootstrap.min.js"></c:url>'></script>

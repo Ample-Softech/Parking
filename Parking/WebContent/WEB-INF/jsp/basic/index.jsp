@@ -22,12 +22,14 @@
 		          // Get the place details from the autocomplete object.
 		    	var place = autocomplete.getPlace();
 		          alert(place.geometry.location.lat()+"  "+place.geometry.location.lng());
-		       
-	// 	          posM = {
-	// 	                  lat: place.geometry.location.lat(),
-	// 	                  lng: place.geometry.location.lng()
-	// 	                };
-	
+/* 		       		document.getElementById('lat').innerHTML=place.geometry.location.lat();
+		       		document.getElementById('lng').innerHTML=place.geometry.location.lng();
+ */		          
+ 	 	          Demo = {
+	 	                  lat: place.geometry.location.lat(),
+	 	                  lng: place.geometry.location.lng()
+	 	                };
+ 	
 		        }
 
 		</script>		
@@ -38,12 +40,14 @@
 		<jsp:include page="/mainMenu.jsp"></jsp:include>		
 		
 		<!-- CONTENT -->
-		<form action="/Parking/check.basic" method="post">
+		<form action="/Parking/Check.basic" method="post" modelAttribute="Demo" name="searchForm">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 jumbotron searchbar" style="padding: 15px;">
 						<div class="input-group" align="center">
 				        	<input type="text" class="form-control" name="searchPlace" id="searchPlace"  />
+				        	<input type="hidden" id="lat" name="lat" />
+				        	<input type="hidden" id="lng" name="lng" />
 				   			<span class="input-group-btn">
 				       			<button type="submit" class="btn btn-success" id="searchBtn"> <b>Search</b></button>
 				        	</span>      

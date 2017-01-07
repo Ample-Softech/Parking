@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Demo implements Serializable {
 	private String lat;
 	private String lng;
-	
+
 	public String getLat() {
 		return lat;
 	}

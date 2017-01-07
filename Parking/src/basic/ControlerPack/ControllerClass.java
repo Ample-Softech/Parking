@@ -23,11 +23,17 @@ public class ControllerClass {
 	@Autowired
 	HttpServletRequest request;
 	
-	@RequestMapping()
-	public ModelAndView print(@RequestParam("searchPlace") String info){
-		System.out.println(info);
+	@RequestMapping("/Check")
+	public ModelAndView print(@ModelAttribute("Demo") Demo Demo, @RequestParam("searchPlace") String loc){
+		System.out.println("get");
+		System.out.println(loc);
+		System.out.println(Demo.getLat());
+		System.out.println(Demo.getLng());
+		System.out.println("com");
 		ModelAndView model=new ModelAndView("search");
-		model.addObject("location", info);
+		model.addObject("Demo", Demo);
+		model.addObject("location", loc);
+
 		return model;
 	}
 	

@@ -2,15 +2,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
-    <title>Place Autocomplete</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+    <title>Place Autocomplete</title>
     <jsp:include page="/link.jsp"></jsp:include>
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
         height: 100%;
+        
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -18,6 +19,7 @@
         margin: 0;
         padding: 0;
       }
+      
       .controls {
         margin-top: 10px;
         border: 1px solid transparent;
@@ -63,10 +65,9 @@
   </head>
   <body>
   		<!-- MENU BAR -->
-		<jsp:include page="/mainMenu.jsp"></jsp:include>		
+		<jsp:include page="/mainMenu.jsp" />		
   
-    <input id="pac-input" class="controls" type="text"
-        placeholder="Enter a location" value="${location }" >
+    <input id="pac-input" class="controls" type="text" placeholder="Enter a location" value="${location }" >
     <div id="type-selector" class="controls">
       <input type="radio" name="type" id="changetype-all" checked="checked">
       <label for="changetype-all">All</label>
@@ -164,5 +165,7 @@
         setupClickListener('changetype-geocode', ['geocode']);
       }
     </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy0y-BGBgl6fjl1zDhcBpgHHo6ZR6PXvY&libraries=places&callback=initMap" async defer></script>
+    
   </body>
 </html>
