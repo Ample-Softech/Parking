@@ -11,8 +11,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="#">Drivers</a></li>
-        <li><a href="#">Space Owners</a></li> 
-         
+        <li><a href="#">Space Owners</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="/Parking/register.basic"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

@@ -26,7 +26,8 @@ public class ControllerClass {
 	@RequestMapping()
 	public ModelAndView print(@RequestParam("searchPlace") String info){
 		System.out.println(info);
-		ModelAndView model=new ModelAndView("Login");
+		ModelAndView model=new ModelAndView("search");
+		model.addObject("location", info);
 		return model;
 	}
 	

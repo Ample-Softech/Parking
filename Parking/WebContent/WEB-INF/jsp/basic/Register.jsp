@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Sign-Up</title>
 <jsp:include page="/link.jsp"></jsp:include>
 <style type="text/css">
 /* Register(Page) : Credit to bootsnipp.com for the css for the color graph */

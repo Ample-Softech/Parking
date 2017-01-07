@@ -3,11 +3,10 @@
 
 <html>
 	<head>
-		<jsp:include page="/link.jsp"></jsp:include>
+		<jsp:include page="/link.jsp" />
 		<title>Home Page</title>
 		
 		<script type="text/javascript">
-
 			$(document).ready(function(){    		
 	    		$("#searchPlace").click(function(){
 	    		
@@ -18,8 +17,7 @@
 	    			autocomplete.addListener('place_changed', fillInAddress);
 	    		});
 	   		});
-			
-						
+							
 			function fillInAddress() {
 		          // Get the place details from the autocomplete object.
 		    	var place = autocomplete.getPlace();
@@ -37,23 +35,22 @@
 	<body>
 	
 		<!-- MENU BAR -->
-		<jsp:include page="/mainMenu.jsp"></jsp:include>
-		
+		<jsp:include page="/mainMenu.jsp"></jsp:include>		
 		
 		<!-- CONTENT -->
 		<form action="/Parking/check.basic" method="post">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 jumbotron searchbar" style="padding: 15px;">
-					<div class="input-group" align="center">
-			        	<input type="text" class="form-control" name="searchPlace" id="searchPlace"  />
-			   			<span class="input-group-btn">
-			       			<button type="submit" class="btn btn-success" id="searchBtn"> <b>Search</b></button>
-			        	</span>      
-			     	</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 jumbotron searchbar" style="padding: 15px;">
+						<div class="input-group" align="center">
+				        	<input type="text" class="form-control" name="searchPlace" id="searchPlace"  />
+				   			<span class="input-group-btn">
+				       			<button type="submit" class="btn btn-success" id="searchBtn"> <b>Search</b></button>
+				        	</span>      
+				     	</div>
+					</div>
 				</div>
 			</div>
-		</div>
 		</form>
 			
 		<div class="container">
