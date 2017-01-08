@@ -10,14 +10,15 @@
 	   		});
 							
 			function fillInAddress() {
-		          // Get the place details from the autocomplete object.
-		    	var place = autocomplete.getPlace();
- 		       		document.getElementById('lat').innerHTML=place.geometry.location.lat();
-		       		document.getElementById('lng').innerHTML=place.geometry.location.lng();
-		            alert(place.geometry.location.lat()+"  "+place.geometry.location.lng());
- 		          
+		        //Get the place details from the autocomplete object.
+				var place = autocomplete.getPlace();
+		    	var obj, Demo;
+		          alert(place.geometry.location.lat()+"  "+place.geometry.location.lng());
  	 	          Demo = {
-	 	                  lat: place.geometry.location.lat(),
-	 	                  lng: place.geometry.location.lng()
-	 	                };
+	 	                  "lat": place.geometry.location.lat(),
+	 	                  "lng": place.geometry.location.lng()
+	 	          };
+ 	 	          obj = JSON.stringify(Demo);
+ 	 	          document.getElementById('lat').innerHTML=obj.lat;
+ 	 	          document.getElementById('lng').innerHTML=obj.lng;
 		        }

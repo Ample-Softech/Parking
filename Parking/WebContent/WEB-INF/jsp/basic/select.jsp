@@ -13,7 +13,7 @@
       #map, #pano {
         float: left;
         height: 100%;
-        width: 45%;
+        width: 50%;
       }
     </style>
   </head>
@@ -28,6 +28,7 @@
           center: fenway,
           zoom: 14
         });
+        
         var panorama = new google.maps.StreetViewPanorama(
             document.getElementById('pano'), {
               position: fenway,

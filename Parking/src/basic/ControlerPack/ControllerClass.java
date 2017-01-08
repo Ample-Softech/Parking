@@ -23,21 +23,17 @@ public class ControllerClass {
 	HttpServletRequest request;
 	
 	@RequestMapping("/Check")
-	public ModelAndView print(@ModelAttribute("Demo") Demo Demo, @RequestParam("searchPlace") String loc, @RequestParam("lat") String lat) {
-		System.out.println("get");
-		System.out.println(loc);
-		System.out.println(Demo.getLat());
-		System.out.println(Demo.getLng());
-		System.out.println(lat);
-		ModelAndView model=new ModelAndView("search");
-		model.addObject("Demo", Demo);
-		model.addObject("location", loc);
-		return model;
+	public ModelAndView print(@ModelAttribute("Demo") Demo Demo) {
+		modelAndView=new ModelAndView("select");
+//		System.out.println(Demo.getLat()+"  "+Demo.getLng());
+		modelAndView.addObject("location", Demo.getSearchPlace());
+		return modelAndView;
 	}
 	
 	@RequestMapping(value="/home", method=RequestMethod.GET)
 	public ModelAndView homePage() {
 		modelAndView.setViewName("index");
+
 		return modelAndView;
 	}
 	

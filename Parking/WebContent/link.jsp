@@ -8,7 +8,7 @@
 <link rel="stylesheet" href='<c:url value="chosen/chosen.min.css"></c:url>'>
 <link rel="stylesheet" href='<c:url value="css/commonStyle.css"></c:url>'>
 
-<script type="text/javascript" src='<c:url value="js/angular.min.js"></c:url>'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
 <script type="text/javascript" src='<c:url value="js/jquery/Register.js"></c:url>'></script>
 <script type="text/javascript" src='<c:url value="js/jquery/login.js"></c:url>'></script>
