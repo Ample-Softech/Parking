@@ -1,7 +1,6 @@
 package basic.ControlerPack;
 
 import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -24,16 +23,15 @@ public class ControllerClass {
 	HttpServletRequest request;
 	
 	@RequestMapping("/Check")
-	public ModelAndView print(@ModelAttribute("Demo") Demo Demo, @RequestParam("searchPlace") String loc){
+	public ModelAndView print(@ModelAttribute("Demo") Demo Demo, @RequestParam("searchPlace") String loc, @RequestParam("lat") String lat) {
 		System.out.println("get");
 		System.out.println(loc);
 		System.out.println(Demo.getLat());
 		System.out.println(Demo.getLng());
-		System.out.println("com");
+		System.out.println(lat);
 		ModelAndView model=new ModelAndView("search");
 		model.addObject("Demo", Demo);
 		model.addObject("location", loc);
-
 		return model;
 	}
 	
