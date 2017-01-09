@@ -17,12 +17,10 @@
 						
 			function fillInAddress() {
 		        //Get the place details from the autocomplete object.
-				var place = autocomplete.getPlace();
-			    
+				var place = autocomplete.getPlace();			    
 		        var loc = document.getElementById('searchPlace').value;
-		       	var lat = place.geometry.location.lat(), long = place.geometry.location.lng();
+		       	var lat = place.geometry.location.lat(), long = place.geometry.location.lng();		       	
 	       		window.location = "/Parking/Check.basic?loc="+loc+"&latitude=" + lat + "&longitude=" + long;
-
 	       		//	       	  	alert(place.geometry.location.lat()+"  "+place.geometry.location.lng());	       		
 			}
 		</script>

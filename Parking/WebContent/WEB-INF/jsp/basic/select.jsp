@@ -15,13 +15,13 @@
      	#pano {
         float: left;
         height: 100%;
-        width: 36%;
+        width: 40%;
       } 
             
       #map{
         float: left;
         height: 100%;
-        width: 64%;
+        width: 60%;
       }
       
     </style>
@@ -36,8 +36,12 @@
         var fenway = {lat: ${latitude}, lng: ${longitude}};
         var map = new google.maps.Map(document.getElementById('map'), {
           center: fenway,
-          zoom: 14
+          zoom: 14,
+          mapTypeId:google.maps.MapTypeId.ROADMAP
         });
+        
+        
+        
         
         var panorama = new google.maps.StreetViewPanorama(
             document.getElementById('pano'), {
