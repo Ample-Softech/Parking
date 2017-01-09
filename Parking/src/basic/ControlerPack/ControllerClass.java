@@ -25,8 +25,6 @@ public class ControllerClass {
 	@RequestMapping("/Check")
 	public ModelAndView print() {
 		modelAndView=new ModelAndView("find");
-//		Demo demo=new Demo();
-		
 		modelAndView.addObject("latitude", request.getParameter("latitude"));
 		modelAndView.addObject("longitude", request.getParameter("longitude"));		
 		modelAndView.addObject("loc", request.getParameter("loc"));
