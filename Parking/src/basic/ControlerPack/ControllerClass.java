@@ -29,7 +29,7 @@ public class ControllerClass {
 		
 		modelAndView.addObject("latitude", request.getParameter("latitude"));
 		modelAndView.addObject("longitude", request.getParameter("longitude"));		
-		modelAndView.addObject("location", request.getParameter("loc"));
+		modelAndView.addObject("loc", request.getParameter("loc"));
 		return modelAndView;
 	}
 	
