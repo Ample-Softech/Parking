@@ -11,12 +11,13 @@
         margin: 0;
         padding: 0;
       }
-/*      #map, #pano {
+      
+     	#pano {
         float: left;
         height: 100%;
-        width: 50%;
+        width: 36%;
       } 
-*/      
+            
       #map{
         float: left;
         height: 100%;
@@ -28,8 +29,8 @@
   <body>
   
     <div id="map"></div>
-<!--     <div id="pano"></div>
- -->
+     <div id="pano"></div>
+ 
     <script>        
       function initialize() {
         var fenway = {lat: ${latitude}, lng: ${longitude}};
