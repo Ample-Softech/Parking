@@ -44,11 +44,12 @@
               map: map,
               draggable: true,
               animation: google.maps.Animation.DROP,
-              position: fenway
+              position: fenway,
+              title: 'fenway (Ayers Rock)'
             });
             google.maps.event.addListener(marker, 'click', function() {
               infowindow.setContent('<div><strong>' + results[0].name + '</strong><br>' +
-                'Place ID: ' + results[0].place_id + '<br>' +
+                'Place ID: ' + results[0].place_id + '<br>' +'Address: '+
                 results[0].formatted_address + '</div>');
               infowindow.open(map, this);
             });
