@@ -1,3 +1,4 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,20 +11,28 @@
         margin: 0;
         padding: 0;
       }
-      #map, #pano {
+/*      #map, #pano {
         float: left;
         height: 100%;
         width: 50%;
+      } 
+*/      
+      #map{
+        float: left;
+        height: 100%;
+        width: 64%;
       }
+      
     </style>
   </head>
   <body>
+  
     <div id="map"></div>
-    <div id="pano"></div>
-    <script>
-
+<!--     <div id="pano"></div>
+ -->
+    <script>        
       function initialize() {
-        var fenway = {lat: 42.345573, lng: -71.098326};
+        var fenway = {lat: ${latitude}, lng: ${longitude}};
         var map = new google.maps.Map(document.getElementById('map'), {
           center: fenway,
           zoom: 14

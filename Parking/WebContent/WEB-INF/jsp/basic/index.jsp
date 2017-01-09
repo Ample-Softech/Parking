@@ -18,7 +18,10 @@
 			function fillInAddress() {
 		        //Get the place details from the autocomplete object.
 				var place = autocomplete.getPlace();
+			    var loc = document.getElementById('searchPlace').value;
+		       	var lat = place.geometry.location.lat(), long = place.geometry.location.lng();
 	       	  	alert(place.geometry.location.lat()+"  "+place.geometry.location.lng());
+	       		window.location = "/Parking/Check.basic?loc="+loc+"&latitude=" + lat + "&longitude=" + long;
 			}
 		</script>
 		
@@ -29,12 +32,11 @@
 		<jsp:include page="/mainMenu.jsp" />		
 		
 		<!-- CONTENT -->
-		<form action="/Parking/Check.basic" method="post" modelAttribute="Demo">
 			<div class="container" >
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 jumbotron searchbar" style="padding: 15px;">
 						<div class="input-group" align="center">
-				        	<input type="text" class="form-control" name="searchPlace" id="searchPlace"  />
+				        	<input type="text" class="form-control" name="searchPlace" id="searchPlace" required="required"  />
 				        	<span class="input-group-btn">
 				       			<button type="submit" class="btn btn-success" id="searchBtn"> <b>Search</b></button>
 				        	</span>      
@@ -42,7 +44,6 @@
 					</div>
 				</div>
 			</div>
-		</form>
 			
 		<div class="container">
 			<br><br><br><br><br><br><br><br><br><br><br><br>

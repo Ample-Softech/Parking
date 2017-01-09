@@ -23,10 +23,11 @@ public class ControllerClass {
 	HttpServletRequest request;
 	
 	@RequestMapping("/Check")
-	public ModelAndView print(@ModelAttribute("Demo") Demo Demo) {
+	public ModelAndView print() {
 		modelAndView=new ModelAndView("select");
-//		System.out.println(Demo.getLat()+"  "+Demo.getLng());
-		modelAndView.addObject("location", Demo.getSearchPlace());
+		modelAndView.addObject("latitude", request.getParameter("latitude"));
+		modelAndView.addObject("longitude", request.getParameter("longitude"));		
+		modelAndView.addObject("location", request.getParameter("loc"));
 		return modelAndView;
 	}
 	
