@@ -9,6 +9,7 @@ body {
 
 .cards {
 	height: 150px;
+	margin-bottom: 40px;
 }
 
 .cardImg {
@@ -21,4 +22,26 @@ body {
 
 .searchbar {
 	opacity: 0.8;	
+}
+
+.img{
+	width: 100%;
+}
+
+		.imglinks {
+			color: white;
+			font-style: italic;
+			font: bold;
+			font-size: 18;
+			font-stretch: normal;
+			font-family: monospace;			
+		}
+		.imglinks:HOVER {
+			color: #d4d4d4;
+			text-decoration: underline;
+		}
+
+.img-temp{
+	margin-top: 150px;
+	
 }

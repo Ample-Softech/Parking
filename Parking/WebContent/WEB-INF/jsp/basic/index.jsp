@@ -45,18 +45,15 @@
 				</div>
 			</div>
 			
-		<div class="container">
-			<br><br><br><br><br><br><br><br><br><br><br><br>
-		</div>		
 				
-		<div class="container">
+		<div class="container img-temp">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 cards">
 					<div class="cardImg">
 						<a class="imglinks" href="/Parking/Check.basic?loc=Kothrud, Pune, Maharashtra&lat=18.5073985&lng=73.80765040000006">
-							<img src="images/kothrud.jpg" alt="Kothrud" style="width:100%"></a>
+							<img class="img-responsive img-thumbnail img" src="images/kothrud.jpg" alt="Kothrud"></a>
         				<div class="caption" style="color: white;">
-          					<a class="imglinks" href="/Parking/Check.basic?loc=Kothrud, Pune, Maharashtra&lat=18.5073985&lng=73.80765040000006" style="color:white;"><p>Kothrud, Pune</p></a>
+          					<a class="imglinks" href="/Parking/Check.basic?loc=Kothrud, Pune, Maharashtra&lat=18.5073985&lng=73.80765040000006">Kothrud, Pune</a>
         				</div>	
 					</div>
 				</div>
@@ -65,9 +62,9 @@
 				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 cards">
 					<div class="cardImg">
 						<a class="imglinks" href="/Parking/Check.basic?loc=Karve Nagar, Pune, Maharashtra&lat=18.4897587&lng=73.82029620000003">
-						<img src="images/karvenagar.jpg" alt="Karvenagar" style="width:100%"></a>
+						<img class="img-responsive img-thumbnail img" src="images/karvenagar.jpg" alt="Karvenagar"></a>
         				<div class="caption" style="color: white;">
-          					<a class="imglinks" href="/Parking/Check.basic?loc=Karve Nagar, Pune, Maharashtra&lat=18.4897587&lng=73.82029620000003" style="color:white;"><p>Karvenagar, Pune</p></a>
+          					<a class="imglinks" href="/Parking/Check.basic?loc=Karve Nagar, Pune, Maharashtra&lat=18.4897587&lng=73.82029620000003">Karvenagar, Pune</a>
        	 				</div>	
 					</div>
 				</div>
@@ -76,9 +73,9 @@
 				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 cards">
 					<div class="cardImg">
 						<a class="imglinks" href="/Parking/Check.basic?loc=Chinchwad, Maharashtra&lat=18.6297811&lng=73.79970939999998">
-						<img src="images/chinchwa.jpg" alt="Chinchwad" style="width:100%"></a>
+						<img class="img-responsive img-thumbnail img" src="images/chinchwa.jpg" alt="Chinchwad"></a>
         				<div class="caption" style="color: white;">
-          					<a class="imglinks" href="/Parking/Check.basic?loc=Chinchwad, Maharashtra&lat=18.6297811&lng=73.79970939999998" style="color:white;"><p>Chinchwad, Pune</p></a>
+          					<a class="imglinks" href="/Parking/Check.basic?loc=Chinchwad, Maharashtra&lat=18.6297811&lng=73.79970939999998">Chinchwad, Pune</a>
         				</div>	
 					</div>
 				</div>
@@ -86,9 +83,10 @@
 				
 				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 cards">
 					<div class="cardImg">
-						<a class="imglinks" href="/Parking/Check.basic?loc=Deccan Gymkhana, Pune, Maharashtra&lat=18.5175566&lng=73.84166000000005"><img src="images/deccan.jpg" alt="Deccan" style="width:100%"></a>
+						<a class="imglinks" href="/Parking/Check.basic?loc=Deccan Gymkhana, Pune, Maharashtra&lat=18.5175566&lng=73.84166000000005">
+							<img class="img-responsive img-thumbnail img" src="images/deccan.jpg" alt="Deccan"></a>
         				<div class="caption" style="color: white;">
-          					<a class="imglinks" href="/Parking/Check.basic?loc=Deccan Gymkhana, Pune, Maharashtra&lat=18.5175566&lng=73.84166000000005" style="color:white;"><p>Deccan-Gymkhana, Pune</p></a>
+          					<a class="imglinks" href="/Parking/Check.basic?loc=Deccan Gymkhana, Pune, Maharashtra&lat=18.5175566&lng=73.84166000000005">Deccan-Gymkhana, Pune</a>
         				</div>	
 					</div>
 				</div>
@@ -96,9 +94,9 @@
 				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 cards">
 					<div class="cardImg">
 						<a class="imglinks" href="/Parking/Check.basic?loc=Sadashiv Peth, Pune, Maharashtra&lat=18.5083218&lng=73.84656480000001">
-							<img src="images/sadashiv.jpg" alt="Sadashiv Peth" style="width:100%"></a>
+							<img class="img-responsive img-thumbnail img" src="images/sadashiv.jpg" alt="Sadashiv Peth"></a>
         				<div class="caption" style="color: white;">
-          					<a class="imglinks" href="/Parking/Check.basic?loc=Sadashiv Peth, Pune, Maharashtra&lat=18.5083218&lng=73.84656480000001" style="color:white;"><p>Sadashiv Peth, Pune</p></a>
+          					<a class="imglinks" href="/Parking/Check.basic?loc=Sadashiv Peth, Pune, Maharashtra&lat=18.5083218&lng=73.84656480000001">Sadashiv Peth, Pune</a>
         				</div>	
         			</div>
 				</div>
@@ -107,9 +105,9 @@
 				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 cards">
 					<div class="cardImg">
 						<a class="imglinks" href="/Parking/Check.basic?loc=Senapati Bapat Road, Sheti Mahamandal, 30, Laxmi Society, Pune, Maharashtra&lat=18.5316664&lng=73.83010739999997">
-							<img src="images/SB.jpg" alt="SB Road" style="width:100%"></a>
+							<img class="img-responsive img-thumbnail img" src="images/SB.jpg" alt="SB Road"></a>
         				<div class="caption" style="color: white;">
-          					<a class="imglinks" href="/Parking/Check.basic?loc=Senapati Bapat Road, Sheti Mahamandal, 30, Laxmi Society, Pune, Maharashtra&lat=18.5316664&lng=73.83010739999997" style="color:white;"><p>Senapati Bapat Road, Pune</p></a>
+          					<a class="imglinks" href="/Parking/Check.basic?loc=Senapati Bapat Road, Sheti Mahamandal, 30, Laxmi Society, Pune, Maharashtra&lat=18.5316664&lng=73.83010739999997">Senapati-Bapat-Road, Pune</a>
         				</div>	
         			</div>
 				</div>
@@ -117,30 +115,34 @@
 		
 				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 cards">
 					<div class="cardImg">
-						<a class="imglinks" href="/Parking/Check.basic?loc=Shaniwar Peth, Pune, Maharashtra&lat=18.5194431&lng=73.85193559999993"><img src="images/shaniwar peth.jpg" alt="Shaniwar Peth" style="width:100%"></a>
+						<a class="imglinks" href="/Parking/Check.basic?loc=Shaniwar Peth, Pune, Maharashtra&lat=18.5194431&lng=73.85193559999993">
+						<img class="img-responsive img-thumbnail img" src="images/shaniwar peth.jpg" alt="Shaniwar Peth"></a>
         				<div class="caption" style="color: white;">
-          					<a class="imglinks" href="/Parking/Check.basic?loc=Shaniwar Peth, Pune, Maharashtra&lat=18.5194431&lng=73.85193559999993" style="color:white;"><p>Shaniwar Peth, Pune</p></a>
+          					<a class="imglinks" href="/Parking/Check.basic?loc=Shaniwar Peth, Pune, Maharashtra&lat=18.5194431&lng=73.85193559999993">Shaniwar Peth, Pune</a>
         				</div>	
        	 			</div>
 				</div>
 		
 				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 cards">
 					<div class="cardImg">
-						<a class="imglinks" href="/Parking/Check.basic?loc=Sinhagad Road, Amarendra Society, Bank Of India Colony, Pune, Maharashtra&lat=18.4571738&lng=73.80336820000002"><img src="images/sinhgad.jpg" alt="Sinhgad Road" style="width:100%"></a>
+						<a class="imglinks" href="/Parking/Check.basic?loc=Sinhagad Road, Amarendra Society, Bank Of India Colony, Pune, Maharashtra&lat=18.4571738&lng=73.80336820000002">
+						<img class="img-responsive img-thumbnail img" src="images/sinhgad.jpg" alt="Sinhgad Road"></a>
         				<div class="caption" style="color: white;">
-          					<a class="imglinks" href="/Parking/Check.basic?loc=Sinhagad Road, Amarendra Society, Bank Of India Colony, Pune, Maharashtra&lat=18.4571738&lng=73.80336820000002" style="color:white;"><p>Sinhgad Road, Pune</p></a>
+          					<a class="imglinks" href="/Parking/Check.basic?loc=Sinhagad Road, Amarendra Society, Bank Of India Colony, Pune, Maharashtra&lat=18.4571738&lng=73.80336820000002">Sinhgad Road, Pune</a>
        	 				</div>	
         			</div>
 				</div>
 			</div>
 		</div>
 		
-		
-		<!-- FOOTER -->
-<!-- 		<div class="container-fluid"> -->
-<!-- 			<div class="jumbotron" > -->
-<!-- 					FOOTER HERE -->
-<!-- 			</div> -->
-<!-- 		</div> -->
+<!-- 		
+		FOOTER
+ 		<div class="container-fluid"> 
+ 			<div class="jumbotron" > 
+ 					FOOTER HERE
+ 			</div> 
+ 		</div> 
+
+ -->
 	</body>
 </html>
