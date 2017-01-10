@@ -10,6 +10,7 @@
    		 			var options = {
 						  componentRestrictions: {country: "ind"}
 
+   		 		
    		 			};
     				autocomplete = new google.maps.places.Autocomplete(document.getElementById('searchPlace'),options);
     				 autocomplete.addListener('place_changed', fillInAddress);
