@@ -1,5 +1,7 @@
 package basic.ControlerPack;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,11 +25,12 @@ public class ControllerClass {
 	HttpServletRequest request;
 	
 	@RequestMapping("/Check")
-	public ModelAndView print() {
+	public ModelAndView print(@RequestParam Map<String,String> requestParams) {
 		modelAndView=new ModelAndView("find");
-		modelAndView.addObject("latitude", request.getParameter("latitude"));
-		modelAndView.addObject("longitude", request.getParameter("longitude"));		
-		modelAndView.addObject("loc", request.getParameter("loc"));
+//		System.out.println("loc= "+requestParams.get("loc")+"lat= "+requestParams.get("lat")+"lng= "+requestParams.get("lng"));
+		modelAndView.addObject("latitude", requestParams.get("lat"));
+		modelAndView.addObject("longitude", requestParams.get("lng"));		
+		modelAndView.addObject("loc", requestParams.get("loc"));
 		return modelAndView;
 	}
 	
