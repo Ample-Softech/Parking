@@ -29,8 +29,10 @@
 		
 	</head>
 	<body>
+
 		<!-- MENU BAR -->
 		<jsp:include page="/mainMenu.jsp" />		
+
 		<!-- CONTENT -->
 			<div class="container" >
 				<div class="row">

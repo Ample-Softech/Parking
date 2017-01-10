@@ -21,27 +21,27 @@ body {
 }
 
 .searchbar {
-	opacity: 0.8;	
+	opacity: 0.8;		
 }
 
 .img{
 	width: 100%;
 }
 
-		.imglinks {
-			color: white;
-			font-style: italic;
-			font: bold;
-			font-size: 18;
-			font-stretch: normal;
-			font-family: monospace;			
-		}
-		.imglinks:HOVER {
-			color: #d4d4d4;
-			text-decoration: underline;
-		}
+.imglinks {
+	color: white;
+	font-style: italic;
+	font: bold;
+	font-size: 18;
+	font-stretch: normal;
+	font-family: monospace;			
+}
+.imglinks:HOVER {
+	color: #d4d4d4;	
+	text-decoration: underline;
+}
 
 .img-temp{
-	margin-top: 150px;
-	
+	margin-top: 130px;	
+	margin-bottom: 100px;
 }
