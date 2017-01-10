@@ -124,7 +124,6 @@
        	 			</div>
 				</div>
 		
-		
 				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 cards">
 					<div class="cardImg">
 						<a class="imglinks" href="/Parking/Check.basic?loc=Sinhagad Road, Amarendra Society, Bank Of India Colony, Pune, Maharashtra&lat=18.4571738&lng=73.80336820000002"><img src="images/sinhgad.jpg" alt="Sinhgad Road" style="width:100%"></a>
