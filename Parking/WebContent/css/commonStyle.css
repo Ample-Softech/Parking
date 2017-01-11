@@ -12,16 +12,14 @@ body {
 }
 
 .cards {
-	height: 150px;
-	margin-bottom: 40px;
+	height: 18%;
 }
-
 .cardImg {
-	height: 100px;
-	width: 240px;
+	height: 85%;
+	width: 90%;
 	margin: 10px;
 	background-color: gray;
-		opacity: 0.8;	
+	opacity: 0.8;	
 }
 
 .searchbar {
@@ -29,13 +27,16 @@ body {
 	margin-top: 40px;		
 }
 
-.img{
-	width: 100%;
+.img-temp{
+	margin-top: 120px;	
+	margin-bottom: 200px;
 }
 
-.img:HOVER {
-	opacity: 0.8;
-}
+.img-rows{ margin-bottom: 80px;}
+
+.img{width: 100%;}
+
+.img:HOVER {opacity: 0.8;}
 
 .imglinks {
 	color: white;
@@ -51,10 +52,6 @@ body {
 	text-decoration: underline;
 }
 
-.img-temp{
-	margin-top: 130px;	
-	margin-bottom: 100px;
-}
 
 
 /* footer css code  start*/ 

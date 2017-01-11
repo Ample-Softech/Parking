@@ -2,7 +2,10 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 	<head>
-		<title>Home Page</title>		
+		<title>Home Page</title>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    	<meta charset="utf-8">
+		
 		<jsp:include page="/link.jsp" />
 		<script type="text/javascript">
 			$(document).ready(function() {    		
@@ -26,6 +29,16 @@
 	       		//	       	  	alert(place.geometry.location.lat()+"  "+place.geometry.location.lng());	       		
 			}
 		</script>
+		<style type="text/css">
+      		/* Optional: Makes the sample page fill the window. */
+      		html, body {
+       	 		height: 100%;
+        		margin: 0;
+        		padding: 0;
+      		}		
+		</style>
+		
+		
 	</head>
 	<body>
 
@@ -48,8 +61,8 @@
 			
 				
 		<div class="container img-temp">
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 cards">
+			<div class="row img-rows">
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 cards">
 					<div class="cardImg">
 						<a class="imglinks" href="/Parking/Check.basic?loc=Kothrud, Pune, Maharashtra&lat=18.5073985&lng=73.80765040000006">
 							<img class="img-responsive img-thumbnail img" src="images/kothrud.jpg" alt="Kothrud"></a>
@@ -60,7 +73,7 @@
 				</div>
 				
 				
-				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 cards">
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 cards">
 					<div class="cardImg">
 						<a class="imglinks" href="/Parking/Check.basic?loc=Karve Nagar, Pune, Maharashtra&lat=18.4897587&lng=73.82029620000003">
 						<img class="img-responsive img-thumbnail img" src="images/karvenagar.jpg" alt="Karvenagar" data-toggle="popover"></a>
@@ -71,7 +84,7 @@
 				</div>
 	
 	
-				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 cards">
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 cards">
 					<div class="cardImg">
 						<a class="imglinks" href="/Parking/Check.basic?loc=Chinchwad, Maharashtra&lat=18.6297811&lng=73.79970939999998">
 						<img class="img-responsive img-thumbnail img" src="images/chinchwa.jpg" alt="Chinchwad"></a>
@@ -82,7 +95,7 @@
 				</div>
 				
 				
-				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 cards">
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 cards">
 					<div class="cardImg">
 						<a class="imglinks" href="/Parking/Check.basic?loc=Deccan Gymkhana, Pune, Maharashtra&lat=18.5175566&lng=73.84166000000005">
 							<img class="img-responsive img-thumbnail img" src="images/deccan.jpg" alt="Deccan"></a>
@@ -94,7 +107,7 @@
 			</div>
 
 			<div class="row">					
-				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 cards">
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 cards">
 					<div class="cardImg">
 						<a class="imglinks" href="/Parking/Check.basic?loc=Sadashiv Peth, Pune, Maharashtra&lat=18.5083218&lng=73.84656480000001">
 							<img class="img-responsive img-thumbnail img" src="images/sadashiv.jpg" alt="Sadashiv Peth"></a>
@@ -105,7 +118,7 @@
 				</div>
 				
 				
-				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 cards">
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 cards">
 					<div class="cardImg">
 						<a class="imglinks" href="/Parking/Check.basic?loc=Senapati Bapat Road, Sheti Mahamandal, 30, Laxmi Society, Pune, Maharashtra&lat=18.5316664&lng=73.83010739999997">
 							<img class="img-responsive img-thumbnail img" src="images/SB.jpg" alt="SB Road"></a>
@@ -116,7 +129,7 @@
 				</div>
 		
 		
-				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 cards">
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 cards">
 					<div class="cardImg">
 						<a class="imglinks" href="/Parking/Check.basic?loc=Shaniwar Peth, Pune, Maharashtra&lat=18.5194431&lng=73.85193559999993">
 						<img class="img-responsive img-thumbnail img" src="images/shaniwar peth.jpg" alt="Shaniwar Peth"></a>
@@ -126,7 +139,7 @@
        	 			</div>
 				</div>
 		
-				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 cards">
+				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 cards">
 					<div class="cardImg">
 						<a class="imglinks" href="/Parking/Check.basic?loc=Sinhagad Road, Amarendra Society, Bank Of India Colony, Pune, Maharashtra&lat=18.4571738&lng=73.80336820000002">
 						<img class="img-responsive img-thumbnail img" src="images/sinhgad.jpg" alt="Sinhgad Road"></a>
