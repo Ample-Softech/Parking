@@ -82,9 +82,6 @@
 		
 			
 			<div class="form-group">
-				<input type="text" name="display_name" id="display_name" class="form-control input-lg" placeholder="Display Name" tabindex="3">
-			</div>
-			<div class="form-group">
 				<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
 			</div>
 			<div class="row">
@@ -99,6 +96,39 @@
 					</div>
 				</div>
 			</div>
+			
+			<div class="form-group">
+				<input type="text" name="address" id="address" class="form-control input-lg" placeholder="Address" tabindex="4">
+			</div>
+			
+						<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="text" name="city" id="city" class="form-control input-lg" placeholder="City" tabindex="5">
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="text" name="state" id="state" class="form-control input-lg" placeholder="State" tabindex="6">
+					</div>
+				</div>
+			</div>
+			
+						<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="text" name="country" id="country" class="form-control input-lg" placeholder="Country" tabindex="5">
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="text" name="pincode" id="pincode" class="form-control input-lg" placeholder="Pincode" tabindex="6">
+					</div>
+				</div>
+			</div>
+			
+			
+			
 			<div class="row">
 				<div class="col-xs-4 col-sm-3 col-md-3">
 					<span class="button-checkbox">
@@ -145,14 +175,6 @@
 
 
 </div>
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
 
 </body>
 </html>
