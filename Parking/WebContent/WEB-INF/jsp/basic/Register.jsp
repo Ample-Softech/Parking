@@ -6,6 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Sign-Up</title>
 <jsp:include page="/link.jsp"></jsp:include>
+    <link href="css/datepicker.css" rel="stylesheet">
+
 <style type="text/css">
 /* Register(Page) : Credit to bootsnipp.com for the css for the color graph */
 .colorgraph {
@@ -136,7 +138,7 @@
                         <input type="checkbox" name="t_and_c" id="t_and_c" class="hidden" value="1">
 					</span>
 				</div>
-				<div class="col-xs-8 col-sm-9 col-md-9">
+				<div class="col-xs-8 col-sm-9 col-md-9" style="color: white;">
 					 By clicking <strong class="label label-primary">Register</strong>, you agree to the <a href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a> set out by this site, including our Cookie Use.
 				</div>
 			</div>
@@ -149,6 +151,7 @@
 		</form>
 	</div>
 </div>
+
 <!-- Modal -->
 <div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog modal-lg">
@@ -173,8 +176,11 @@
 	</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-
 </div>
+
+
+<br><br><br><br><br><br>
+		<jsp:include page="/footer.jsp"></jsp:include>
 
 </body>
 </html>

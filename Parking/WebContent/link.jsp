@@ -10,12 +10,14 @@
 <script type="text/javascript" src='<c:url value="/chosen/chosen.jquery.min.js"></c:url>'></script>
  --%>
 
+<link rel="stylesheet" href='<c:url value="/bootstrap/css/datepicker.css"></c:url>'>
 <link rel="stylesheet" href='<c:url value="/bootstrap/css/bootstrap-theme.css"></c:url>'>
 <link rel="stylesheet" href='<c:url value="/bootstrap/css/bootstrap-theme.min.css"></c:url>'>
 <link rel="stylesheet" href='<c:url value="/bootstrap/css/bootstrap.css"></c:url>'>
 <link rel="stylesheet" href='<c:url value="/chosen/chosen.css"></c:url>'>
 <link rel="stylesheet" href='<c:url value="/chosen/chosen.min.css"></c:url>'>
 <link rel="stylesheet" href='<c:url value="/css/commonStyle.css"></c:url>'>
+<link rel="stylesheet" href='<c:url value="/css/datepicker.css"></c:url>'>
 
 <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 
@@ -31,3 +33,5 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy0y-BGBgl6fjl1zDhcBpgHHo6ZR6PXvY&&libraries=places" async defer></script>
 
 <script type="text/javascript" src='<c:url value="/bootstrap/js/bootstrap.js"></c:url>'></script>
+
+

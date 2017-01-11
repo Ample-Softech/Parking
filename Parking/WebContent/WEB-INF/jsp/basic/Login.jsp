@@ -59,5 +59,11 @@
 </div>
 
 </div>
+
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+
+		<jsp:include page="/footer.jsp"></jsp:include>
+
 </body>
 </html>
