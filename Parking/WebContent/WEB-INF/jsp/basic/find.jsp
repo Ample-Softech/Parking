@@ -10,9 +10,16 @@
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
-        height: 92%;
+/* 	    float: left;    */        
+		height: 92%;
         width: 60%;
       }
+/*       #pano {
+	    float: left;
+        height: 92%;
+        width: 40%;
+      }
+ */      
       /* Optional: Makes the sample page fill the window. */
       html, body {
         height: 100%;
@@ -56,12 +63,25 @@
       			window.alert('Geocoder failed due to: ' + status);
     		}
 	  	});
+
+/* 		var panorama = new google.maps.StreetViewPanorama(
+	            document.getElementById('pano'), {
+	              position: fenway,
+	              addressControlOptions: {
+	                position: google.maps.ControlPosition.BOTTOM_CENTER
+	              },
+	              linksControl: true,
+	              panControl: true,
+	              enableCloseButton: true
+	        });
+ */
 	}
     </script>
   </head>
   <body>
   	<jsp:include page="/mainMenu.jsp"></jsp:include>
 	<div id="map"></div>
+	<!-- 	<div id="pano"></div> -->	
 	<jsp:include page="/footer.jsp"></jsp:include>
 	
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy0y-BGBgl6fjl1zDhcBpgHHo6ZR6PXvY&libraries=places&callback=initMap"></script>

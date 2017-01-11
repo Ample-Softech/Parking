@@ -30,7 +30,7 @@
 <div class="row">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 		<form role="form">
-			<h2>Please Sign Up <small>It's free and always will be.</small></h2>
+			<h2 style="color: white;">Please Sign Up <small>It's free and always will be.</small></h2>
 			<hr class="colorgraph">
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
@@ -40,10 +40,47 @@
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
+                        <input type="text" name="middle_name" id="middle_name" class="form-control input-lg" placeholder="Middle Name" tabindex="1">
+					</div>
+				</div>
+				
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
 						<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
 					</div>
 				</div>
 			</div>
+		
+			
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group form-inline">
+						<label for="gen form-control" style="color: white;">Gender : </label>
+							<div class="form-control gen">
+							<input class="radio" type="radio" name="gender" value="male" />
+							<label for="gender form-control">Male</label>
+							<input class="radio" type="radio" name="gender" value="female" />
+							<label for="gender">Female</label>
+						</div>
+					</div>
+				</div>
+			
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<div class="input-group date" id="datetimepicker1">
+                    		<input class="form-control input-lg" type="text" />
+                    		<span class="input-group-addon">
+                        		<span class="glyphicon glyphicon-calendar"></span>
+                    		</span>
+                		</div>
+					</div>
+				</div>
+				<script type="text/javascript">
+		        	$(function () {$('#datetimepicker1').datetimepicker();});
+		        </script>
+			</div>
+		
+			
 			<div class="form-group">
 				<input type="text" name="display_name" id="display_name" class="form-control input-lg" placeholder="Display Name" tabindex="3">
 			</div>
@@ -105,6 +142,17 @@
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+
 </div>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<br><br><br><br><br><br>
+
 </body>
 </html>
