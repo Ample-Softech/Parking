@@ -37,7 +37,6 @@ public class ControllerClass {
 	@RequestMapping(value="/home", method=RequestMethod.GET)
 	public ModelAndView homePage() {
 		modelAndView.setViewName("index");
-
 		return modelAndView;
 	}
 	

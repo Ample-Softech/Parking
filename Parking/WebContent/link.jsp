@@ -8,6 +8,8 @@
 <link rel="stylesheet" href='<c:url value="/chosen/chosen.min.css"></c:url>'>
 <link rel="stylesheet" href='<c:url value="/css/commonStyle.css"></c:url>'>
 
+<link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
 <script type="text/javascript" src='<c:url value="/js/jquery/Register.js"></c:url>'></script>

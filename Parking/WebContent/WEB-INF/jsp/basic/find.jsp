@@ -10,7 +10,7 @@
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
-        height: 100%;
+        height: 585px;
         width: 60%;
       }
       /* Optional: Makes the sample page fill the window. */
@@ -60,7 +60,10 @@
     </script>
   </head>
   <body>
+  	<jsp:include page="/mainMenu.jsp"></jsp:include>
 	<div id="map"></div>
+	<jsp:include page="/footer.jsp"></jsp:include>
+	
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy0y-BGBgl6fjl1zDhcBpgHHo6ZR6PXvY&libraries=places&callback=initMap"></script>
   </body>
 </html>

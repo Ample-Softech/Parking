@@ -16,8 +16,6 @@ public class RestFul {
 	@RequestMapping(value="/search",method=RequestMethod.POST)
 	public ResponseEntity<Demo> search(@ModelAttribute("demo")Demo demo){
 		System.out.println(demo.getLat()+" "+demo.getLng());
-		
-		
 		return new ResponseEntity<Demo>(demo,HttpStatus.OK);
 		
 	}

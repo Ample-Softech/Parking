@@ -26,7 +26,6 @@
 	       		//	       	  	alert(place.geometry.location.lat()+"  "+place.geometry.location.lng());	       		
 			}
 		</script>
-		
 	</head>
 	<body>
 
@@ -34,7 +33,7 @@
 		<jsp:include page="/mainMenu.jsp" />		
 
 		<!-- CONTENT -->
-			<div class="container" >
+			<div class="container searchField" >
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 jumbotron searchbar" style="padding: 15px;">
 						<div class="input-group" align="center">
@@ -64,7 +63,7 @@
 				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 cards">
 					<div class="cardImg">
 						<a class="imglinks" href="/Parking/Check.basic?loc=Karve Nagar, Pune, Maharashtra&lat=18.4897587&lng=73.82029620000003">
-						<img class="img-responsive img-thumbnail img" src="images/karvenagar.jpg" alt="Karvenagar"></a>
+						<img class="img-responsive img-thumbnail img" src="images/karvenagar.jpg" alt="Karvenagar" data-toggle="popover"></a>
         				<div class="caption" style="color: white;">
           					<a class="imglinks" href="/Parking/Check.basic?loc=Karve Nagar, Pune, Maharashtra&lat=18.4897587&lng=73.82029620000003">Karvenagar, Pune</a>
        	 				</div>	
@@ -92,7 +91,9 @@
         				</div>	
 					</div>
 				</div>
-								
+			</div>
+
+			<div class="row">					
 				<div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 cards">
 					<div class="cardImg">
 						<a class="imglinks" href="/Parking/Check.basic?loc=Sadashiv Peth, Pune, Maharashtra&lat=18.5083218&lng=73.84656480000001">
@@ -137,6 +138,7 @@
 			</div>
 		</div>
 		
+		<jsp:include page="/footer.jsp"></jsp:include>
 <!-- 		
 		FOOTER
  		<div class="container-fluid"> 
