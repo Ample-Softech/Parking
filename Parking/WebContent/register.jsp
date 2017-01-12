@@ -1,37 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    	<meta charset="utf-8">
-<title>Sign-Up</title>
-<jsp:include page="/link.jsp" />
-    <link href="css/datepicker.css" rel="stylesheet" />
-
-<style type="text/css">
-/* Register(Page) : Credit to bootsnipp.com for the css for the color graph */
-.colorgraph {
-  height: 5px;
-  border-top: 0;
-  background: #c4e17f;
-  border-radius: 5px;
-  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-}
-</style>
-
-</head>
-<body>
-		<!-- MENU BAR -->
-		<jsp:include page="/mainMenu.jsp" />
-
-<div class="container">
+<!-- Start register  -->                
+<div class="container register">
 <div class="row">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-		<form role="form" action="/Parking/imageUp.basic" method="post">
-			<h2 style="color: white;">Please Sign Up <small>It's free and always will be.</small></h2>
+		<form role="form">
+			<h2 >Please Sign Up <small>It's free and always will be.</small></h2>
 			<hr class="colorgraph">
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
@@ -56,7 +28,7 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group form-inline">
-						<label for="gen form-control" style="color: white;">Gender : </label>
+						<label for="gen form-control">Gender : </label>
 							<div class="form-control gen">
 							<input class="radio" type="radio" name="gender" value="male" />
 							<label for="gender form-control">Male</label>
@@ -68,18 +40,57 @@
 			
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<div class="input-group date" id="datetimepicker1">
-                    		<input class="form-control input-lg" type="text" />
-                    		<span class="input-group-addon">
+						<div class="input-group date" id="datetimepicker">
+                    		<input class="form-control input-lg" type="text" placeholder="DOB" />
+                    		<span class="input-group-addon add-on">
                         		<span class="glyphicon glyphicon-calendar"></span>
                     		</span>
                 		</div>
 					</div>
 				</div>
-				<script type="text/javascript">
+				         <script>
+         $(document).ready(function() {
+        	    $('#dateRangePicker')
+        	        .datepicker({
+        	            format: 'mm/dd/yyyy',
+        	            startDate: '01/01/2010',
+        	            endDate: '12/30/2020'
+        	        })
+        	        .on('changeDate', function(e) {
+        	            // Revalidate the date field
+        	            $('#dateRangeForm').formValidation('revalidateField', 'date');
+        	        });
+
+        	    $('#dateRangeForm').formValidation({
+        	        framework: 'bootstrap',
+        	        icon: {
+        	            valid: 'glyphicon glyphicon-ok',
+        	            invalid: 'glyphicon glyphicon-remove',
+        	            validating: 'glyphicon glyphicon-refresh'
+        	        },
+        	        fields: {
+        	            date: {
+        	                validators: {
+        	                    notEmpty: {
+        	                        message: 'The date is required'
+        	                    },
+        	                    date: {
+        	                        format: 'MM/DD/YYYY',
+        	                        min: '01/01/2010',
+        	                        max: '12/30/2020',
+        	                        message: 'The date is not a valid'
+        	                    }
+        	                }
+        	            }
+        	        }
+        	    });
+        	});
+         </script>
+				
+<!-- 				<script type="text/javascript">
 		        	$(function () {$('#datetimepicker1').datetimepicker();});
 		        </script>
-			</div>
+ -->			</div>
 		
 			
 			<div class="form-group">
@@ -136,14 +147,14 @@
                         <input type="checkbox" name="t_and_c" id="t_and_c" class="hidden" value="1">
 					</span>
 				</div>
-				<div class="col-xs-8 col-sm-9 col-md-9" style="color: white;">
+				<div class="col-xs-8 col-sm-9 col-md-9">
 					 By clicking <strong class="label label-primary">Register</strong>, you agree to the <a href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a> set out by this site, including our Cookie Use.
 				</div>
 			</div>
 			
 			<hr class="colorgraph">
 			<div class="row">
-				<div class="col-xs-12 col-md-6"><input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
+				<div class="col-xs-12 col-md-6"><input id="activate-step-2" type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
 				<div class="col-xs-12 col-md-6"><a href="/Parking/LoginPage.basic" class="btn btn-success btn-block btn-lg">Sign In</a></div>
 			</div>
 		</form>
@@ -176,7 +187,4 @@
 
 </div>
 
-<br><br><br><br>
-		<jsp:include page="/footer.jsp" />
-</body>
-</html>
+<!-- End register  -->                

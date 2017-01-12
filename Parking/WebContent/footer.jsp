@@ -1,6 +1,6 @@
 <!--footer start from here-->
 <footer>
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-md-4 col-sm-6 footerleft ">
         <div class="logofooter"> Logo</div>
@@ -30,6 +30,7 @@
           <p>facebook crack the movie advertisment code:what it means for you <span>August 3,2015</span></p>
         </div>
       </div>
+      
       <div class="col-md-3 col-sm-6 paddingtop-bottom">
         <div class="fb-page" data-href="https://www.facebook.com/facebook" data-tabs="timeline" data-height="300" data-small-header="false" style="margin-bottom:15px;" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
           <div class="fb-xfbml-parse-ignore">
@@ -37,6 +38,24 @@
           </div>
         </div>
       </div>
+
+      <div class="col-md-3 col-sm-6 ">
+        <div class="tw-page" data-href="https://twitter.com/twitter" data-tabs="timeline" data-height="300" data-small-header="false" style="margin-bottom:15px; color: #1dcaff;" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+          <div class="tw-xfbml-parse-ignore">
+            <blockquote cite="https://twitter.com/twitter"><a href="https://twitter.com/twitter">Twitter</a></blockquote>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 ">
+        <div class="gp-page" data-href="https://plus.google.com" data-tabs="timeline" data-height="300" data-small-header="false" style="margin-bottom:15px; color: #d34836;" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+          <div class="gp-xfbml-parse-ignore">
+            <blockquote cite="https://plus.google.com"><a href="https://plus.google.com">Google+</a></blockquote>
+          </div>
+        </div>
+      </div>
+
+    
     </div>
   </div>
 </footer>
