@@ -24,10 +24,18 @@ public class ControllerClass {
 	@Autowired
 	HttpServletRequest request;
 	
+	
+	@RequestMapping("/imageUp")
+	public ModelAndView imageUp() {
+		modelAndView=new ModelAndView("image");
+		return modelAndView;
+	}	
+	
+	
 	@RequestMapping("/Check")
 	public ModelAndView print(@RequestParam Map<String,String> requestParams) {
 		modelAndView=new ModelAndView("find");
-//		System.out.println("loc= "+requestParams.get("loc")+"lat= "+requestParams.get("lat")+"lng= "+requestParams.get("lng"));
+//		System.out.println("loc= "+requestParams.get("loc")+", lat= "+requestParams.get("lat")+", lng= "+requestParams.get("lng"));
 		modelAndView.addObject("latitude", requestParams.get("lat"));
 		modelAndView.addObject("longitude", requestParams.get("lng"));		
 		modelAndView.addObject("loc", requestParams.get("loc"));
@@ -59,7 +67,7 @@ public class ControllerClass {
 	@RequestMapping(value="/register")
 	public ModelAndView register()
 	{
-		ModelAndView m= new ModelAndView("Register");
+		ModelAndView m= new ModelAndView("Registration");
 		return  m;
 	}
 	

@@ -98,3 +98,26 @@ footer { background-color:#0c1a1e; min-height:350px; font-family: 'Open Sans', s
  .bottom_ul li a { color:#FFF;  font-size:12px;}
 /* footer css code  end*/ 
  
+ /* Registration page code start */
+ 	.registration{ margin-top:30px; margin-bottom: 30px;}
+ 	.register{ margin-bottom: 25px; text-align: center;}
+        .file-input-wrapper {
+            height: 35px;
+            overflow: hidden;
+            position: absolute;
+            width: 123px;
+            background-color: white;
+            cursor: pointer;
+        }
+        
+        .file-input-wrapper > input[type="file"] {
+            font-size: 40px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            opacity: 0;
+            cursor: pointer;
+        }        
+ /* Registration page code end */
+ 
+ 

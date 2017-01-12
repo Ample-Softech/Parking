@@ -12,8 +12,6 @@
    		 		$("#searchPlace").click(function(){
    		 			var options = {
 						  componentRestrictions: {country: "ind"}
-
-   		 		
    		 			};
     				autocomplete = new google.maps.places.Autocomplete(document.getElementById('searchPlace'),options);
     				 autocomplete.addListener('place_changed', fillInAddress);
@@ -151,7 +149,7 @@
 			</div>
 		</div>
 		
-		<jsp:include page="/footer.jsp"></jsp:include>
+		<jsp:include page="/footer.jsp" />
 <!-- 		
 		FOOTER
  		<div class="container-fluid"> 

@@ -5,7 +5,7 @@
     <title>Place details</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-        <jsp:include page="/link.jsp"></jsp:include>
+        <jsp:include page="/link.jsp" />
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -35,7 +35,7 @@
             zoom: 16,
             mapTypeId:google.maps.MapTypeId.ROADMAP
         });
-          
+
         var infowindow = new google.maps.InfoWindow();
         var service = new google.maps.places.PlacesService(map);
         var geocoder = new google.maps.Geocoder;
@@ -64,6 +64,16 @@
     		}
 	  	});
 
+/*         
+		var weatherLayer = new google.maps.weather.WeatherLayer({
+			temperatuerUnits: google.maps.weather.TemperatuerUnits.CELSIUS
+		});
+		weatherLayer.setMap(map);
+		
+		var cloudLayer = google.maps.weather.CloudLayer();
+		cloudLayer.setMap(map);
+ */
+		
 /* 		var panorama = new google.maps.StreetViewPanorama(
 	            document.getElementById('pano'), {
 	              position: fenway,
@@ -79,10 +89,10 @@
     </script>
   </head>
   <body>
-  	<jsp:include page="/mainMenu.jsp"></jsp:include>
+  	<jsp:include page="/mainMenu.jsp" />
 	<div id="map"></div>
 	<!-- 	<div id="pano"></div> -->	
-	<jsp:include page="/footer.jsp"></jsp:include>
+	<jsp:include page="/footer.jsp" />
 	
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy0y-BGBgl6fjl1zDhcBpgHHo6ZR6PXvY&libraries=places&callback=initMap"></script>
   </body>

@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    	<meta charset="utf-8">
 <title>Sign-Up</title>
-<jsp:include page="/link.jsp"></jsp:include>
-    <link href="css/datepicker.css" rel="stylesheet">
+<jsp:include page="/link.jsp" />
+    <link href="css/datepicker.css" rel="stylesheet" />
 
 <style type="text/css">
 /* Register(Page) : Credit to bootsnipp.com for the css for the color graph */
@@ -25,13 +25,12 @@
 </head>
 <body>
 		<!-- MENU BAR -->
-		<jsp:include page="/mainMenu.jsp"></jsp:include>
+		<jsp:include page="/mainMenu.jsp" />
 
 <div class="container">
-
 <div class="row">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-		<form role="form">
+		<form role="form" action="/Parking/imageUp.basic" method="post">
 			<h2 style="color: white;">Please Sign Up <small>It's free and always will be.</small></h2>
 			<hr class="colorgraph">
 			<div class="row">
@@ -130,7 +129,6 @@
 			</div>
 			
 			
-			
 			<div class="row">
 				<div class="col-xs-4 col-sm-3 col-md-3">
 					<span class="button-checkbox">
@@ -178,9 +176,7 @@
 
 </div>
 
-
-<br><br><br><br><br><br>
-		<jsp:include page="/footer.jsp"></jsp:include>
-
+<br><br><br><br>
+		<jsp:include page="/footer.jsp" />
 </body>
 </html>
