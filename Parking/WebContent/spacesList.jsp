@@ -1,9 +1,14 @@
 <div class="container pana">
+	<div class="row">
+		<div class="well loc-well">
+			<h4>Location</h4>
+		</div>
+	</div>
 	<div class="row contentList">
 		<div class="row"> 
                     <div class="col-xs-12 col-sm-3 col-md-3">
                         <a href="#">
-                            <img src="http://wanderluxe.theluxenomad.com/wp-content/uploads/2014/10/http-www.urchinbali.comgallery.jpg" class="img-responsive img-box img-thumbnail"> 
+                            <img src="http://wanderluxe.theluxenomad.com/wp-content/uploads/2014/10/http-www.urchinbali.comgallery.jpg" class="img-responsive img-box img-thumbnail" /> 
                         </a>
                     </div> 
                     <div class="col-xs-12 col-sm-9 col-md-9">
@@ -28,8 +33,8 @@
                                 </div>
                             </div>
                         </div>
-                        <h4><a href="#">5 of Bali’s Spanking New Haunts - WanderLuxe Magazine</a></h4>
-                        <p>Naturally, we know where Bali's newest restaurants are and what to order, so give that private chef a rest and check out these spanking new haunts.</p>
+                        <h4><a href="#">5 of Bali’s agazine</a></h4>
+                        <p>Naturally, and what topriaspanking new haunts.</p>
                     </div> 
                 </div>
                 <hr>
@@ -62,8 +67,8 @@
                                 </div>
                             </div>
                         </div>
-                        <h4><a href="#">Top 8 Best Bali Restaurants - WanderLuxe Magazine</a></h4>
-                        <p>We know that there’s tons to noms in Bali, but what’s the best and where are they? Here are our top 8 Seminyak Bali restaurants to visit.</p>
+                        <h4><a href="#">Top 8 Best Bants - WanderLuxe Magazine</a></h4>
+                        <p>We know that there’s tons orestaurants to visit.</p>
                     </div> 
                 </div>
                 <hr>
@@ -97,8 +102,8 @@
                                 </div>
                             </div>
                         </div>
-                        <h4><a href="#">These Are The Best Noodle Spots In Bangkok</a></h4>
-                        <p>BANGKOK (AP) — With its fluorescent bulbs and cafeteria-style tables, the Bangkok restaurant Raan Jay Fai wouldn't win any awards for interior decorating.              But that hasn't deterred Martha Stewart, one of the restaurant's many fans...</p>
+                        <h4><a href="#">These Are The Spots In Bangkok</a></h4>
+                        <p>BANGKOK (AP) — With its fluor decorating.              But thathstaurant's many fans...</p>
                     </div> 
                 </div>
                 <hr>

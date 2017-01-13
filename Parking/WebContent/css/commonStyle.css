@@ -32,7 +32,7 @@
 .row-float{margin-top: -40px;}
 .explore a {color: green; font-size: 13px;font-weight: 600}
 .twitter a {color:#4099FF}
-.img-box{box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);border-radius: 2px;border: 0;}
+.img-box{box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);border-radius: 1px;border: 0;}
 
 /* spacesList page css code end  */
 
@@ -77,7 +77,15 @@
     	overflow: scroll;
     	overflow-x:hidden;
     	height:100%;
+    	margin-left: inherit;
+    	width: auto;
     	-webkit-overflow-scrolling: touch;    
+	}
+	
+	.loc-well{
+		width: 96%;
+		margin-left: 2%; 
+		margin-bottom: 1px;
 	}
     /* element that contains the map find page css end */
 
