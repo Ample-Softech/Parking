@@ -4,6 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Registration</title>
+<!-- Link:- http://bootsnipp.com/snippets/M3pNX  -->
 <jsp:include page="/link.jsp" />
 <style type="text/css">
         /* Register(Page) : Credit to bootsnipp.com for the css for the color graph */
@@ -24,6 +25,7 @@
 <jsp:include page="/mainMenu.jsp" />
 
 <div class="container registration" >
+
 	<div class="row form-group">
         <div class="col-xs-12">
             <ul class="nav nav-pills nav-justified thumbnail setup-panel">
@@ -52,7 +54,6 @@
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">            	
             	<jsp:include page="/register.jsp" />                
-<!--                 <button id="activate-step-2" class="btn btn-primary btn-md">Activate Step 2</button>	-->       	</div>
         	</div>
     	</div>
     </div>
@@ -61,51 +62,34 @@
     <div class="row setup-content" id="step-2">
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">
-                	<jsp:include page="/addSpace.jsp" />
-<!--                  <button id="activate-step-3" class="btn btn-primary btn-md">Activate Step 3</button> -->
+                <jsp:include page="/addSpace.jsp" />
 		  	</div>
         </div>
     </div>
-
     
     
     <div class="row setup-content" id="step-3">
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">
                 <h1 class="text-center"> UPLOAD-LOCATION-IMAGE </h1> 
-			    <div class="container">
-          			<div class="row">
-           				<div class="col-lg-11 col-xs-11 col-sm-11 col-md-11">
-           					<form class="well well-image" action="upload.php" method="post" enctype="multipart/form-data">
-               					<div class="form-group">
-                   					<label for="file">Select a file to upload</label>
-                   					<input type="file" name="file">
-                   					<p class="help-block">Only jpg,jpeg,png and gif file with maximum size of 1 MB is allowed.</p>
-               					</div>
-			 	                <input id="activate-step-4" type="submit" class="btn btn-lg btn-primary" value="Upload">
-               				</form>
-            			</div>
-          			</div>
-    			</div> 
-<!-- <button id="activate-step-4" class="btn btn-primary btn-md">Activate Step 3</button> -->          
+                <jsp:include page="/imageUp.jsp" />                
 	 		</div>
     	</div>
     </div>
-
     
      <div class="row setup-content" id="step-4">
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">
                 <h1 class="text-center"> FINALLY </h1>
-                
-					<form></form>
-                
+					<form></form>                
             </div>
         </div>
     </div>
-		
+	
+
 </div>
 
+		
 <jsp:include page="/footer.jsp" />
 
 </body>
