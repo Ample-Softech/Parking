@@ -56,7 +56,7 @@
 <div class="container register">
 	<div class="row">
     	<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-    		<form action="/Parking/regCode.basic" method="post">
+    		<form action="/Parking/regCode.basic">
 				<h2 >Please Sign Up <small>It's free and always will be.</small></h2>
 				<hr class="colorgraph">
 				<div class="row">
@@ -261,7 +261,7 @@
 <div class="container register">
 	<div class="row">
     	<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-			<form role="form" action="/Parking/regCode.basic" method="post">
+			<form role="form" action="/Parking/regCode.basic">
 				<h2 > Parkink-Space <small>Please Provide Space for Parking.</small></h2>
 				<hr class="colorgraph">
 				<div class="row">
@@ -309,7 +309,7 @@
 			    <div class="container">
           			<div class="row">
            				<div class="col-lg-11 col-xs-11 col-sm-11 col-md-11">
-			               <form role="form" class="well" enctype="multipart/form-data">
+			               <form role="form" action="/Parking/regCode.basic" class="well" enctype="multipart/form-data">
             			   		<div class="form-group">
                     				<label for="file">Select a file to upload</label>
                     					<input type="file" name="file"  />

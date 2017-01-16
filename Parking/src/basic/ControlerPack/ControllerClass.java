@@ -1,5 +1,6 @@
 package basic.ControlerPack;
 
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
@@ -22,18 +23,17 @@ public class ControllerClass {
 	@Autowired
 	Services service = new Services();
 
-	
 	@Autowired
 	ModelAndView modelAndView;
 	
 	@Autowired
-	HttpServletRequest request;
+	HttpServletRequest request;	
 	
-	
-	@RequestMapping("/regCode")
-	public ModelAndView regcod(@RequestParam("first_name") String first_name) {
+	@RequestMapping(value="/regCode", method=RequestMethod.GET )
+	public ModelAndView regcod(@RequestParam Map<String,String> requestParams) {
 		System.out.println("reg");
-		System.out.println(first_name);
+		System.out.println(requestParams.get("first_name"));
+		System.out.println(requestParams.get("file"));
 		return new ModelAndView("Registration");
 	}	
 	
