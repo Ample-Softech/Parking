@@ -34,7 +34,7 @@
                             </div>
                         </div>
                         <h4><a href="#">5 of Bali’s agazine</a></h4>
-                        <p>Naturally, and what topriaspanking new haunts.</p>
+                        <p>Naturally, and what.</p>
                     </div> 
                 </div>
                 <hr>
@@ -67,8 +67,8 @@
                                 </div>
                             </div>
                         </div>
-                        <h4><a href="#">Top 8 Best Bants - WanderLuxe Magazine</a></h4>
-                        <p>We know that there’s tons orestaurants to visit.</p>
+                        <h4><a href="#">Top 8 Best Bants</a></h4>
+                        <p>We know that there’s to visit.</p>
                     </div> 
                 </div>
                 <hr>

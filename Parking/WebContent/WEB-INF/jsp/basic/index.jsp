@@ -92,7 +92,6 @@
 					</div>
 				</div>
 				
-				
 				<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 cards">
 					<div class="cardImg">
 						<a class="imglinks" href="/Parking/Check.basic?loc=Deccan Gymkhana, Pune, Maharashtra&lat=18.5175566&lng=73.84166000000005">

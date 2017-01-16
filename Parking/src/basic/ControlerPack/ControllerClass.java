@@ -1,7 +1,7 @@
 package basic.ControlerPack;
 
+import java.util.List;
 import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,13 +10,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.google.gson.Gson;
-
 import basic.Pojo.Demo;
+import basic.Pojo.Parking;
+import services.Services;
 
 @Controller
 public class ControllerClass {
+
+	@Autowired
+	Services service = new Services();
+
 	
 	@Autowired
 	ModelAndView modelAndView;
@@ -39,6 +43,10 @@ public class ControllerClass {
 		modelAndView.addObject("latitude", requestParams.get("lat"));
 		modelAndView.addObject("longitude", requestParams.get("lng"));		
 		modelAndView.addObject("loc", requestParams.get("loc"));
+		List<Parking> l1 = service.getParkings();
+		for (Parking parking : l1) {
+			System.out.println(parking.getPincode());			
+		}
 		return modelAndView;
 	}
 	
