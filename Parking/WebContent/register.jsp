@@ -1,15 +1,16 @@
 <div class="container register">
 	<div class="row">
     	<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-    		<form role="form">
+    		<form action="/Parking/regCode.basic" method="post">
 				<h2 >Please Sign Up <small>It's free and always will be.</small></h2>
 				<hr class="colorgraph">
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-        	                <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
+        	                <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1" />
 						</div>
 					</div>
+					
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
            	            	<input type="text" name="middle_name" id="middle_name" class="form-control input-lg" placeholder="Middle Name" tabindex="1">
@@ -21,8 +22,7 @@
 							<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
 						</div>
 					</div>
-				</div>
-		
+				</div>		
 			
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-6">
@@ -154,8 +154,12 @@
 			
 			<hr class="colorgraph">
 			<div class="row">
-				<div class="col-xs-12 col-md-6"><input id="activate-step-2" type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7"></div>
-				<div class="col-xs-12 col-md-6"><a href="/Parking/LoginPage.basic" class="btn btn-success btn-block btn-lg">Sign In</a></div>
+				<div class="col-xs-12 col-md-6">
+					<input id="activate-step-2" type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7">
+				</div>
+				<div class="col-xs-12 col-md-6">
+					<a href="/Parking/LoginPage.basic" class="btn btn-success btn-block btn-lg">Sign In</a>
+				</div>
 			</div>
 		</form>
     		

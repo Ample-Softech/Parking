@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,6 +30,13 @@ public class ControllerClass {
 	HttpServletRequest request;
 	
 	
+	@RequestMapping("/regCode")
+	public ModelAndView regcod(@RequestParam("first_name") String first_name) {
+		System.out.println("reg");
+		System.out.println(first_name);
+		return new ModelAndView("Registration");
+	}	
+	
 	@RequestMapping("/imageUp")
 	public ModelAndView imageUp() {
 		modelAndView=new ModelAndView("image");
@@ -43,9 +51,10 @@ public class ControllerClass {
 		modelAndView.addObject("latitude", requestParams.get("lat"));
 		modelAndView.addObject("longitude", requestParams.get("lng"));		
 		modelAndView.addObject("loc", requestParams.get("loc"));
-		List<Parking> l1 = service.getParkings();
+		List<Parking> l1 = service.getParkings();		
 		for (Parking parking : l1) {
-			System.out.println(parking.getPincode());			
+			System.out.println(parking.getArea());			
+			modelAndView.addObject("parking", parking);			
 		}
 		return modelAndView;
 	}
