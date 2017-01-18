@@ -6,6 +6,9 @@
 <title>Registration</title>
 <!-- Link:- http://bootsnipp.com/snippets/M3pNX  -->
 <jsp:include page="/link.jsp" />
+
+<script src="http://momentjs.com/downloads/moment-with-locales.js"></script>
+<script src="http://momentjs.com/downloads/moment-timezone-with-data.js"></script>
 <style type="text/css">
         /* Register(Page) : Credit to bootsnipp.com for the css for the color graph */
 .colorgraph {
@@ -56,7 +59,7 @@
 <div class="container register">
 	<div class="row">
     	<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-    		<form action="/Parking/regCode.basic">
+    		<form action="/Parking/regCode.basic" method="post">
 				<h2 >Please Sign Up <small>It's free and always will be.</small></h2>
 				<hr class="colorgraph">
 				<div class="row">
@@ -95,14 +98,14 @@
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
 							<div class="input-group date" id="datetimepicker">
-            	        		<input class="form-control input-lg" type="text" placeholder="DOB" />
+            	        		<input class="form-control input-lg" type="date" name="dob" id="dob" placeholder="DOB" />
         	            		<span class="input-group-addon add-on">
-               	         		<span class="glyphicon glyphicon-calendar"></span>
+	               	         		<span class="glyphicon glyphicon-calendar"></span>               	         		
                 	    		</span>
                 			</div>
 						</div>
 					</div>
-							<script>
+		<script>
          $(document).ready(function() {
         	    $('#dateRangePicker')
         	        .datepicker({
