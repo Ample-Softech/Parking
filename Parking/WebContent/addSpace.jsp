@@ -8,20 +8,25 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-                    	    <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder="First Name" tabindex="1">
+                    	    <input type="text" name="first_name" id="first_name" class="form-control input-lg" placeholder=" Street/Area " tabindex="1">
 						</div>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-                        	<input type="text" name="middle_name" id="middle_name" class="form-control input-lg" placeholder="Middle Name" tabindex="1">
+                        	<input type="text" name="middle_name" id="middle_name" class="form-control input-lg" placeholder=" Town/City " tabindex="1">
 						</div>
 					</div>
 				
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-							<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+							<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Pincode" tabindex="2">
 						</div>
 					</div>				
+
+					<div class="col-xs-6 col-md-6">
+						<a href="#" class="btn btn-success btn-block btn-lg"> Find </a>
+					</div>
+					
 				</div>
 			
 				<hr class="colorgraph">
@@ -39,3 +44,21 @@
 	</div>
 </div>
 <!--  -->
+
+<!--
+  
+	var lat = '';
+    var lng = '';
+    var address = {zipcode} or {city and state};
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+         lat = results[0].geometry.location.lat();
+         lng = results[0].geometry.location.lng();
+        });
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
+      }
+    });
+    alert('Latitude: ' + lat + ' Logitude: ' + lng);
+
+ -->

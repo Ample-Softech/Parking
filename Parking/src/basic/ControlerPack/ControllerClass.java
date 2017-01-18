@@ -29,11 +29,12 @@ public class ControllerClass {
 	@Autowired
 	HttpServletRequest request;	
 	
-	@RequestMapping(value="/regCode", method=RequestMethod.GET )
+	@RequestMapping(value="/regCode")
 	public ModelAndView regcod(@RequestParam Map<String,String> requestParams) {
 		System.out.println("reg");
-		System.out.println(requestParams.get("first_name"));
+		System.out.println(requestParams.get("first"));
 		System.out.println(requestParams.get("file"));
+		System.out.println("regi "+ request.getParameter("first"));
 		return new ModelAndView("Registration");
 	}	
 	
