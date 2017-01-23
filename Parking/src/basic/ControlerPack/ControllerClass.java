@@ -29,6 +29,8 @@ public class ControllerClass {
 	@Autowired
 	HttpServletRequest request;	
 	
+	//sagar
+	
 	@RequestMapping(value="/regCode")
 	public ModelAndView regcod(@RequestParam Map<String,String> requestParams) {
 		System.out.println("reg");

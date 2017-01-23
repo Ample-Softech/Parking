@@ -55,7 +55,8 @@
 	
     <div class="row setup-content" id="step-1">
         <div class="col-xs-12">
-            <div class="col-md-12 well text-center">            	
+            <div class="col-md-12 well text-center">
+                        	
 <div class="container register">
 	<div class="row">
     	<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
@@ -191,7 +192,6 @@
 				</div>
 			</div>
 			
-			
 			<div class="row">
 				<div class="col-xs-4 col-sm-3 col-md-3">
 					<span class="button-checkbox">
@@ -290,9 +290,8 @@
         </div>
     </div>
 	
-
+	
 </div>
-
 		
 <jsp:include page="/footer.jsp" />
 
