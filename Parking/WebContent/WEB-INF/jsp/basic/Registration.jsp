@@ -144,7 +144,6 @@
         	});
          </script>
 				</div>
-		
 			
 				<div class="form-group">
 					<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
@@ -161,6 +160,7 @@
 						</div>
 					</div>
 				</div>
+			
 			
 				<div class="form-group">
 					<input type="text" name="address" id="address" class="form-control input-lg" placeholder="Address" tabindex="4">
