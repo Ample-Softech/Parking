@@ -1,9 +1,13 @@
-<div class="container pana">
-	<div class="row">
-		<div class="well loc-well heading">
-			<h4>${loc }</h4>
-		</div>
-	</div>
+<div class="container-fluid pana">
+	<nav class="navbar navbar-fixed ">
+  		<div class="container-fluid navbar2">
+    		<div class="navbar-header">
+      			<a class="navbar-brand" href="#">${loc }</a>
+    		</div>
+    		<br><br>
+    		<br><br>
+  		</div>
+	</nav>
 	<div class="row contentList">
 		<div class="row"> 
                     <div class="col-xs-12 col-sm-3 col-md-3">

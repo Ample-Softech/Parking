@@ -54,7 +54,7 @@
         width: 40%;
       }
  */
-        .pana {
+     .pana {
 	  	float: left;
         height: 92%;
         width: 40%;
@@ -77,22 +77,22 @@
     	overflow: scroll;
     	overflow-x:hidden;
     	height:	86%;
-    	margin-left: inherit;
     	-webkit-overflow-scrolling: touch;    
 	}
-	
-	.loc-well{
-		width: 96%;
-		margin-left: 2%;
-		margin-bottom: 1px;
-	}
-    /* element that contains the map find page css end */
 
-
-.navbar{
+	.navbar2 {
 		margin-top: 1px;
 		margin-bottom: 0px;
 	}
+	
+    /* element that contains the map find page css end */
+
+
+	.navbar1 {
+		margin-top: 1px;
+		margin-bottom: 0px;
+	}
+	
 body {
 	background-image: url("../images/PicsArt_1481705646271.jpg"); 
 	width: auto;

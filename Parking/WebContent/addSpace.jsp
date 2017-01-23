@@ -2,7 +2,7 @@
 <div class="container register">
 	<div class="row">
     	<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-			<form role="form">
+			<form role="/Parking/regCode.basic" method="post">
 				<h2 > Parkink-Space <small>Please Provide Space for Parking.</small></h2>
 				<hr class="colorgraph">
 				<div class="row">
