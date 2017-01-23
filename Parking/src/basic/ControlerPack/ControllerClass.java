@@ -29,7 +29,7 @@ public class ControllerClass {
 	@Autowired
 	HttpServletRequest request;	
 	
-	//sagar
+	//sagar..
 	
 	@RequestMapping(value="/regCode")
 	public ModelAndView regcod(@RequestParam Map<String,String> requestParams) {
