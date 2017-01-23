@@ -161,7 +161,6 @@
 					</div>
 				</div>
 			
-			
 				<div class="form-group">
 					<input type="text" name="address" id="address" class="form-control input-lg" placeholder="Address" tabindex="4">
 				</div>
