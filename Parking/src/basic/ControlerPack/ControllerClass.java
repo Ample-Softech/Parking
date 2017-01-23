@@ -85,6 +85,7 @@ public class ControllerClass {
 	@RequestMapping(value="/register")
 	public ModelAndView register()
 	{
+		
 		ModelAndView m= new ModelAndView("Registration");
 		return  m;
 	}
