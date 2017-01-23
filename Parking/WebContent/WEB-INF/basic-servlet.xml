@@ -19,7 +19,6 @@
 		<property name="prefix" value="/WEB-INF/jsp/basic/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-
 	
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
