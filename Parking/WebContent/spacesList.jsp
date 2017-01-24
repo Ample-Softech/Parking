@@ -4,15 +4,13 @@
     		<div class="navbar-header">
       			<a class="navbar-brand" href="#">${loc }</a>
     		</div>
-    		<br><br>
-    		<br><br>
   		</div>
 	</nav>
 	<div class="row contentList">
-		<div class="row"> 
+		<div class="row">
                     <div class="col-xs-12 col-sm-3 col-md-3">
                         <a href="#">
-                            <img src="${parking.image }" class="img-responsive img-box img-thumbnail" /> 
+                            <img src="${parking.image }" class="img-responsive img-box img-thumbnail"  /> 
                         </a>
                     </div> 
                     <div class="col-xs-12 col-sm-9 col-md-9">

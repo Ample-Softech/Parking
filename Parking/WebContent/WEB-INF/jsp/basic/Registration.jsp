@@ -36,20 +36,20 @@
             <ul class="nav nav-pills nav-justified thumbnail setup-panel">
                 <li class="active"><a href="#step-1">
                     <h4 class="list-group-item-heading">Step 1</h4>
-                    <p class="list-group-item-text">First step description</p>
+                    <p class="list-group-item-text">User Registration</p>
                 </a></li>
                 <li class="disabled"><a href="#step-2">
                     <h4 class="list-group-item-heading">Step 2</h4>
-                    <p class="list-group-item-text">Second step description</p>
+                    <p class="list-group-item-text">Parking Space</p>
                 </a></li>
                 <li class="disabled"><a href="#step-3">
                     <h4 class="list-group-item-heading">Step 3</h4>
-                    <p class="list-group-item-text">Third step description</p>
+                    <p class="list-group-item-text">Image Uploading</p>
                 </a></li>
                 
                  <li class="disabled"><a href="#step-4">
                     <h4 class="list-group-item-heading">Step 4</h4>
-                    <p class="list-group-item-text">Second step description</p>
+                    <p class="list-group-item-text">Final/Done</p>
                 </a></li>
             </ul>
         </div>
@@ -62,25 +62,25 @@
 <div class="container register">
 	<div class="row">
     	<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-    		<form action="/Parking/regCode.basic" method="post">
+    		<form action="/Parking/reg.basic" method="post">
 				<h2 >Please Sign Up <small>It's free and always will be.</small></h2>
 				<hr class="colorgraph">
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-        	                <input type="text" name="first" id="first" class="form-control input-lg" placeholder="First Name" tabindex="1" />
+        	                <input type="text" name="first" id="first" class="form-control input-lg" placeholder="First Name" tabindex="1" required="required" />
 						</div>
 					</div>
 					
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-           	            	<input type="text" name="middle_name" id="middle_name" class="form-control input-lg" placeholder="Middle Name" tabindex="1">
+           	            	<input type="text" required="required" name="middle_name" id="middle_name" class="form-control input-lg" placeholder="Middle Name" tabindex="1">
 						</div>
 					</div>
 				
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-							<input type="text" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+							<input type="text" required="required" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
 						</div>
 					</div>
 				</div>		
@@ -92,7 +92,7 @@
 							<div class="form-control gen">
 								<input class="radio" type="radio" name="gender" value="male" />
 								<label for="gender form-control">Male</label>
-								<input class="radio" type="radio" name="gender" value="female" />
+								<input class="radio"  type="radio" name="gender" value="female" />
 								<label for="gender">Female</label>
 							</div>
 						</div>
@@ -101,7 +101,7 @@
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
 							<div class="input-group date" id="datetimepicker">
-            	        		<input class="form-control input-lg" type="date" name="dob" id="dob" placeholder="DOB" />
+            	        		<input class="form-control input-lg" required="required" type="date" name="dob" id="dob" placeholder="DOB" />
         	            		<span class="input-group-addon add-on">
 	               	         		<span class="glyphicon glyphicon-calendar"></span>               	         		
                 	    		</span>
@@ -149,12 +149,12 @@
 				</div>
 			
 				<div class="form-group">
-					<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
+					<input type="email" name="email" required="required" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
 				</div>
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-							<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
+							<input type="password" name="password" required="required" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
 						</div>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6">
@@ -165,18 +165,18 @@
 				</div>
 			
 				<div class="form-group">
-					<input type="text" name="address" id="address" class="form-control input-lg" placeholder="Address" tabindex="4">
+					<input type="text" name="address" required="required" id="address" class="form-control input-lg" placeholder="Address" tabindex="4">
 				</div>
 			
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-							<input type="text" name="city" id="city" class="form-control input-lg" placeholder="City" tabindex="5">
+							<input type="text" name="city" id="city" required="required" class="form-control input-lg" placeholder="City" tabindex="5">
 						</div>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-						<input type="text" name="state" id="state" class="form-control input-lg" placeholder="State" tabindex="6">
+						<input type="text" name="state" id="state" class="form-control input-lg" placeholder="State" required="required" tabindex="6">
 					</div>
 				</div>
 			</div>
@@ -184,12 +184,12 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<input type="text" name="country" id="country" class="form-control input-lg" placeholder="Country" tabindex="5">
+						<input type="text" name="country" id="country" class="form-control input-lg" required="required" placeholder="Country" tabindex="5">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<input type="text" name="pincode" id="pincode" class="form-control input-lg" placeholder="Pincode" tabindex="6">
+						<input type="text" name="pincode" id="pincode" class="form-control input-lg" required="required" placeholder="Pincode" tabindex="6">
 					</div>
 				</div>
 			</div>
@@ -198,15 +198,16 @@
 				<div class="col-xs-4 col-sm-3 col-md-3">
 					<span class="button-checkbox">
 						<button type="button" class="btn" data-color="info" tabindex="7">I Agree</button>
-                        <input type="checkbox" name="t_and_c" id="t_and_c" class="hidden" value="1">
+                        <input type="checkbox" required="required" name="t_and_c" id="t_and_c" class="hidden" value="1">
 					</span>
 				</div>
 				<div class="col-xs-8 col-sm-9 col-md-9">
 					 By clicking <strong class="label label-primary">Register</strong>, you agree to the <a href="#" data-toggle="modal" data-target="#t_and_c_m">Terms and Conditions</a> set out by this site, including our Cookie Use.
 				</div>
-			</div>
-			
+			</div>			
+
 			<hr class="colorgraph">
+
 			<div class="row">
 				<div class="col-xs-12 col-md-6">
 					<input id="activate-step-2" type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7">

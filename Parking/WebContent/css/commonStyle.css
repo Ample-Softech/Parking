@@ -63,19 +63,19 @@
     	display: block; 
     	border:solid #000 2px;
     	background-image: none;    	
-      } 
+      }
+       
 /*         
       span{
 	    padding:4em 0 0 0;
     	display:inline-block
 	  }
-	  
  */ 
-	.contentList{
-    	padding:0;
+	.contentList {
+    	padding: 0;
     	background-color: white;
     	overflow: scroll;
-    	overflow-x:hidden;
+    	overflow-x: hidden;
     	height:	86%;
     	-webkit-overflow-scrolling: touch;    
 	}
@@ -86,7 +86,6 @@
 	}
 	
     /* element that contains the map find page css end */
-
 
 	.navbar1 {
 		margin-top: 1px;

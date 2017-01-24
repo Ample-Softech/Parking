@@ -65,7 +65,8 @@
 		cloudLayer.setMap(map);
  */
 		
-/* 		var panorama = new google.maps.StreetViewPanorama(
+/* 		
+		var panorama = new google.maps.StreetViewPanorama(
 	            document.getElementById('pano'), {
 	              position: fenway,
 	              addressControlOptions: {
@@ -75,7 +76,7 @@
 	              panControl: true,
 	              enableCloseButton: true
 	        });
- */
+*/
 	}
     </script>
   </head>

@@ -31,12 +31,13 @@ public class ControllerClass {
 	
 	//sagar...
 	
-	@RequestMapping(value="/regCode")
+	@RequestMapping(value="/reg")
 	public ModelAndView regcod(@RequestParam Map<String,String> requestParams) {
 		System.out.println("reg");
 		System.out.println(requestParams.get("middle_name"));
-		System.out.println(requestParams.get("file"));
+//		System.out.println(requestParams.get("file"));
 		System.out.println("regi "+ request.getParameter("middle_name"));
+		modelAndView.addObject("id", "activate-step-2");
 		return new ModelAndView("Registration");
 	}	
 	

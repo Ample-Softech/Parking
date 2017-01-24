@@ -2,7 +2,7 @@
 <div class="container register">
 	<div class="row">
     	<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-			<form role="/Parking/regCode.basic" method="post">
+			<form role="/Parking/regCode.basic" method="post" name="form">
 				<h2 > Parkink-Space <small>Please Provide Space for Parking.</small></h2>
 				<hr class="colorgraph">
 				<div class="row">
@@ -16,7 +16,7 @@
                         	<input type="text" name="middle_name" id="middle_name" class="form-control input-lg" placeholder=" Town/City " tabindex="1">
 						</div>
 					</div>
-				
+					
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
 							<input type="text" name="pincode" id="pincode" class="form-control input-lg" placeholder=" Pincode " tabindex="2">
@@ -24,7 +24,7 @@
 					</div>				
 
 					<div class="col-xs-6 col-md-6">
-						<a href="#" class="btn btn-success btn-block btn-lg"> Find </a>
+						<button onclick="getLocation()" class="btn btn-success btn-block btn-lg"> Find </button>
 					</div>
 					
 				</div>
@@ -50,67 +50,59 @@
 	</div>
 </div>
 <!--  -->
+<script language="javascript">
+function getLocation(){
+	var zip = document.form.pincode.value;
+  getAddressInfoByZip(zip); 
+}
 
-<script type="text/javascript">
-var lat = '';
-var lng = '';
-
-$(document).ready({
-	$("#find").click({
-
-		var address = {zipcode} or {city and state};
-		geocoder.geocode( { 'address': address}, function(results, status) {
-		  if (status == google.maps.GeocoderStatus.OK) {
-		     lat = results[0].geometry.location.lat();
-		     lng = results[0].geometry.location.lng();
-		    });
-		  } else {
-		    alert("Geocode was not successful for the following reason: " + status);
-		  }
-		});
-		alert('Latitude: ' + lat + ' Logitude: ' + lng);
-		
-	});
-});
-
-
-
-
-    function initMap() {
-    	var fenway = {lat: ${latitude}, lng: ${longitude}};
-        var map = new google.maps.Map(document.getElementById('map'), {
-            center: fenway,
-            zoom: 16,
-            mapTypeId:google.maps.MapTypeId.ROADMAP
-        });
-
-        var infowindow = new google.maps.InfoWindow();
-        var service = new google.maps.places.PlacesService(map);
-        var geocoder = new google.maps.Geocoder;
-
-		geocoder.geocode({'location': fenway}, function(results, status) {
-    		if (status === google.maps.GeocoderStatus.OK) {
-	      		if (results[0]) {
-    	      		var marker = new google.maps.Marker({
-        	      		map: map,
-            	  		draggable: true,
-              			animation: google.maps.Animation.DROP,
-              			position: fenway,
-              			title: 'Google '
-            		});
-	      			var title = marker.getTitle();
-    		      		google.maps.event.addListener(marker, 'click', function() {          		
-            			infowindow.setContent('<div><strong>' + marker.getTitle() + '</strong><br>' +
-                		'Place ID: ' + results[0].place_id + '<br>' +'Address: '+ results[0].formatted_address + '</div>');
-              			infowindow.open(map, this);
-            		});
-	      		} else {
-        			window.alert('No results found');
-      			}
-    		} else {
-      			window.alert('Geocoder failed due to: ' + status);
-    		}
-	  	});
-
-	}
-    </script>
+function response(obj){
+  console.log(obj);
+}
+function getAddressInfoByZip(zip){
+  if(zip.length >= 5 && typeof google != 'undefined'){
+    var addr = {};
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({ 'address': zip }, function(results, status){
+      if (status == google.maps.GeocoderStatus.OK){
+        if (results.length >= 1) {
+	  for (var ii = 0; ii < results[0].address_components.length; ii++){
+	    var street_number = route = street = city = state = zipcode = country = formatted_address = '';
+	    var types = results[0].address_components[ii].types.join(",");
+	    if (types == "street_number"){
+	      addr.street_number = results[0].address_components[ii].long_name;
+	    }
+	    if (types == "route" || types == "point_of_interest,establishment"){
+	      addr.route = results[0].address_components[ii].long_name;
+	    }
+	    if (types == "sublocality,political" || types == "locality,political" || types == "neighborhood,political" || types == "administrative_area_level_3,political"){
+	      addr.city = (city == '' || types == "locality,political") ? results[0].address_components[ii].long_name : city;
+	    }
+	    if (types == "administrative_area_level_1,political"){
+	      addr.state = results[0].address_components[ii].short_name;
+	    }
+	    if (types == "postal_code" || types == "postal_code_prefix,postal_code"){
+	      addr.zipcode = results[0].address_components[ii].long_name;
+	    }
+	    if (types == "country,political"){
+	      addr.country = results[0].address_components[ii].long_name;
+	    }
+	  }
+	  addr.success = true;
+	  for (name in addr){
+		  alert("Done " + name + ': ' + addr[name]);
+//		  console.log('### google maps api ### ' + name + ': ' + addr[name]);
+	  }
+	  response(addr);
+        } else {
+          response({success:false});
+        }
+      } else {
+        response({success:false});
+      }
+    });
+  } else {
+    response({success:false});
+  }
+}
+</script>
