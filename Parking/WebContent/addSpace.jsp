@@ -88,7 +88,6 @@ function getAddressInfoByZip(zip){
 	      addr.country = results[0].address_components[ii].long_name;
 	    }
 	  }
-	  
 	  addr.success = true;
 	  for (name in addr){
 		  alert("Done " + name + ': ' + addr[name]);
