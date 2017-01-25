@@ -30,6 +30,18 @@ public class ControllerClass {
 	HttpServletRequest request;	
 	
 	//sagar...
+
+	@RequestMapping("/Checkpin")
+	public ModelAndView pincode(@RequestParam Map<String,String> requestParams) {
+		modelAndView=new ModelAndView("find");
+		System.out.println("loc= "+requestParams.get("loc")+", lat= "+requestParams.get("lat")+", lng= "+requestParams.get("lng"));
+		modelAndView.addObject("latitude", requestParams.get("lat"));
+		modelAndView.addObject("longitude", requestParams.get("lng"));		
+		modelAndView.addObject("loc", requestParams.get("loc"));
+		return modelAndView;
+	}
+
+	
 	
 	@RequestMapping(value="/reg")
 	public ModelAndView regcod(@RequestParam Map<String,String> requestParams) {
