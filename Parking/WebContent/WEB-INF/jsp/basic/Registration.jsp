@@ -12,6 +12,14 @@
 <script src="http://momentjs.com/downloads/moment-with-locales.js"></script>
 <script src="http://momentjs.com/downloads/moment-timezone-with-data.js"></script>
 <style type="text/css">
+
+      /* Optional: Makes the sample page fill the window. */
+      
+      #map {
+  	    height: 40%;
+        width: 50%;
+      }
+      
         /* Register(Page) : Credit to bootsnipp.com for the css for the color graph */
 .colorgraph {
   height: 5px;

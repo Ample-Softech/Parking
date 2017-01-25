@@ -17,6 +17,51 @@
         overflow-x: hidden;
         
       }
+      #map {
+  	    float: left;            
+ 		height: 92%;
+        width: 60%;
+      }
+           .pana {
+	  	float: left;
+        height: 92%;
+        width: 40%;
+   		margin: 0;
+    	padding: 0;
+    	display: block; 
+    	border:solid #000 2px;
+    	background-image: none;    	
+      }
+       
+/*         
+      span{
+	    padding:4em 0 0 0;
+    	display:inline-block
+	  }
+ */ 
+ /*        
+		#pano {
+	    float: left;
+        height: 92%;
+        width: 40%;
+      }
+ */
+	
+ 
+	.contentList {
+    	padding: 0;
+    	background-color: white;
+    	overflow: scroll;
+    	overflow-x: hidden;
+    	height:	86%;
+    	-webkit-overflow-scrolling: touch;    
+	}
+
+	.navbar2 {
+		margin-top: 1px;
+		margin-bottom: 0px;
+	}
+      
     </style>
     <script>
     function initMap() {

@@ -38,54 +38,20 @@
 
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map find page css start */
-      #map {
-  	    float: left;            
- 		height: 92%;
-        width: 60%;
-      }
+
       /* http://bootsnipp.com/snippets/featured/bookmarks-reading-list
       http://bootsnipp.com/snippets/featured/blog-post-list-with-photo
       
         */
-/*        
-		#pano {
-	    float: left;
-        height: 92%;
-        width: 40%;
-      }
- */
-     .pana {
-	  	float: left;
-        height: 92%;
-        width: 40%;
-   		margin: 0;
-    	padding: 0;
-    	display: block; 
-    	border:solid #000 2px;
-    	background-image: none;    	
-      }
-       
-/*         
-      span{
-	    padding:4em 0 0 0;
-    	display:inline-block
-	  }
- */ 
-	.contentList {
-    	padding: 0;
-    	background-color: white;
-    	overflow: scroll;
-    	overflow-x: hidden;
-    	height:	86%;
-    	-webkit-overflow-scrolling: touch;    
+
+    /* element that contains the map find page css end */
+
+	.mapGr {
+	
+		text-decoration: none;
+		
 	}
 
-	.navbar2 {
-		margin-top: 1px;
-		margin-bottom: 0px;
-	}
-	
-    /* element that contains the map find page css end */
 
 	.navbar1 {
 		margin-top: 1px;

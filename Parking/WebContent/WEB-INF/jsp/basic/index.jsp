@@ -14,7 +14,7 @@
 						  componentRestrictions: {country: "ind"}
    		 			};
     				autocomplete = new google.maps.places.Autocomplete(document.getElementById('searchPlace'),options);
-    				 autocomplete.addListener('place_changed', fillInAddress);
+	   				autocomplete.addListener('place_changed', fillInAddress);
     			});
    			});
 						
@@ -24,7 +24,7 @@
 		        var loc = document.getElementById('searchPlace').value;
 		       	var lat = place.geometry.location.lat(), lng = place.geometry.location.lng();		       	
 	       		window.location = "/Parking/Check.basic?loc="+loc+"&lat=" + lat + "&lng=" + lng;
-	       		//	       	  	alert(place.geometry.location.lat()+"  "+place.geometry.location.lng());	       		
+	       		//alert(place.geometry.location.lat()+"  "+place.geometry.location.lng());	       		
 			}
 		</script>
 		<style type="text/css">
