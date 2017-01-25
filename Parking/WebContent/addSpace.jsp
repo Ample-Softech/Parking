@@ -2,7 +2,7 @@
 <div class="container register">
 	<div class="row">
     	<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-    		<form action="/Parking/checkpin.basic" method="post" name="form" role="form">
+    		<form class="form" name="form" role="form">
 				<h2 > Parkink-Space <small> Please Provide Space for Parking. </small></h2>
 				<hr class="colorgraph">
 				<div class="row">
@@ -30,36 +30,28 @@
 
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-6">
-					<hr>
-					</div>
-				</div>				
-
-				<div class="row">
-					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
 							<h2 name="lat" id="lat" class="form-control input-lg" placeholder=" Latitude " tabindex="1">Latitude</h2>
-                    	    <input type="hidden" name="lat" id="lat" class="form-control input-lg" placeholder=" Latitude " tabindex="1">
 						</div>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
 							<h2 name="lng" id="lng" class="form-control input-lg" placeholder=" Longitude " tabindex="1">Longitude</h2>
-                        	<input type="hidden" name="lng" id="lng" class="form-control input-lg" placeholder=" Longitude " tabindex="1">
 						</div>
 					</div>										
 				</div>
-
 				<div class="row">
-					<div class="col-xs-12 col-sm-6 col-md-6">
-					<hr>
+					<div class="col-xs-12 col-sm-12 col-md-12">
+						<label >Features: </label>
+								<input type="checkbox" class="" value="" name="" /><label for="">CCTV</label>
+								<input type="checkbox" class="" value="" name="" /><label for="">Garage</label>
+								<input type="checkbox" class="" value="" name="" /><label for="">Washing</label>
+								<input type="checkbox" class="" value="" name="" /><label for="">Security</label>							
 					</div>
-				</div>
+				</div>				
 
-				<div class="row mapGr" >
-					<div class="form-group">
-						<div id="map"></div>
-					</div>
-				</div>
+
+
 				
 				<hr class="colorgraph">
 				
@@ -89,8 +81,8 @@
                     var longitude = results[0].geometry.location.lng();
                     document.getElementById('lat').innerHTML=latitude;
                     document.getElementById('lng').innerHTML=longitude;
-                    alert("address: "+address+"\nLatitude: " + latitude + "\nLongitude: " + longitude);
-//    	       		window.location = "/Parking/Checkpin.basic?loc="+address+"&lat=" + latitude + "&lng=" + longitude;
+//                    alert("address: "+address+"\nLatitude: " + latitude + "\nLongitude: " + longitude);
+    	       		window.location = "/Parking/Checkpin.basic?loc="+address+"&lat=" + latitude + "&lng=" + longitude;
                 
 /*          var fenway = {lat: latitude, lng: longitude};
             var map = new google.maps.Map(document.getElementById('map'), {

@@ -38,6 +38,7 @@ public class ControllerClass {
 		modelAndView.addObject("latitude", requestParams.get("lat"));
 		modelAndView.addObject("longitude", requestParams.get("lng"));		
 		modelAndView.addObject("loc", requestParams.get("loc"));
+		modelAndView.addObject("id", "activate-step-3");
 		return modelAndView;
 	}
 
