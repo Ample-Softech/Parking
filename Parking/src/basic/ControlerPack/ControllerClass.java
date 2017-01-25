@@ -31,7 +31,7 @@ public class ControllerClass {
 	
 	//sagar...
 
-	@RequestMapping("/Checkpin")
+	@RequestMapping("/checkpin")
 	public ModelAndView pincode(@RequestParam Map<String,String> requestParams) {
 		modelAndView=new ModelAndView("find");
 		System.out.println("loc= "+requestParams.get("loc")+", lat= "+requestParams.get("lat")+", lng= "+requestParams.get("lng"));
