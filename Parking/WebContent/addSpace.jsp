@@ -49,9 +49,6 @@
 								<input type="checkbox" class="" value="" name="" /><label for="">Security</label>							
 					</div>
 				</div>				
-
-
-
 				
 				<hr class="colorgraph">
 				
