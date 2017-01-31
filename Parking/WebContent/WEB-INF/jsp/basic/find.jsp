@@ -66,6 +66,7 @@
 	}
       
     </style>
+
     <style type="text/css">
      /* CSS for Credit Card Payment form */
  .credit-card-box {
@@ -100,6 +101,7 @@
 /* The old "center div vertically" hack */
 .credit-card-box .display-table {
     display: table;
+    width: 100%;
 }
 .credit-card-box .display-tr {
     display: table-row;
@@ -112,6 +114,7 @@
 /* Just looks nicer */
 .credit-card-box .panel-heading img {
     min-width: 180px;
+    
 }
  
     

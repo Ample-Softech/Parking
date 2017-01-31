@@ -1,6 +1,7 @@
 <div class="popup-box chat-popup" id="qnimatee">
 	<div class="popup-head">
-		<div class="popup-head-left pull-left"> Your Deatils</div>
+		<div class="popup-head-left pull-left"> Payment </div>
+			<a id="addClass" href="#" style="font-size: 13px; margin-left: 10px;"> Back </a>
 			<div class="popup-head-right pull-right">
 				<div class="btn-group">
     				<button class="chat-header-button" data-toggle="dropdown" type="button" aria-expanded="false">

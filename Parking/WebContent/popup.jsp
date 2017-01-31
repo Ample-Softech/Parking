@@ -1,6 +1,6 @@
 <div class="popup-box chat-popup" id="qnimate">
 	<div class="popup-head">
-		<div class="popup-head-left pull-left"> Your Deatils</div>
+		<div class="popup-head-left pull-left"> Your Details</div>
 			<div class="popup-head-right pull-right">
 				<div class="btn-group">
     				<button class="chat-header-button" data-toggle="dropdown" type="button" aria-expanded="false">
@@ -19,59 +19,55 @@
 		<div class="container">
 			<form class="form" role="form">
 				<div class="row">
-				<div class="col-xs-3 col-sm-3 col-md-3">
-					<div class="form-group">
-                	    <input type="text" name="fn" id="fn" class="form-control" placeholder=" First Name " tabindex="1">
+	 				<div class="col-xs-3 col-sm-3 col-md-3">
+						<div class="form-group">
+    	            	    <input type="text" name="fn" id="fn" class="form-control" placeholder=" First Name " tabindex="1">
+						</div>
 					</div>
-				</div>
-				<div class="col-xs-3 col-sm-3 col-md-3">
-					<div class="form-group">
-                	    <input type="text" name="ln" id="ln" class="form-control" placeholder=" Last Name " tabindex="1">
+					<div class="col-xs-3 col-sm-3 col-md-3">
+						<div class="form-group">
+                		    <input type="text" name="ln" id="ln" class="form-control" placeholder=" Last Name " tabindex="1">
+						</div>
 					</div>
-				</div>
 				</div>
 
 				<div class="row">
-				<div class="col-xs-3 col-sm-3 col-md-3">
-					<div class="form-group">
-                	    <input type="text" name="mn" id="mn" class="form-control" placeholder=" Mobile Number " tabindex="1">
+					<div class="col-xs-3 col-sm-3 col-md-3">
+						<div class="form-group">
+   		             	    <input type="text" name="mn" id="mn" class="form-control" placeholder=" Mobile Number " tabindex="1">
+						</div>
 					</div>
-				</div>
-				<div class="col-xs-3 col-sm-3 col-md-3">
-					<div class="form-group">
-                	    <input type="text" name="ea" id="ea" class="form-control" placeholder=" Email Address " tabindex="1">
+					<div class="col-xs-3 col-sm-3 col-md-3">
+						<div class="form-group">
+                		    <input type="text" name="ea" id="ea" class="form-control" placeholder=" Email Address " tabindex="1">
+						</div>
 					</div>
-				</div>
 				</div>
 				
 				<div class="row">
-				<div class="col-xs-3 col-sm-3 col-md-3">
-					<div class="form-group">
-                	    <input type="text" name="vr" id="vr" class="form-control" placeholder=" Vehicle Registration " tabindex="1">
+					<div class="col-xs-3 col-sm-3 col-md-3">
+						<div class="form-group">
+    	            	    <input type="text" name="vr" id="vr" class="form-control" placeholder=" Vehicle Registration " tabindex="1">
+						</div>
 					</div>
-				</div>
 				</div>
 				<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-						<input type="checkbox" id="tc" name="tc" />
-						<label for="tc">I agree to the YourParkingSpace Terms & Conditions</label>
+					<div class="col-xs-12 col-sm-6 col-md-6">
+						<div class="form-group">
+							<input type="checkbox" id="tc" name="tc" />
+							<label for="tc">I agree to the YourParkingSpace Terms & Conditions</label>
+						</div>
 					</div>
-				</div>
 				</div>
 				<div class="row">
 					<div class="col-xs-6 col-sm-2 col-md-2">
-					<div class="form-group">
-						<a href="#" id="addClasss" class="btn btn-success">Payment</a>
+						<div class="form-group">
+							<a href="#" id="addClasss" class="btn btn-success">Payment</a>
+						</div>
 					</div>
 				</div>
-				</div>
-				
-			</form>	
-			
-			
+			</form>				
 		</div>
-
 
 		<div class="popup-messages-footer">
 			<textarea id="status_message" placeholder="Type a message..." rows="10" cols="40" name="message"></textarea>
@@ -87,6 +83,7 @@
 <script type="text/javascript">
 $(function(){
 	$("#addClass").click(function () {
+		$('#qnimatee').removeClass('popup-box-on');
         $('#qnimate').addClass('popup-box-on');
   	});
         
