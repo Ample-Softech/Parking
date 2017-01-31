@@ -36,9 +36,7 @@
 <body>
 
 <jsp:include page="/mainMenu.jsp" />
-<input type="hidden" id="${id }"  value="${id }"  />
 <div class="container registration" >
-
 	<div class="row form-group">
         <div class="col-xs-12">
             <ul class="nav nav-pills nav-justified thumbnail setup-panel">

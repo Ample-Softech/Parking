@@ -18,7 +18,7 @@
                             <div class="list-group-item">
                                 <div class="row-content">
                                     <div class="list-group-item-heading">
-                                        <a href="#" title="sintret">
+                                        <a href="Pay.jsp" title="sintret">
                                             <small>${parking.area }</small>
                                         </a>
                                     </div>
@@ -30,10 +30,12 @@
                                 </div>
                             </div>
                         </div>
-                        <h4><a href="#">${parking.country }</a></h4>
+                        <h4><a href="#" >${parking.country }</a></h4>
                         <p>${parking.state }</p>
-                    </div> 
+                        <a href="#" id="addClass" class="btn btn-success" >Book Now</a>
+                  	</div>
                 </div>
+
                 <hr>
 
                 <div class="row"> 
