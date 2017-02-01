@@ -24,13 +24,15 @@
       }
            .pana {
 	  	float: left;
-        height: 93%;
+        height: 92%;
         width: 40%;
    		margin: 0;
     	padding: 0;
     	display: block; 
     	border:solid #000 2px;
     	background-image: none;    	
+    	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(255,0,0,0.6);
+    	
       }
        
 /*         
@@ -49,20 +51,22 @@
         width: 40%;
       }
  */
-	
  
 	.contentList {
     	padding: 0;
     	background-color: white;
     	overflow: scroll;
     	overflow-x: hidden;
-    	height:	86%;
+    	height:	88%;
+    	margin-left: -2px;
+    	overflow-y: auto;    		
     	-webkit-overflow-scrolling: touch;    
 	}
 
 	.navbar2 {
-		margin-top: 1px;
+		margin-top: 0px;
 		margin-bottom: 0px;
+		
 	}
       
     </style>
@@ -136,6 +140,7 @@ body
     right: 90px;
     width: 600px;
     font-family: 'Open Sans', sans-serif;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .round.hollow {
     margin: 40px 0 0;

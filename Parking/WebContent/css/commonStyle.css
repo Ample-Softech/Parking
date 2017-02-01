@@ -84,11 +84,12 @@ body {
 
 .searchbar {
 	opacity: 0.8;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	margin-top: 40px;		
 }
 
-.img-temp{
-	margin-top: 120px;	
+.img-temp {
+	margin-top: 120px;
 	margin-bottom: 200px;
 }
 
@@ -110,6 +111,8 @@ body {
 .imglinks:HOVER {
 	color: #d4d4d4;	
 	text-decoration: underline;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);	
+	
 }
 
 
@@ -144,7 +147,7 @@ footer { background-color:#0c1a1e; min-height:350px; font-family: 'Open Sans', s
  .icon { float:left; margin-right:5px;}
  
  
- .copyright { min-height:40px; background-color:#000000;}
+ .copyright { min-height:40px; background-color:#000000; margin-bottom: 0px;}
  .copyright p { text-align:left; color:#FFF; padding:10px 0; margin-bottom:0px;}
  .heading7 { font-size:21px; font-weight:700; color:#d9d6d6; margin-bottom:22px;}
  .post p { font-size:12px; color:#FFF; line-height:20px;}

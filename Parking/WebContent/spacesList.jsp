@@ -13,7 +13,7 @@
                         <a href="#">
                             <img src="${parking.image }" class="img-responsive img-box img-thumbnail"  /> 
                         </a>
-                    </div> 
+                    </div>
                     <div class="col-xs-6 col-sm-10 col-md-10">
                         <div class="list-group">
                             <div class="list-group-item">
