@@ -262,6 +262,41 @@ LOCK TABLES `user` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `fname` varchar(45) NOT NULL,
+  `mname` varchar(45) DEFAULT NULL,
+  `lname` varchar(45) DEFAULT NULL,
+  `gender` varchar(45) DEFAULT NULL,
+  `username` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  `dob` varchar(45) DEFAULT NULL,
+  `latitude` varchar(45) DEFAULT NULL,
+  `logitude` varchar(45) DEFAULT NULL,
+  `area` varchar(45) DEFAULT NULL,
+  `state` varchar(45) DEFAULT NULL,
+  `city` varchar(45) DEFAULT NULL,
+  `usertype` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `usertype`
 --
 
@@ -293,4 +328,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-01-16 15:54:58
+-- Dump completed on 2017-02-01 12:32:02

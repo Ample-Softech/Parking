@@ -1,4 +1,4 @@
-<div class="container-fluid pana">
+<div class="container pana">
 	<nav class="navbar navbar-fixed ">
   		<div class="container-fluid navbar2">
     		<div class="navbar-header">
@@ -7,13 +7,14 @@
   		</div>
 	</nav>
 	<div class="row contentList">
+		<div class="container">
 		<div class="row">
-                    <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="col-xs-6 col-sm-2 col-md-2">
                         <a href="#">
                             <img src="${parking.image }" class="img-responsive img-box img-thumbnail"  /> 
                         </a>
                     </div> 
-                    <div class="col-xs-12 col-sm-9 col-md-9">
+                    <div class="col-xs-6 col-sm-10 col-md-10">
                         <div class="list-group">
                             <div class="list-group-item">
                                 <div class="row-content">
@@ -39,12 +40,12 @@
                 <hr>
 
                 <div class="row"> 
-                    <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="col-xs-6 col-sm-2 col-md-2">
                         <a href="#">
                             <img src="http://wanderluxe.theluxenomad.com/wp-content/uploads/2014/09/http-barbacoabali.com_.jpg" class="img-responsive img-box img-thumbnail"> 
                         </a>
                     </div> 
-                    <div class="col-xs-12 col-sm-9 col-md-9">
+                    <div class="col-xs-6 col-sm-10 col-md-10">
                         <div class="list-group">
                             <div class="list-group-item">
                                 <div class="row-picture">
@@ -74,12 +75,12 @@
 
 
                 <div class="row"> 
-                    <div class="col-xs-12 col-sm-3 col-md-3">
+                    <div class="col-xs-6 col-sm-2 col-md-2">
                         <a href="#">
                             <img src="http://i.huffpost.com/gen/2038950/thumbs/s-BANGKOK-NOODLES-large.jpg" class="img-responsive img-box img-thumbnail"> 
                         </a>
                     </div> 
-                    <div class="col-xs-12 col-sm-9 col-md-9">
+                    <div class="col-xs-6 col-sm-10 col-md-10">
                         <div class="list-group">
                             <div class="list-group-item">
                                 <div class="row-picture">
@@ -106,5 +107,6 @@
                     </div> 
                 </div>
                 <hr>
+      	</div>
 	</div>
 </div>

@@ -1,4 +1,5 @@
 /* spacesList page css code start  */
+
 .list-group {border-radius: 0;}
 .list-group .list-group-item {background-color: transparent;overflow: hidden;border: 0;border-radius: 0;padding: 0 16px;}
 .list-group .list-group-item .row-picture,
