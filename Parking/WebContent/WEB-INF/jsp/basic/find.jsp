@@ -19,19 +19,20 @@
       }
       #map {
   	    float: left;            
- 		height: 92%;
+ 		height: 585px;
         width: 60%;
       }
-           .pana {
+
+       .pana {
 	  	float: left;
-        height: 92%;
+        height: 585px;
         width: 40%;
    		margin: 0;
     	padding: 0;
+    	padding-right: 11px;
     	display: block; 
     	border:solid #000 2px;
     	background-image: none;    	
-    	box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(255,0,0,0.6);
     	
       }
        
@@ -53,7 +54,7 @@
  */
  
 	.contentList {
-    	padding: 0;
+		padding-top: 13px;
     	background-color: white;
     	overflow: scroll;
     	overflow-x: hidden;
@@ -63,12 +64,22 @@
     	-webkit-overflow-scrolling: touch;    
 	}
 
-	.navbar2 {
-		margin-top: 0px;
-		margin-bottom: 0px;
+	.box{ height: auto;    }
+	.header{ padding: 12px 10px 10px 10px ;}
+	.fixed{			}
+	.brand{  color: white; font-size: 17px; font-weight: bold; text-shadow: 2px 2px 5px black;}
+	.navbar2 {		
+		margin-right: -13px;
+		margin-left: -1px;
+		margin-top: -2px;
+		height: 74px;
 		
+		background: -webkit-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet); /* For Safari 5.1 to 6.0 */
+	    background: -o-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet); /* For Opera 11.1 to 12.0 */
+    	background: -moz-linear-gradient(left, red, orange, yellow, green, blue, indigo, violet); /* For Fx 3.6 to 15 */
+    	background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); /* Standard syntax (must be last) */		
 	}
-      
+  
     </style>
 
     <style type="text/css">
@@ -500,14 +511,14 @@ body
   <body>
   	<jsp:include page="/mainMenu.jsp" />
 	
-	<div id="map"></div>
+ 	<div id="map"></div>
 	
 	<!-- <div id="pano"></div>	 -->	
-	<jsp:include page="/spacesList.jsp" />
+ 	<jsp:include page="/spacesList.jsp" />
 	
 	<jsp:include page="/popup.jsp"></jsp:include>
 	<jsp:include page="/Payment.jsp"></jsp:include>
-	<jsp:include page="/footer.jsp" />
+  	<jsp:include page="/footer.jsp" />
 	
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy0y-BGBgl6fjl1zDhcBpgHHo6ZR6PXvY&libraries=places&callback=initMap"></script>
 

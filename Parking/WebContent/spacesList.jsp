@@ -1,12 +1,15 @@
 <div class="container pana">
-	<nav class="navbar navbar-fixed ">
+	<div class="box">
   		<div class="container-fluid navbar2">
-    		<div class="navbar-header">
-      			<a class="navbar-brand" href="#">${loc }</a>
+    		<div class="header">
+      			<a class="brand" >${loc }</a>
     		</div>
   		</div>
+	</div>
+
+<!-- 	<nav class="navbar navbar-fixed ">
 	</nav>
-	<div class="row contentList">
+ -->	<div class="row contentList">
 		<div class="container">
 		<div class="row">
                     <div class="col-xs-6 col-sm-2 col-md-2">
