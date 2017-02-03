@@ -7,9 +7,7 @@
   		</div>
 	</div>
 
-<!-- 	<nav class="navbar navbar-fixed ">
-	</nav>
- -->	<div class="row contentList">
+	<div class="row contentList">
 		<div class="container">
 		<div class="row">
                     <div class="col-xs-6 col-sm-2 col-md-2">

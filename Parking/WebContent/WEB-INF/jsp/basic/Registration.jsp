@@ -16,8 +16,9 @@
       /* Optional: Makes the sample page fill the window. */
       
       #map {
-  	    height: 40%;
+ 		height: 250px;
         width: 50%;
+        margin-left: 28%;
       }
       
         /* Register(Page) : Credit to bootsnipp.com for the css for the color graph */
