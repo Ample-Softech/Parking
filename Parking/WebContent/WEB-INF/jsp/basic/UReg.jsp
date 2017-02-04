@@ -1,27 +1,17 @@
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>  
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>  
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Registration</title>
-<!-- Link:- http://bootsnipp.com/snippets/M3pNX  -->
+<title>User Registration</title>
+
 <jsp:include page="/link.jsp" />
 
 <script src="http://momentjs.com/downloads/moment-with-locales.js"></script>
 <script src="http://momentjs.com/downloads/moment-timezone-with-data.js"></script>
 <style type="text/css">
 
-      /* Optional: Makes the sample page fill the window. */
-      
-      #map {
- 		height: 250px;
-        width: 50%;
-        margin-left: 28%;
-        display: inherit;
-      }
-      
         /* Register(Page) : Credit to bootsnipp.com for the css for the color graph */
 .colorgraph {
   height: 5px;
@@ -34,43 +24,17 @@
   background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
 }
 </style>
+
+
 </head>
 <body>
 
-<jsp:include page="/mainMenu.jsp" />
-<div class="container registration" >
-	<div class="row form-group">
-        <div class="col-xs-12">
-            <ul class="nav nav-pills nav-justified thumbnail setup-panel">
-                <li class="active"><a href="#step-1">
-                    <h4 class="list-group-item-heading">Step 1</h4>
-                    <p class="list-group-item-text">User Registration</p>
-                </a></li>
-                <li class="disabled"><a href="#step-2">
-                    <h4 class="list-group-item-heading">Step 2</h4>
-                    <p class="list-group-item-text">Parking Space</p>
-                </a></li>
-                <li class="disabled"><a href="#step-3">
-                    <h4 class="list-group-item-heading">Step 3</h4>
-                    <p class="list-group-item-text">Image Uploading</p>
-                </a></li>
-                
-                 <li class="disabled"><a href="#step-4">
-                    <h4 class="list-group-item-heading">Step 4</h4>
-                    <p class="list-group-item-text">Final/Done</p>
-                </a></li>
-            </ul>
-        </div>
-	</div>
-	
-    <div class="row setup-content" id="step-1">
-       	<div class="col-xs-12">
-            <div class="col-md-12 well text-center">
-                        	
-<div class="container register">
+	<jsp:include page="/mainMenu.jsp" />
+
+<div class="container register well">
 	<div class="row">
-    	<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-    		<form action="/Parking/reg.basic" method="post">
+    	<div class="  col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+    		<form class=" text-center form" action="/Parking/reg.basic" method="post">
 				<h2 >Please Sign Up <small>It's free and always will be.</small></h2>
 				<hr class="colorgraph">
 				<div class="row">
@@ -218,7 +182,7 @@
 
 			<div class="row">
 				<div class="col-xs-12 col-md-6">
-					<input id="activate-step-2" type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7">
+					<input  type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7">
 				</div>
 				<div class="col-xs-12 col-md-6">
 					<a href="/Parking/LoginPage.basic" class="btn btn-success btn-block btn-lg">Sign In</a>
@@ -234,7 +198,7 @@
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">Ã—</button>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 					<h4 class="modal-title" id="myModalLabel">Terms & Conditions</h4>
 				</div>
 				<div class="modal-body">
@@ -253,57 +217,9 @@
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 
-
 </div>
 
 <!-- End register  -->                
-        	</div>
-    	</div>
-    </div>
-
-    <div class="row setup-content" id="step-2">
-        <div class="col-xs-12">
-            <div class="col-md-12 well text-center">
-				<jsp:include page="/addSpace.jsp" />
-			</div>
-        </div>
-    </div>
-    
-    
-    <div class="row setup-content" id="step-3">
-        <div class="col-xs-12">
-            <div class="col-md-12 well text-center">
-                <h1 class="text-center"> UPLOAD-LOCATION-IMAGE </h1> 
-			    <div class="container">
-          			<div class="row">
-           				<div class="col-lg-11 col-xs-11 col-sm-11 col-md-11">
-			               <form role="form" action="/Parking/regCode.basic" class="well" enctype="multipart/form-data">
-            			   		<div class="form-group">
-                    				<label for="file">Select a file to upload</label>
-                    					<input type="file" name="file"  />
-                    					<p class="help-block">Only jpg,jpeg,png and gif file with maximum size of 1 MB is allowed.</p>
-                  				</div>
-                  				<input type="submit" id="activate-step-4" class="btn btn-lg btn-primary" value="Upload">
-                			</form>
-            			</div>
-          			</div>
-    			</div>	 		</div>
-    	</div>
-    </div>
-    
-     <div class="row setup-content" id="step-4">
-        <div class="col-xs-12">
-            <div class="col-md-12 well text-center">
-                <h1 class="text-center"> FINALLY </h1>
-					<form></form>                
-            </div>
-        </div>
-    </div>
-	
-	
-</div>
-		
-<jsp:include page="/footer.jsp" />
-
+<jsp:include page="/footer.jsp"></jsp:include>
 </body>
 </html>

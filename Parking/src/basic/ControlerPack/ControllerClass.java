@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.google.gson.Gson;
 import basic.Pojo.Demo;
 import basic.Pojo.Parking;
+import basic.Pojo.Users;
 import services.Services;
 
 @Controller
@@ -47,17 +48,38 @@ public class ControllerClass {
 	@RequestMapping(value="/reg")
 	public ModelAndView regcod(@RequestParam Map<String,String> requestParams) {
 		System.out.println("reg");
+		Users u1 = new Users();
+		u1.setFname(requestParams.get("first"));;
+		u1.setMname(requestParams.get("middle_name"));
+		u1.setLname(requestParams.get("last_name"));
+		u1.setGender(requestParams.get("gender"));
+		u1.setUsername(requestParams.get("dob"));
+		u1.setPassword(requestParams.get("email"));
+		u1.setDob(requestParams.get("password"));
+		u1.setLatitude(requestParams.get("lat"));
+		u1.setLongitude(requestParams.get("lng"));
+		u1.setArea(requestParams.get("area"));
+		u1.setCity(requestParams.get("city"));
+		u1.setState(requestParams.get("state"));
+		u1.setUsertype("user");		
+		System.out.println(u1);
+		return new ModelAndView("PReg");
+	}	
+
+	@RequestMapping(value="/psReg")
+	public ModelAndView psReg(@RequestParam Map<String,String> requestParams) {
+		System.out.println("reg");
 		System.out.println(requestParams.get("middle_name"));
 //		System.out.println(requestParams.get("file"));
 		System.out.println("regi "+ request.getParameter("middle_name"));
 		modelAndView.addObject("id", "activate-step-2");
-		return new ModelAndView("Registration");
+		return new ModelAndView("IUpload");
 	}	
-	
+
 	
 	@RequestMapping("/imageUp")
 	public ModelAndView imageUp() {
-		modelAndView=new ModelAndView("image");
+		modelAndView=new ModelAndView("RegDone");
 		return modelAndView;
 	}	
 	
@@ -65,7 +87,7 @@ public class ControllerClass {
 	@RequestMapping("/Check")
 	public ModelAndView print(@RequestParam Map<String,String> requestParams) {
 		modelAndView=new ModelAndView("find");
-//		System.out.println("loc= "+requestParams.get("loc")+", lat= "+requestParams.get("lat")+", lng= "+requestParams.get("lng"));
+		System.out.println("loc= "+requestParams.get("loc")+", lat= "+requestParams.get("lat")+", lng= "+requestParams.get("lng"));
 		modelAndView.addObject("latitude", requestParams.get("lat"));
 		modelAndView.addObject("longitude", requestParams.get("lng"));		
 		modelAndView.addObject("loc", requestParams.get("loc"));
@@ -103,7 +125,7 @@ public class ControllerClass {
 	public ModelAndView register()
 	{
 		
-		ModelAndView m= new ModelAndView("Registration");
+		ModelAndView m= new ModelAndView("UReg");
 		return  m;
 	}
 	

@@ -54,7 +54,7 @@
         
         //init s
         		function initMap() {
-            	var fenway = {lat: 18.4897587, lng: 73.82029620000003};
+            	var fenway = {lat: 18.5204303, lng: 73.85674369999992};
                 var map = new google.maps.Map(document.getElementById('map'), {
                     center: fenway,
                     zoom: 16,
@@ -68,14 +68,14 @@
         		geocoder.geocode({'location': fenway}, function(results, status) {
             		if (status === google.maps.GeocoderStatus.OK) {
         	      		if (results[0]) {
-            	      		var marker = new google.maps.Marker({
+/*            	      		var marker = new google.maps.Marker({
                 	      		map: map,
                     	  		draggable: true,
                       			animation: google.maps.Animation.DROP,
                       			position: fenway,
                       			title: 'Google '
                     		});
-        	      			var title = marker.getTitle();
+*/        	      			var title = marker.getTitle();
             		      		google.maps.event.addListener(marker, 'click', function() {          		
                     			infowindow.setContent('<div><strong>' + marker.getTitle() + '</strong><br>' +
                         		'Place ID: ' + results[0].place_id + '<br>' +'Address: '+ results[0].formatted_address + '</div>');
