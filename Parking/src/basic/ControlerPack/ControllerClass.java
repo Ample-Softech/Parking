@@ -1,16 +1,22 @@
 package basic.ControlerPack;
 
+import java.io.BufferedOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
+
 import javax.servlet.http.HttpServletRequest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import com.google.gson.Gson;
 import basic.Pojo.Demo;
@@ -20,6 +26,8 @@ import services.Services;
 
 @Controller
 public class ControllerClass {
+
+	private static final Logger logger = LoggerFactory.getLogger(ControllerClass.class);
 
 	@Autowired
 	Services service = new Services();
@@ -68,18 +76,38 @@ public class ControllerClass {
 
 	@RequestMapping(value="/psReg")
 	public ModelAndView psReg(@RequestParam Map<String,String> requestParams) {
-		System.out.println("reg");
-		System.out.println(requestParams.get("middle_name"));
-//		System.out.println(requestParams.get("file"));
-		System.out.println("regi "+ request.getParameter("middle_name"));
-		modelAndView.addObject("id", "activate-step-2");
 		return new ModelAndView("IUpload");
 	}	
 
 	
 	@RequestMapping("/imageUp")
-	public ModelAndView imageUp() {
-		modelAndView=new ModelAndView("RegDone");
+	public ModelAndView imageUp(@RequestParam("file") MultipartFile file) {
+		if (!file.isEmpty()) {
+			String content = file.getContentType();
+			try {
+				if (content.equals("image/jpeg") || content.equals("image/gif") || content.equals("image/png")) {
+					byte[] bytes = file.getBytes();
+					// Create the file on server
+					File serverFile = new File("C:\\Users\\Sagar Pawar\\git\\Parking\\Parking\\WebContent\\images\\parkinks" + File.separator + file.getOriginalFilename());
+					BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
+					stream.write(bytes);
+					stream.close();
+					logger.info("Server File Location=" + serverFile.getAbsolutePath());
+					System.out.println("(for db) images/parkinks/"+ file.getOriginalFilename());
+					System.out.println("You successfully uploaded file");
+					modelAndView=new ModelAndView("RegDone");					
+				} else {
+					modelAndView=new ModelAndView("IUpload");
+					System.out.println("You failed to upload(content mismatch)  => " + content);
+				}
+			} catch (Exception e) {
+				modelAndView=new ModelAndView("IUpload");
+				System.out.println("You failed to upload  => " + e.getMessage());
+			}
+		} else {
+			modelAndView=new ModelAndView("IUpload");
+			System.out.println("You failed to upload because the file was empty.");
+		}
 		return modelAndView;
 	}	
 	
