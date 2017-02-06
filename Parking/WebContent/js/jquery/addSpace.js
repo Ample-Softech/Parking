@@ -1,14 +1,25 @@
         function GetLocation() {
             var geocoder = new google.maps.Geocoder();
             //var address = document.form.pincode.value; 
-            var address = document.getElementById("pincode").value;
+            var address = document.getElementById("pin").value;
+            var city1 = document.getElementById("city1").value;
+            var street = document.getElementById("street").value;
+
+            var lat = document.getElementById("lat");
+            var lng = document.getElementById("lng");
+            var area = document.getElementById("area");
+            var city = document.getElementById("city");
+            var pincode = document.getElementById("pincode");
             geocoder.geocode({ 'address': address }, function (results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
                     var latitude = results[0].geometry.location.lat();
                     var longitude = results[0].geometry.location.lng();
-                    document.getElementById("lat").innerHTML=latitude;
-                    document.getElementById("lng").innerHTML=longitude;
- //                   alert("address: "+address+"\nLatitude: " + latitude + "\nLongitude: " + longitude);
+                    lat.value = latitude;
+                    lng.value = longitude;
+                    area.value = street;
+                    city.value = city1;
+                    pincode.value = address;
+ //                 alert("address: "+address+"\nLatitude: " + latitude + "\nLongitude: " + longitude);
 //    	       		window.location = "/Parking/Checkpin.basic?loc="+address+"&lat=" + latitude + "&lng=" + longitude;
 
 			        var fenway = {lat: latitude, lng: longitude};

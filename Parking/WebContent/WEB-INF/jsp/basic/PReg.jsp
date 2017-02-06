@@ -57,20 +57,20 @@
 				<h2 > Parkink-Space <small> Please Provide Space for Parking. </small></h2>
 				<hr class="colorgraph">
 				<div class="row">
-					<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class=" form col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-                    	    <input type="text" name="street" id="street" class="form-control input-lg" placeholder=" Street/Area " tabindex="1">
+                    	    <input type="text" required="required" name="street" id="street" class="form-control input-lg" placeholder=" Street/Area " tabindex="1">
 						</div>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-                        	<input type="text" name="city" id="city" class="form-control input-lg" placeholder=" Town/City " tabindex="1">
+                        	<input type="text" required="required" name="city1" id="city1" class="form-control input-lg" placeholder=" Town/City " tabindex="1">
 						</div>
 					</div>
 					
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-							<input type="text" name="pincode" id="pincode" class="form-control input-lg" placeholder=" Pincode " tabindex="2">
+							<input type="text" required="required" name="pin" id="pin" class="form-control input-lg" placeholder=" Pincode " tabindex="2">
 						</div>
 					</div>				
 
@@ -90,15 +90,18 @@
 	<div class="row">
     	<div class="  text-center col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 				<form role="form" class="form" method="post" action="/Parking/psReg.basic" >
+					<input type="hidden" required="required" name="area" id="area" class="form-control input-lg" placeholder=" Pincode " tabindex="2">
+					<input type="hidden" required="required" name="city" id="city" class="form-control input-lg" placeholder=" Pincode " tabindex="2">
+					<input type="hidden" required="required" name="pincode" id="pincode" class="form-control input-lg" placeholder=" Pincode " tabindex="2">
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-							<h2 style="display: none;" name="lat" id="lat" class="form-control input-lg" placeholder=" Latitude " tabindex="1">Latitude</h2>
+							<input type="text" required="required" name="lat" id="lat" class="form-control input-lg" placeholder=" Latitude " tabindex="2">
 						</div>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-							<h2 style="display: none;" name="lng" id="lng" class="form-control input-lg" placeholder=" Longitude " tabindex="1">Longitude</h2>
+							<input type="text" required="required" name="lng" id="lng" class="form-control input-lg" placeholder=" Logitude " tabindex="2">
 						</div>
 					</div>										
 				</div>
@@ -127,8 +130,8 @@
 		</div>
 	</div>
 </div>
-
 <!--  -->
+
 <jsp:include page="/footer.jsp"></jsp:include>
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy0y-BGBgl6fjl1zDhcBpgHHo6ZR6PXvY&libraries=places&callback=initMap"></script>
 	<script src="js/jquery/addSpace.js" type="text/javascript"></script>

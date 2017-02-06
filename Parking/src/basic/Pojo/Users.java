@@ -4,7 +4,7 @@ public class Users
 {
 
 	int id;
-	String fname, mname, lname, gender, username, password, dob, latitude, longitude, area, state, city, usertype;
+	String fname, mname, lname, gender, username, password, dob, latitude, longitude, area, state, city, country, usertype;
 	public int getId() {
 		return id;
 	}
@@ -88,6 +88,12 @@ public class Users
 	}
 	public void setUsertype(String usertype) {
 		this.usertype = usertype;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
 	} 
 	
 	

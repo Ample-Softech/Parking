@@ -43,21 +43,27 @@ public class ControllerClass {
 	@RequestMapping("/checkpin")
 	public ModelAndView pincode(@RequestParam Map<String,String> requestParams) {
 		modelAndView=new ModelAndView("find");
-		System.out.println("loc= "+requestParams.get("loc")+", lat= "+requestParams.get("lat")+", lng= "+requestParams.get("lng"));
+//		System.out.println("loc= "+requestParams.get("loc")+", lat= "+requestParams.get("lat")+", lng= "+requestParams.get("lng"));
 		modelAndView.addObject("latitude", requestParams.get("lat"));
 		modelAndView.addObject("longitude", requestParams.get("lng"));		
 		modelAndView.addObject("loc", requestParams.get("loc"));
-		modelAndView.addObject("id", "activate-step-3");
 		return modelAndView;
 	}
+	
 
-	
-	
+	@RequestMapping(value="/psReg")
+	public ModelAndView psReg(@RequestParam Map<String,String> requestParams) {
+		System.out.println("area= "+requestParams.get("area")+", lat= "+requestParams.get("lat")+", lng= "+requestParams.get("lng"));
+		System.out.println("city= "+requestParams.get("city"));	
+		System.out.println("pincode= "+requestParams.get("pincode"));	
+		return new ModelAndView("IUpload");
+	}	
+
 	@RequestMapping(value="/reg")
-	public ModelAndView regcod(@RequestParam Map<String,String> requestParams) {
-		System.out.println("reg");
+	public ModelAndView regcod(@ModelAttribute("Users") Users Users,@RequestParam Map<String,String> requestParams) {
+		System.out.println("reg=" + requestParams.get("latitude") +" country=" + Users.getCountry());
 		Users u1 = new Users();
-		u1.setFname(requestParams.get("first"));;
+		u1.setFname(requestParams.get("first"));
 		u1.setMname(requestParams.get("middle_name"));
 		u1.setLname(requestParams.get("last_name"));
 		u1.setGender(requestParams.get("gender"));
@@ -69,16 +75,10 @@ public class ControllerClass {
 		u1.setArea(requestParams.get("area"));
 		u1.setCity(requestParams.get("city"));
 		u1.setState(requestParams.get("state"));
-		u1.setUsertype("user");		
-		System.out.println(u1);
+		u1.setUsertype("user");
+		System.out.println("var= "+u1.getLatitude());
 		return new ModelAndView("PReg");
 	}	
-
-	@RequestMapping(value="/psReg")
-	public ModelAndView psReg(@RequestParam Map<String,String> requestParams) {
-		return new ModelAndView("IUpload");
-	}	
-
 	
 	@RequestMapping("/imageUp")
 	public ModelAndView imageUp(@RequestParam("file") MultipartFile file) {

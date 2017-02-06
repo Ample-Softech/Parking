@@ -1,3 +1,6 @@
+    <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>  
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -24,6 +27,28 @@
   background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
 }
 </style>
+<script type="text/javascript">
+function GetLocation() {
+    var geocoder = new google.maps.Geocoder();
+    var address = document.forms["myForm"]["pincode"].value;
+    var lat = document.getElementById("latitude");
+    var lng = document.getElementById("longitude");
+    geocoder.geocode({ 'address': address }, function (results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            var latitude = results[0].geometry.location.lat();
+            var longitude = results[0].geometry.location.lng();
+  			lat.value = latitude;
+  			lng.value = longitude;
+//  		alert("address: "+address+"\nLatitude: " + latitude + "\nLongitude: " + longitude);
+//       		window.location = "/Parking/reg.basic?latitude=" + latitude + "&longitude=" + longitude;
+  			return true;
+        } else {
+            alert("Request failed.");
+            return false;
+        }
+    });
+};  
+</script>
 
 
 </head>
@@ -33,26 +58,26 @@
 
 <div class="container register well">
 	<div class="row">
-    	<div class="  col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-    		<form class=" text-center form" action="/Parking/reg.basic" method="post">
+    	<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+    		<form:form modelAttribute="Users" name="myForm" onsubmit="return GetLocation()" class=" text-center form" action="/Parking/reg.basic" method="post">
 				<h2 >Please Sign Up <small>It's free and always will be.</small></h2>
 				<hr class="colorgraph">
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-        	                <input type="text" name="first" id="first" class="form-control input-lg" placeholder="First Name" tabindex="1" required="required" />
+        	                <input type="text" name="fname" id="fname" class="form-control input-lg" placeholder="First Name" tabindex="1" required="required" />
 						</div>
 					</div>
 					
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-           	            	<input type="text" required="required" name="middle_name" id="middle_name" class="form-control input-lg" placeholder="Middle Name" tabindex="1">
+           	            	<input type="text" required="required" name="mname" id="mname" class="form-control input-lg" placeholder="Middle Name" tabindex="1">
 						</div>
 					</div>
 				
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-							<input type="text" required="required" name="last_name" id="last_name" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+							<input type="text" required="required" name="lname" id="lname" class="form-control input-lg" placeholder="Last Name" tabindex="2">
 						</div>
 					</div>
 				</div>		
@@ -121,7 +146,7 @@
 				</div>
 			
 				<div class="form-group">
-					<input type="email" name="email" required="required" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="4">
+					<input type="email" name="username" required="required" id="username" class="form-control input-lg" placeholder="Email Address" tabindex="4">
 				</div>
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-6">
@@ -137,7 +162,7 @@
 				</div>
 			
 				<div class="form-group">
-					<input type="text" name="address" required="required" id="address" class="form-control input-lg" placeholder="Address" tabindex="4">
+					<input type="text" name="area" required="required" id="area" class="form-control input-lg" placeholder="Address" tabindex="4">
 				</div>
 			
 				<div class="row">
@@ -161,7 +186,9 @@
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<input type="text" name="pincode" id="pincode" class="form-control input-lg" required="required" placeholder="Pincode" tabindex="6">
+						<input type="text" name="pincode" id="pincode" class="form-control input-lg" required="required" placeholder="Pincode" tabindex="6" />
+						<input type="text" name="latitude" id="latitude" class="form-control input-lg" placeholder="lat" tabindex="6" />
+						<input type="text" name="longitude" id="longitude" class="form-control input-lg" placeholder="lng" tabindex="6" />	
 					</div>
 				</div>
 			</div>
@@ -170,7 +197,7 @@
 				<div class="col-xs-4 col-sm-3 col-md-3">
 					<span class="button-checkbox">
 						<button type="button" class="btn" data-color="info" tabindex="7">I Agree</button>
-                        <input type="checkbox" required="required" name="t_and_c" id="t_and_c" class="hidden" value="1">
+                    	<input type="checkbox" required="required" name="t_and_c" id="t_and_c" class="hidden" value="1">
 					</span>
 				</div>
 				<div class="col-xs-8 col-sm-9 col-md-9">
@@ -188,7 +215,7 @@
 					<a href="/Parking/LoginPage.basic" class="btn btn-success btn-block btn-lg">Sign In</a>
 				</div>
 			</div>
-		</form>
+		</form:form>
     		
 		</div>
 	</div>
