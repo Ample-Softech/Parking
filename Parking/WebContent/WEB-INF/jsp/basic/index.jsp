@@ -44,13 +44,13 @@
 		<jsp:include page="/mainMenu.jsp" />		
 
 		<!-- CONTENT -->
-			<div class="container searchField" >
+			<div class="container searchField">
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 jumbotron searchbar" style="padding: 15px;">
 						<div class="input-group" align="center">
-				        	<input type="text" class="form-control" name="searchPlace" id="searchPlace" required="required"  />
+				        	<input type="text" class="form-control" name="searchPlace" id="searchPlace" required="required" />
 				        	<span class="input-group-btn">
-				       			<button type="submit" class="btn btn-success" id="searchBtn"> <b>Search</b></button>
+				       			<button type="submit" class="btn btn-success" id="searchBtn"><b>Search</b></button>
 				        	</span>      
 				     	</div>
 					</div>

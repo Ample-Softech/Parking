@@ -8,6 +8,8 @@ import java.util.Map;
 import java.util.Properties;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +38,10 @@ public class ControllerClass {
 	ModelAndView modelAndView;
 	
 	@Autowired
-	HttpServletRequest request;	
+	HttpServletRequest request;
+	
+	@Autowired
+	HttpServletResponse response;
 	
 	//sagar...
 
@@ -60,23 +65,27 @@ public class ControllerClass {
 	}	
 
 	@RequestMapping(value="/reg")
-	public ModelAndView regcod(@ModelAttribute("Users") Users Users,@RequestParam Map<String,String> requestParams) {
-		System.out.println("reg=" + requestParams.get("latitude") +" country=" + Users.getCountry());
+	public ModelAndView regcod(@RequestParam Map<String,String> requestParams) {
 		Users u1 = new Users();
 		u1.setFname(requestParams.get("first"));
-		u1.setMname(requestParams.get("middle_name"));
-		u1.setLname(requestParams.get("last_name"));
+		u1.setMname(requestParams.get("mname"));
+		u1.setLname(requestParams.get("lname"));
 		u1.setGender(requestParams.get("gender"));
 		u1.setUsername(requestParams.get("dob"));
-		u1.setPassword(requestParams.get("email"));
+		u1.setPassword(requestParams.get("username"));
 		u1.setDob(requestParams.get("password"));
-		u1.setLatitude(requestParams.get("lat"));
-		u1.setLongitude(requestParams.get("lng"));
+		u1.setLatitude(requestParams.get("latitude"));
+		u1.setLongitude(requestParams.get("longitude"));
 		u1.setArea(requestParams.get("area"));
 		u1.setCity(requestParams.get("city"));
 		u1.setState(requestParams.get("state"));
+		u1.setCountry(requestParams.get("country"));
+		u1.setPincode(requestParams.get("pincode"));
 		u1.setUsertype("user");
-		System.out.println("var= "+u1.getLatitude());
+		System.out.println("latitude= "+u1.getLatitude());
+		System.out.println("logitude= "+u1.getLongitude());
+		System.out.println("pincode= "+u1.getPincode());
+
 		return new ModelAndView("PReg");
 	}	
 	
@@ -151,8 +160,7 @@ public class ControllerClass {
 	
 	@RequestMapping(value="/register")
 	public ModelAndView register()
-	{
-		
+	{		
 		ModelAndView m= new ModelAndView("UReg");
 		return  m;
 	}

@@ -2,9 +2,9 @@ package basic.Pojo;
 
 public class Users
 {
-
 	int id;
-	String fname, mname, lname, gender, username, password, dob, latitude, longitude, area, state, city, country, usertype;
+	String fname, mname, lname, gender, username, password, dob, latitude, longitude, area, state, city, country, pincode, usertype;
+
 	public int getId() {
 		return id;
 	}
@@ -94,8 +94,12 @@ public class Users
 	}
 	public void setCountry(String country) {
 		this.country = country;
+	}
+	public String getPincode() {
+		return pincode;
+	}
+	public void setPincode(String pincode) {
+		this.pincode = pincode;
 	} 
-	
-	
-	
+		
 }

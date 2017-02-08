@@ -1,8 +1,4 @@
-    <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>  
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -27,39 +23,41 @@
   background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
 }
 </style>
+
 <script type="text/javascript">
-function GetLocation() {
-    var geocoder = new google.maps.Geocoder();
-    var address = document.forms["myForm"]["pincode"].value;
-    var lat = document.getElementById("latitude");
-    var lng = document.getElementById("longitude");
-    geocoder.geocode({ 'address': address }, function (results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-            var latitude = results[0].geometry.location.lat();
-            var longitude = results[0].geometry.location.lng();
-  			lat.value = latitude;
-  			lng.value = longitude;
-//  		alert("address: "+address+"\nLatitude: " + latitude + "\nLongitude: " + longitude);
-//       		window.location = "/Parking/reg.basic?latitude=" + latitude + "&longitude=" + longitude;
-  			return true;
-        } else {
-            alert("Request failed.");
-            return false;
-        }
-    });
-};  
+	function getLocation() {
+    	var geocoder = new google.maps.Geocoder();
+//    	var address = document.getElementById('pincode').value;
+    	var address = document.forms["myForm"]["pincode"].value;
+    	geocoder.geocode({ 'address': address }, function (results, status) {
+        	if (status == google.maps.GeocoderStatus.OK) {
+            	var latitude = results[0].geometry.location.lat();
+            	var longitude = results[0].geometry.location.lng();
+	  			alert("address: "+address+"\nLatitude: " + latitude + "\nLongitude: " + longitude);
+// 	       		window.location = "/Parking/reg.basic?latitude=" + latitude + "&longitude=" + longitude;
+//  				return true;
+					document.getElementById("latitude").value = latitude;
+					document.getElementById("longitude").value = longitude;
+					document.getElementById("myForm").submit();
+        	} else {
+            	alert("Request failed.");
+            	return false;
+        	}
+    	});
+	}  
 </script>
-
-
 </head>
 <body>
 
 	<jsp:include page="/mainMenu.jsp" />
 
+  <form action="/Parking/reg.basic" method="post" id="myForm" name="myForm">  
+  <input type="text" name="latitude" id="latitude" />
+  <input type="text" name="longitude" id="longitude" />		
 <div class="container register well">
 	<div class="row">
     	<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-    		<form:form modelAttribute="Users" name="myForm" onsubmit="return GetLocation()" class=" text-center form" action="/Parking/reg.basic" method="post">
+			<div class="text-center form">	
 				<h2 >Please Sign Up <small>It's free and always will be.</small></h2>
 				<hr class="colorgraph">
 				<div class="row">
@@ -187,8 +185,6 @@ function GetLocation() {
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
 						<input type="text" name="pincode" id="pincode" class="form-control input-lg" required="required" placeholder="Pincode" tabindex="6" />
-						<input type="text" name="latitude" id="latitude" class="form-control input-lg" placeholder="lat" tabindex="6" />
-						<input type="text" name="longitude" id="longitude" class="form-control input-lg" placeholder="lng" tabindex="6" />	
 					</div>
 				</div>
 			</div>
@@ -209,14 +205,13 @@ function GetLocation() {
 
 			<div class="row">
 				<div class="col-xs-12 col-md-6">
-					<input  type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7">
+					<button id="Register" onclick="getLocation()" class="btn btn-primary btn-block btn-lg"> Register </button>
 				</div>
 				<div class="col-xs-12 col-md-6">
 					<a href="/Parking/LoginPage.basic" class="btn btn-success btn-block btn-lg">Sign In</a>
 				</div>
 			</div>
-		</form:form>
-    		
+    		</div>
 		</div>
 	</div>
 
@@ -245,8 +240,8 @@ function GetLocation() {
 	</div><!-- /.modal -->
 
 </div>
-
-<!-- End register  -->                
+</form>
+<!-- End register  -->
 <jsp:include page="/footer.jsp"></jsp:include>
 </body>
 </html>
