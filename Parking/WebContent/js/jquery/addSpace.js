@@ -5,8 +5,8 @@
             var city1 = document.getElementById("city1").value;
             var street = document.getElementById("street").value;
 
-            var lat = document.getElementById("lat");
-            var lng = document.getElementById("lng");
+            var lat = document.getElementById("latitude");
+            var lng = document.getElementById("longitude");
             var area = document.getElementById("area");
             var city = document.getElementById("city");
             var pincode = document.getElementById("pincode");
@@ -19,7 +19,7 @@
                     area.value = street;
                     city.value = city1;
                     pincode.value = address;
- //                 alert("address: "+address+"\nLatitude: " + latitude + "\nLongitude: " + longitude);
+                  alert("address: "+address+"\nLatitude: " + latitude + "\nLongitude: " + longitude);
 //    	       		window.location = "/Parking/Checkpin.basic?loc="+address+"&lat=" + latitude + "&lng=" + longitude;
 
 			        var fenway = {lat: latitude, lng: longitude};

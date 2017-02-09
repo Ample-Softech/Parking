@@ -20,6 +20,31 @@
   background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
 }
 </style>
+
+   <script type="text/javascript">
+	function validation() {
+		var name = document.forms["myForm"]["username"].value;
+		var password = document.forms["myForm"]["password"].value;
+		var n1=name.split(' ').join('+');
+		var p1=password.split(' ').join('+');
+//		document.getElementById("errorMessage").innerHTML="Login Field should not be blank..";
+		if(name=="" || n1!=name){
+//			document.getElementById("errorMessage").innerHTML="username Field should not be blank or with spaces..";
+			window.alert("username Field should not be blank or with spaces..");
+			document.forms["myForm"]["username"].focus();
+			return false;
+		}
+		if(password=="" || p1!=password){
+//			document.getElementById("errorMessage").innerHTML="password Field should not be blank or with spaces..";
+			window.alert("Password Field should not be blank or with spaces..");
+			document.forms["myForm"]["password"].focus();
+			return false;
+		}
+		return true;
+	}
+</script> 
+
+
 </head>
 <body>
 		<!-- MENU BAR -->
@@ -29,15 +54,15 @@
 
 <div class="row" style="margin-top:20px">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3 auth-block">
-		<form role="form">
+		<form onsubmit="return validation()" name="myForm" action="/Parking/logValid.basic" method="post" role="form">
 			<fieldset>
 				<h2>Please Sign In</h2>
 				<hr class="colorgraph">
 				<div class="form-group">
-                    <input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address">
+                    <input required="required" type="email" name="username" id="username" class="form-control input-lg" placeholder="Email Address">
 				</div>
 				<div class="form-group">
-                    <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
+                    <input required="required" type="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
 				</div>
 				<span class="button-checkbox">
 					<button type="button" class="btn" data-color="info">Remember Me</button>

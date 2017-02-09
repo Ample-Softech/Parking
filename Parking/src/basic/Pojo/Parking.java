@@ -2,14 +2,19 @@ package basic.Pojo;
 
 public class Parking {
 
-	int id;
-	String area, city, state, country, pincode, lat, lng, image, delflag;
-	
+	int id, userId;
+	String area, city, state, country, pincode, latitude, longitude, image;
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 	public String getArea() {
 		return area;
@@ -41,17 +46,17 @@ public class Parking {
 	public void setPincode(String pincode) {
 		this.pincode = pincode;
 	}
-	public String getLat() {
-		return lat;
+	public String getLatitude() {
+		return latitude;
 	}
-	public void setLat(String lat) {
-		this.lat = lat;
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
 	}
-	public String getLng() {
-		return lng;
+	public String getLongitude() {
+		return longitude;
 	}
-	public void setLng(String lng) {
-		this.lng = lng;
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
 	}
 	public String getImage() {
 		return image;
@@ -59,11 +64,6 @@ public class Parking {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	public String getDelflag() {
-		return delflag;
-	}
-	public void setDelflag(String delflag) {
-		this.delflag = delflag;
-	}
+
 	
 }

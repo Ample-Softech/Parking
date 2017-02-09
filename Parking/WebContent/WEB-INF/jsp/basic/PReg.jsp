@@ -96,12 +96,12 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-							<input type="text" required="required" name="lat" id="lat" class="form-control input-lg" placeholder=" Latitude " tabindex="2">
+							<input type="text" required="required" name="latitude" id="latitude" class="form-control input-lg" placeholder=" Latitude " tabindex="2">
 						</div>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-							<input type="text" required="required" name="lng" id="lng" class="form-control input-lg" placeholder=" Logitude " tabindex="2">
+							<input type="text" required="required" name="longitude" id="longitude" class="form-control input-lg" placeholder=" Logitude " tabindex="2">
 						</div>
 					</div>										
 				</div>

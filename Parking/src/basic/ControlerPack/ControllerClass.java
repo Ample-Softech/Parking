@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import com.google.gson.Gson;
@@ -27,6 +28,7 @@ import basic.Pojo.Users;
 import services.Services;
 
 @Controller
+@SessionAttributes({"User"})
 public class ControllerClass {
 
 	private static final Logger logger = LoggerFactory.getLogger(ControllerClass.class);
@@ -54,26 +56,55 @@ public class ControllerClass {
 		modelAndView.addObject("loc", requestParams.get("loc"));
 		return modelAndView;
 	}
+
 	
+	@RequestMapping(value="/logValid")
+	public ModelAndView logValid(@RequestParam Map<String,String> requestParams) {
+		ModelAndView model = new ModelAndView();
+		Users u1=service.getUser(requestParams.get("username"), requestParams.get("password"));
+		if (u1!=null) {
+			model.addObject("User", u1);
+			return new ModelAndView("PReg");			
+		} else {
+			return new ModelAndView("Login");			
+		}
+	}	
 
 	@RequestMapping(value="/psReg")
-	public ModelAndView psReg(@RequestParam Map<String,String> requestParams) {
-		System.out.println("area= "+requestParams.get("area")+", lat= "+requestParams.get("lat")+", lng= "+requestParams.get("lng"));
-		System.out.println("city= "+requestParams.get("city"));	
-		System.out.println("pincode= "+requestParams.get("pincode"));	
-		return new ModelAndView("IUpload");
+	public ModelAndView psReg(@ModelAttribute("User") Users u1, @RequestParam Map<String,String> requestParams) {
+		ModelAndView model = new ModelAndView();
+		Parking p1 = new Parking();
+		Parking p2 = null;
+		p1.setArea(requestParams.get("area"));
+		p1.setCity(requestParams.get("city"));
+		p1.setState("Maharashtra");
+		p1.setCountry("India");
+		p1.setPincode(requestParams.get("pincode"));
+		p1.setLatitude(requestParams.get("latitude"));
+		p1.setLongitude(requestParams.get("longitude"));
+		p1.setUserId(u1.getId());
+		
+		p2 = service.inserPark(p1);
+		if (p2!=null) {
+			model.addObject("Parking", p2);
+			return new ModelAndView("IUpload");			
+		} else {
+			return new ModelAndView("PReg");			
+		}
+		
+		
 	}	
 
 	@RequestMapping(value="/reg")
 	public ModelAndView regcod(@RequestParam Map<String,String> requestParams) {
 		Users u1 = new Users();
-		u1.setFname(requestParams.get("first"));
+		u1.setFname(requestParams.get("fname"));
 		u1.setMname(requestParams.get("mname"));
 		u1.setLname(requestParams.get("lname"));
 		u1.setGender(requestParams.get("gender"));
-		u1.setUsername(requestParams.get("dob"));
-		u1.setPassword(requestParams.get("username"));
-		u1.setDob(requestParams.get("password"));
+		u1.setUsername(requestParams.get("username"));
+		u1.setPassword(requestParams.get("password"));
+		u1.setDob(requestParams.get("dob"));
 		u1.setLatitude(requestParams.get("latitude"));
 		u1.setLongitude(requestParams.get("longitude"));
 		u1.setArea(requestParams.get("area"));
@@ -82,11 +113,13 @@ public class ControllerClass {
 		u1.setCountry(requestParams.get("country"));
 		u1.setPincode(requestParams.get("pincode"));
 		u1.setUsertype("user");
-		System.out.println("latitude= "+u1.getLatitude());
-		System.out.println("logitude= "+u1.getLongitude());
-		System.out.println("pincode= "+u1.getPincode());
-
-		return new ModelAndView("PReg");
+		if ((!(u1.getLatitude().equals("")) && u1.getLatitude()!=null) || (!(u1.getLongitude().equals("")) && u1.getLongitude()!=null)) {
+			System.out.println(u1);
+			if (service.insertUser(u1)==1) {
+				return new ModelAndView("Login");				
+			}
+		} 
+		return new ModelAndView("UReg"); 		
 	}	
 	
 	@RequestMapping("/imageUp")
@@ -124,13 +157,13 @@ public class ControllerClass {
 	@RequestMapping("/Check")
 	public ModelAndView print(@RequestParam Map<String,String> requestParams) {
 		modelAndView=new ModelAndView("find");
-		System.out.println("loc= "+requestParams.get("loc")+", lat= "+requestParams.get("lat")+", lng= "+requestParams.get("lng"));
+//		System.out.println("loc= "+requestParams.get("loc")+", lat= "+requestParams.get("lat")+", lng= "+requestParams.get("lng"));
 		modelAndView.addObject("latitude", requestParams.get("lat"));
 		modelAndView.addObject("longitude", requestParams.get("lng"));		
 		modelAndView.addObject("loc", requestParams.get("loc"));
 		List<Parking> l1 = service.getParkings();		
 		for (Parking parking : l1) {
-			System.out.println(parking.getArea());			
+//			System.out.println(parking.getArea());			
 			modelAndView.addObject("parking", parking);			
 		}
 		return modelAndView;

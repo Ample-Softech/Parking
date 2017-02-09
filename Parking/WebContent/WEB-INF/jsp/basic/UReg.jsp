@@ -9,8 +9,8 @@
 
 <script src="http://momentjs.com/downloads/moment-with-locales.js"></script>
 <script src="http://momentjs.com/downloads/moment-timezone-with-data.js"></script>
-<style type="text/css">
 
+<style type="text/css">
         /* Register(Page) : Credit to bootsnipp.com for the css for the color graph */
 .colorgraph {
   height: 5px;
@@ -33,27 +33,27 @@
         	if (status == google.maps.GeocoderStatus.OK) {
             	var latitude = results[0].geometry.location.lat();
             	var longitude = results[0].geometry.location.lng();
-	  			alert("address: "+address+"\nLatitude: " + latitude + "\nLongitude: " + longitude);
-// 	       		window.location = "/Parking/reg.basic?latitude=" + latitude + "&longitude=" + longitude;
-//  				return true;
-					document.getElementById("latitude").value = latitude;
-					document.getElementById("longitude").value = longitude;
-					document.getElementById("myForm").submit();
+				document.getElementById("latitude").value = latitude;
+				document.getElementById("longitude").value = longitude;
+				document.getElementById("myForm").submit();
+//	  			alert("address: "+address+"\nLatitude: " + latitude + "\nLongitude: " + longitude);
+//				window.location = "/Parking/reg.basic?latitude=" + latitude + "&longitude=" + longitude;
+  				return true;
         	} else {
             	alert("Request failed.");
             	return false;
         	}
     	});
-	}  
+	}
 </script>
 </head>
 <body>
 
 	<jsp:include page="/mainMenu.jsp" />
 
-  <form action="/Parking/reg.basic" method="post" id="myForm" name="myForm">  
-  <input type="text" name="latitude" id="latitude" />
-  <input type="text" name="longitude" id="longitude" />		
+<form action="/Parking/reg.basic" method="post" id="myForm" name="myForm" onsubmit="return getLocation()">  
+	<input type="hidden" name="latitude" id="latitude" />
+	<input type="hidden" name="longitude" id="longitude" />
 <div class="container register well">
 	<div class="row">
     	<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
