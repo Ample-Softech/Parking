@@ -51,6 +51,7 @@
                     					<p class="help-block">Only jpg,jpeg,png and gif file with maximum size of 1 MB is allowed.</p>
                   				</div>
                   				<input type="submit" class="btn btn-lg btn-primary" value="Upload">
+								<a href="/Parking/regDone.basic" class="btn btn-lg btn-success"> Skip </a>
                 			</form>
             			</div>
           			</div>

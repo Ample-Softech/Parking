@@ -37,4 +37,9 @@ public class Services implements ServicesInf {
 		return dao.inserPark(p1);
 	}
 
+	@Override
+	public int insertImage(int uid, String path) {
+		return dao.insertImage(uid, path);
+	}
+
 }

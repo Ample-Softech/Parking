@@ -27,23 +27,101 @@
 <script type="text/javascript">
 	function getLocation() {
     	var geocoder = new google.maps.Geocoder();
-//    	var address = document.getElementById('pincode').value;
     	var address = document.forms["myForm"]["pincode"].value;
-    	geocoder.geocode({ 'address': address }, function (results, status) {
-        	if (status == google.maps.GeocoderStatus.OK) {
-            	var latitude = results[0].geometry.location.lat();
-            	var longitude = results[0].geometry.location.lng();
-				document.getElementById("latitude").value = latitude;
-				document.getElementById("longitude").value = longitude;
-				document.getElementById("myForm").submit();
-//	  			alert("address: "+address+"\nLatitude: " + latitude + "\nLongitude: " + longitude);
-//				window.location = "/Parking/reg.basic?latitude=" + latitude + "&longitude=" + longitude;
-  				return true;
-        	} else {
-            	alert("Request failed.");
-            	return false;
-        	}
-    	});
+    	var fname = document.forms["myForm"]["fname"].value;
+    	var mname = document.forms["myForm"]["mname"].value;
+    	var lname = document.forms["myForm"]["lname"].value;
+    	var gender = document.forms["myForm"]["gender"].value;
+    	var dob = document.forms["myForm"]["dob"].value;
+    	var area = document.forms["myForm"]["area"].value;
+    	var city = document.forms["myForm"]["city"].value;
+    	var state = document.forms["myForm"]["state"].value;
+    	var country = document.forms["myForm"]["country"].value;
+    	var pass1 = document.forms["myForm"]["password"].value;
+    	var pass2 = document.forms["myForm"]["passconf"].value;
+
+        if(fname=="" || fname!=(fname.split(' ').join('+'))){
+    		document.getElementById("fname").focus();
+    		return false;
+    	}
+        if(mname=="" || mname!=(mname.split(' ').join('+'))){
+    		document.getElementById("mname").focus();
+    		return false;
+    	}
+        if(lname=="" || lname!=(lname.split(' ').join('+'))){
+    		document.getElementById("lname").focus();
+    		return false;
+    	}
+        if(gender=="" || gender!=(gender.split(' ').join('+'))){
+    		document.getElementById("gender").focus();
+    		return false;
+    	}
+        if(dob=="" || dob!=(dob.split(' ').join('+'))){
+    		document.getElementById("dob").focus();
+    		return false;
+    	}
+        if(area=="" || area!=(area.split(' ').join('+'))){
+    		document.getElementById("area").focus();
+    		return false;
+    	}
+        if(city=="" || city!=(city.split(' ').join('+'))){
+    		document.getElementById("city").focus();
+    		return false;
+    	}
+        if(state=="" || state!=(state.split(' ').join('+'))){
+    		document.getElementById("state").focus();
+    		return false;
+    	}
+        if(country=="" || country!=(country.split(' ').join('+'))){
+    		document.getElementById("country").focus();
+    		return false;
+    	}
+        
+        //Password
+    	if((pass1!="") && (pass1==(pass1.split(' ').join('+')))){
+			if(pass1.length > 3){
+				if(pass1!=pass2){
+		    		document.getElementById("password").focus();
+		    		document.getElementById("passconf").focus();
+		    		return false;    							
+				}
+			} else {
+	    		document.getElementById("password").focus();
+	    		document.getElementById("passconf").focus();
+	    		return false;    		
+			}
+    	} else {
+//    		document.getElementById("errorMessage").innerHTML="username Field should not be blank or with spaces..";
+//    		window.alert("username Field should not be blank or with spaces..");
+    		document.getElementById("password").focus();
+    		document.getElementById("passconf").focus();
+    		return false;    		
+    	}
+    	
+        //GeoLocation
+    	if((address!="") && (address==(address.split(' ').join('+')))){
+        	geocoder.geocode({'address': address }, function (results, status) {
+            	if (status == google.maps.GeocoderStatus.OK) {
+                	var latitude = results[0].geometry.location.lat();
+                	var longitude = results[0].geometry.location.lng();
+    				document.getElementById("latitude").value = latitude;
+    				document.getElementById("longitude").value = longitude;
+    				document.getElementById("myForm").submit();
+//    	  			alert("address: "+address+"\nLatitude: " + latitude + "\nLongitude: " + longitude);
+//    				window.location = "/Parking/reg.basic?latitude=" + latitude + "&longitude=" + longitude;
+      				return true;
+            	} else {
+                	alert("Request failed.");
+                	return false;
+            	}
+        	});        	
+    	} else {
+//    		document.getElementById("errorMessage").innerHTML="username Field should not be blank or with spaces..";
+//    		window.alert("username Field should not be blank or with spaces..");    		
+    		document.getElementById("pincode").focus();    		
+    		return false;
+    	}
+    	
 	}
 </script>
 </head>
@@ -154,7 +232,7 @@
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-							<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
+							<input type="password" name="passconf" required="required" id="passconf" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
 						</div>
 					</div>
 				</div>

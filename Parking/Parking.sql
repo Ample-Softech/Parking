@@ -169,13 +169,13 @@ CREATE TABLE `parkspace` (
   `state` varchar(45) DEFAULT NULL,
   `country` varchar(45) DEFAULT NULL,
   `pincode` varchar(45) DEFAULT NULL,
-  `lat` varchar(45) NOT NULL,
-  `lng` varchar(45) NOT NULL,
-  `delflag` varchar(45) DEFAULT NULL,
+  `latitude` varchar(45) NOT NULL,
+  `longitude` varchar(45) NOT NULL,
   `image` varchar(45) DEFAULT NULL,
+  `userid` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -184,7 +184,7 @@ CREATE TABLE `parkspace` (
 
 LOCK TABLES `parkspace` WRITE;
 /*!40000 ALTER TABLE `parkspace` DISABLE KEYS */;
-INSERT INTO `parkspace` VALUES (1,'Chinchwad, Maharashtra','pune','MH','India','411010','18.6297811','73.79970939999998','123','images/parkinks/cycle.jpeg');
+INSERT INTO `parkspace` VALUES (1,'Chinchwad, Maharashtra','pune','MH','India','411010','18.6297811','73.79970939999998','images/parkinks/cycle.jpeg',0);
 /*!40000 ALTER TABLE `parkspace` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -278,13 +278,15 @@ CREATE TABLE `users` (
   `password` varchar(45) NOT NULL,
   `dob` varchar(45) DEFAULT NULL,
   `latitude` varchar(45) DEFAULT NULL,
-  `logitude` varchar(45) DEFAULT NULL,
+  `longitude` varchar(45) DEFAULT NULL,
   `area` varchar(45) DEFAULT NULL,
-  `state` varchar(45) DEFAULT NULL,
   `city` varchar(45) DEFAULT NULL,
+  `state` varchar(45) DEFAULT NULL,
+  `country` varchar(45) DEFAULT NULL,
+  `pincode` varchar(45) DEFAULT NULL,
   `usertype` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -293,6 +295,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (5,'Sagar','Vijay','Pawar','male','sagar005pawar@gmail.com','s','2017-02-14','18.4865807','73.85011029999998','Swargate','Pune','Maharashtra','India','411009','user');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -328,4 +331,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-02-01 12:32:02
+-- Dump completed on 2017-02-09 21:19:12

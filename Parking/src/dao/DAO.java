@@ -13,6 +13,16 @@ import basic.Pojo.Users;
 public class DAO implements DaoInf {
 
 	JdbcTemplate template;
+
+	@Override
+	public int insertImage(int uid, String path) {
+		try {
+			String sql = "UPDATE `parking`.`parkspace` SET `image`='"+path+"' WHERE `id`='"+uid+"';";
+			return template.update(sql);			
+		} catch (Exception e) {
+			return 0;
+		}		
+	}
 	
 	@Override
 	public Parking inserPark(Parking p1) {
@@ -103,5 +113,6 @@ public class DAO implements DaoInf {
 	public void setTemplate(JdbcTemplate template) {
 		this.template = template;
 	}
+
 
 }

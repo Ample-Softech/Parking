@@ -32,7 +32,9 @@
 <hr class="colorgraph">
 	    <div class="col-md-12 well text-center">  
                 <h1 class="text-center"> FINALLY </h1>
-					<form></form>                
+					<form></form>         
+					<br><br>
+					<a href="/Parking/home.basic" class="btn btn-lg btn-success"> Done </a>
             </div>
 	<hr class="colorgraph">
 </div>	

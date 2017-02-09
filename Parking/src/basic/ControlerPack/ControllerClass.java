@@ -14,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,7 +29,7 @@ import basic.Pojo.Users;
 import services.Services;
 
 @Controller
-@SessionAttributes({"User"})
+@SessionAttributes({"Users","Parking"})
 public class ControllerClass {
 
 	private static final Logger logger = LoggerFactory.getLogger(ControllerClass.class);
@@ -59,20 +60,20 @@ public class ControllerClass {
 
 	
 	@RequestMapping(value="/logValid")
-	public ModelAndView logValid(@RequestParam Map<String,String> requestParams) {
-		ModelAndView model = new ModelAndView();
-		Users u1=service.getUser(requestParams.get("username"), requestParams.get("password"));
+	public ModelAndView logValid(Model model, @RequestParam Map<String,String> requestParams) {
+		Users u1 = service.getUser(requestParams.get("username"), requestParams.get("password"));
 		if (u1!=null) {
-			model.addObject("User", u1);
+			System.out.println("id= "+u1.getId());
+			model.addAttribute("Users", u1);
 			return new ModelAndView("PReg");			
 		} else {
 			return new ModelAndView("Login");			
 		}
 	}	
-
+	
 	@RequestMapping(value="/psReg")
-	public ModelAndView psReg(@ModelAttribute("User") Users u1, @RequestParam Map<String,String> requestParams) {
-		ModelAndView model = new ModelAndView();
+	public ModelAndView psReg(Model model, @ModelAttribute("Users") Users u1, @RequestParam Map<String,String> requestParams) {
+		System.out.println("id= "+u1.getId());
 		Parking p1 = new Parking();
 		Parking p2 = null;
 		p1.setArea(requestParams.get("area"));
@@ -86,7 +87,7 @@ public class ControllerClass {
 		
 		p2 = service.inserPark(p1);
 		if (p2!=null) {
-			model.addObject("Parking", p2);
+			model.addAttribute("Parking", p2);
 			return new ModelAndView("IUpload");			
 		} else {
 			return new ModelAndView("PReg");			
@@ -122,11 +123,13 @@ public class ControllerClass {
 		return new ModelAndView("UReg"); 		
 	}	
 	
+	
 	@RequestMapping("/imageUp")
-	public ModelAndView imageUp(@RequestParam("file") MultipartFile file) {
+	public ModelAndView imageUp(@ModelAttribute("Parking") Parking p1, @RequestParam("file") MultipartFile file) {
 		if (!file.isEmpty()) {
 			String content = file.getContentType();
 			try {
+				System.out.println(p1.getId());
 				if (content.equals("image/jpeg") || content.equals("image/gif") || content.equals("image/png")) {
 					byte[] bytes = file.getBytes();
 					// Create the file on server
@@ -135,9 +138,15 @@ public class ControllerClass {
 					stream.write(bytes);
 					stream.close();
 					logger.info("Server File Location=" + serverFile.getAbsolutePath());
+					String path = "images/parkinks/"+ file.getOriginalFilename();
 					System.out.println("(for db) images/parkinks/"+ file.getOriginalFilename());
-					System.out.println("You successfully uploaded file");
-					modelAndView=new ModelAndView("RegDone");					
+					if (service.insertImage(p1.getId(), path)==1) {
+						modelAndView=new ModelAndView("RegDone");
+						System.out.println("You successfully uploaded file");
+					} else {
+						modelAndView=new ModelAndView("IUpload");
+						System.out.println("You failed to upload(in SQL insertion)  => " + path +"for park id= "+p1.getId());
+					}
 				} else {
 					modelAndView=new ModelAndView("IUpload");
 					System.out.println("You failed to upload(content mismatch)  => " + content);
@@ -194,8 +203,14 @@ public class ControllerClass {
 	@RequestMapping(value="/register")
 	public ModelAndView register()
 	{		
-		ModelAndView m= new ModelAndView("UReg");
-		return  m;
+		return new ModelAndView("UReg");
 	}
 	
+	@RequestMapping(value="/regDone")
+	public ModelAndView regDone()
+	{		
+		return new ModelAndView("RegDone");
+	}
+
+		
 }
