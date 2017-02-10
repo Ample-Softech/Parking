@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -47,11 +48,21 @@ public class ControllerClass {
 	
 	//sagar...
 
-	@RequestMapping(value="/SignOut", method=RequestMethod.GET)
-	public String logout(HttpSession session) {
-		session.invalidate();
-		return "redirect:/";
-	}
+	@RequestMapping(value = "/SignOut", method = RequestMethod.GET)
+    public String loadApp() {
+        HttpSession session= request.getSession(false);
+        SecurityContextHolder.clearContext();
+        if(session != null) {
+            session.invalidate();
+        }
+        return "redirect:/";
+    }
+	
+//	@RequestMapping(value="/SignOut", method=RequestMethod.GET)
+//	public String logout(HttpSession session) {		
+//		session.invalidate();
+//		return "redirect:/";
+//	}
 	
 	@RequestMapping("/checkpin")
 	public ModelAndView pincode(@RequestParam Map<String,String> requestParams) {
@@ -214,7 +225,5 @@ public class ControllerClass {
 	public ModelAndView regDone()
 	{		
 		return new ModelAndView("RegDone");
-	}
-
-		
+	}		
 }

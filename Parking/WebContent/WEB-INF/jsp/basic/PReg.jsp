@@ -106,7 +106,7 @@
 					</div>										
 				</div>
 				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-12" ">
+					<div class="col-xs-12 col-sm-12 col-md-12">
 						<label >Features: </label>
 						<input type="checkbox" class="" value="" name="" /><label for="">CCTV</label>
 						<input type="checkbox" class="" value="" name="" /><label for="">Garage</label>
@@ -123,7 +123,7 @@
 					</div>
 		<!-- id="activate-step-3" -->
 					<div class="col-xs-12 col-md-6">
-						<a href="/Parking/regDone.basic" class="btn btn-success btn-block btn-lg"> Skip </a>
+						<a href="/Parking/home.basic" class="btn btn-success btn-block btn-lg"> Skip </a>
 					</div>
 				</div>
 			</form>

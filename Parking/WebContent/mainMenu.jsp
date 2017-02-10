@@ -19,12 +19,14 @@
         <li><a href="#">Drivers</a></li>
         <li><a href="#">Space Owners</a></li>
       </ul>
-      	<c:if test="${Users.fname != null }">
+      	<c:if test="${Users!=null}">
+      		<c:out value="${Users.fname }"></c:out>
             <ul class="nav navbar-nav navbar-right">	
-	    	    <li><a href="/Parking/SignOut.basic"><span class="glyphicon glyphicon-log-out"></span> Logout </a></li>       		
+	    	    <li><a href="/Parking/SignOut.basic"><span class="glyphicon glyphicon-log-out"></span> Logout </a></li>
 		    </ul>
  		</c:if>
-      	<c:if test="${Users.fname == null }">
+      	<c:if test="${Users==null}">	
+      	    <c:out value="${Users.fname }"></c:out>
 			<ul class="nav navbar-nav navbar-right">
         		<li><a href="/Parking/register.basic"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         		<li><a href="/Parking/LoginPage.basic"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> 
@@ -35,4 +37,3 @@
 </nav>
 </body>
 </html>
-

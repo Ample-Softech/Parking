@@ -66,8 +66,8 @@
         	document.getElementById("dob").focus();
     		return false;
     	}
-        if(area=="" || area!=(area.split(' ').join('+'))){
-    		window.alert("Area Field should not be blank or with spaces..");
+        if(area=="" || area!=area.trim()){
+    		window.alert("Area Field should not be blank or with outer spaces..");
         	document.getElementById("area").focus();
     		return false;
     	}
@@ -76,7 +76,7 @@
         	document.getElementById("city").focus();
     		return false;
     	}
-        if(state=="" || state!=(state.split(' ').join('+'))){
+        if(state=="" || state!=state.trim()){
     		window.alert("State Field should not be blank or with spaces..");
         	document.getElementById("state").focus();
     		return false;
@@ -290,7 +290,7 @@
 				<div class="col-xs-4 col-sm-3 col-md-3">
 					<span class="button-checkbox">
 						<button type="button" class="btn" data-color="info" tabindex="7">I Agree</button>
-                    	<input type="checkbox" required="required" name="t&c" id="t&c" class="hidden" value="one">
+                    	<input type="checkbox" required="required" name="t&c" id="t&c" class="hidden" value="one" />
 					</span>
 				</div>
 				<div class="col-xs-8 col-sm-9 col-md-9">
@@ -305,7 +305,7 @@
 					<button id="Register" onclick="getLocation()" class="btn btn-primary btn-block btn-lg"> Register </button>
 				</div>
 				<div class="col-xs-12 col-md-6">
-					<a href="/Parking/LoginPage.basic" class="btn btn-success btn-block btn-lg">Sign In</a>
+					<a href="/Parking/LoginPage.basic" class="btn btn-success btn-block btn-lg"> Sign In </a>
 				</div>
 			</div>
     		</div>
@@ -339,6 +339,8 @@
 </div>
 </form>
 <!-- End register  -->
-<jsp:include page="/footer.jsp"></jsp:include>
+
+	<jsp:include page="/footer.jsp"></jsp:include>
+
 </body>
 </html>
