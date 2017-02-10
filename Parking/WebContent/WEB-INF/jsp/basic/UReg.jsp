@@ -39,60 +39,78 @@
     	var country = document.forms["myForm"]["country"].value;
     	var pass1 = document.forms["myForm"]["password"].value;
     	var pass2 = document.forms["myForm"]["passconf"].value;
-
+    	var tc = document.forms["myForm"]["t&c"].value;
+    	
         if(fname=="" || fname!=(fname.split(' ').join('+'))){
-    		document.getElementById("fname").focus();
+    		window.alert("Firstname Field should not be blank or with spaces..");
+        	document.getElementById("fname").focus();
     		return false;
     	}
         if(mname=="" || mname!=(mname.split(' ').join('+'))){
-    		document.getElementById("mname").focus();
+    		window.alert("Middlename Field should not be blank or with spaces..");
+        	document.getElementById("mname").focus();
     		return false;
     	}
         if(lname=="" || lname!=(lname.split(' ').join('+'))){
-    		document.getElementById("lname").focus();
+    		window.alert("Lastname Field should not be blank or with spaces..");
+        	document.getElementById("lname").focus();
     		return false;
     	}
         if(gender=="" || gender!=(gender.split(' ').join('+'))){
-    		document.getElementById("gender").focus();
+    		window.alert("Gender Field should not be blank..");
+        	document.getElementById("gender").focus();
     		return false;
     	}
         if(dob=="" || dob!=(dob.split(' ').join('+'))){
-    		document.getElementById("dob").focus();
+    		window.alert("DOB Field should not be blank or with spaces..");
+        	document.getElementById("dob").focus();
     		return false;
     	}
         if(area=="" || area!=(area.split(' ').join('+'))){
-    		document.getElementById("area").focus();
+    		window.alert("Area Field should not be blank or with spaces..");
+        	document.getElementById("area").focus();
     		return false;
     	}
         if(city=="" || city!=(city.split(' ').join('+'))){
-    		document.getElementById("city").focus();
+    		window.alert("City Field should not be blank or with spaces..");
+        	document.getElementById("city").focus();
     		return false;
     	}
         if(state=="" || state!=(state.split(' ').join('+'))){
-    		document.getElementById("state").focus();
+    		window.alert("State Field should not be blank or with spaces..");
+        	document.getElementById("state").focus();
     		return false;
     	}
         if(country=="" || country!=(country.split(' ').join('+'))){
-    		document.getElementById("country").focus();
+    		window.alert("Country Field should not be blank or with spaces..");
+        	document.getElementById("country").focus();
     		return false;
     	}
+
+        if(tc!='one'){
+    		window.alert("T&C not Check..");
+        	document.getElementById("t&c").focus();
+    		return false;
+    	}
+
         
         //Password
     	if((pass1!="") && (pass1==(pass1.split(' ').join('+')))){
 			if(pass1.length > 3){
 				if(pass1!=pass2){
+		    		window.alert("Password Fields not macthed");
 		    		document.getElementById("password").focus();
 		    		document.getElementById("passconf").focus();
 		    		return false;    							
 				}
 			} else {
+	    		window.alert("password Field should not be less than lenth 3..");				
 	    		document.getElementById("password").focus();
-	    		document.getElementById("passconf").focus();
 	    		return false;    		
 			}
     	} else {
 //    		document.getElementById("errorMessage").innerHTML="username Field should not be blank or with spaces..";
-//    		window.alert("username Field should not be blank or with spaces..");
+    		window.alert("password Field should not be blank or with spaces..");
     		document.getElementById("password").focus();
     		document.getElementById("passconf").focus();
     		return false;    		
@@ -111,13 +129,13 @@
 //    				window.location = "/Parking/reg.basic?latitude=" + latitude + "&longitude=" + longitude;
       				return true;
             	} else {
-                	alert("Request failed.");
+                	alert("GeoLocation Request failed.");
                 	return false;
             	}
         	});        	
     	} else {
 //    		document.getElementById("errorMessage").innerHTML="username Field should not be blank or with spaces..";
-//    		window.alert("username Field should not be blank or with spaces..");    		
+    		window.alert("Pincode Field should not be blank or with spaces..");
     		document.getElementById("pincode").focus();    		
     		return false;
     	}
@@ -176,18 +194,19 @@
 							<div class="input-group date" id="datetimepicker">
             	        		<input class="form-control input-lg" required="required" type="date" name="dob" id="dob" placeholder="DOB" />
         	            		<span class="input-group-addon add-on">
-	               	         		<span class="glyphicon glyphicon-calendar"></span>               	         		
+	               	         		<span class="glyphicon glyphicon-calendar"></span>
                 	    		</span>
                 			</div>
 						</div>
 					</div>
 		<script>
          $(document).ready(function() {
+        	 var date = new Date();
         	    $('#dateRangePicker')
         	        .datepicker({
         	            format: 'mm/dd/yyyy',
-        	            startDate: '01/01/2010',
-        	            endDate: '12/30/2020'
+        	            startDate: '01/01/1950',
+        	            endDate: (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear()
         	        })
         	        .on('changeDate', function(e) {
         	            // Revalidate the date field
@@ -209,8 +228,8 @@
         	                    },
         	                    date: {
         	                        format: 'MM/DD/YYYY',
-        	                        min: '01/01/2010',
-        	                        max: '12/30/2020',
+        	                        min: '01/01/1950',
+        	                        max: (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear(),
         	                        message: 'The date is not a valid'
         	                    }
         	                }
@@ -271,7 +290,7 @@
 				<div class="col-xs-4 col-sm-3 col-md-3">
 					<span class="button-checkbox">
 						<button type="button" class="btn" data-color="info" tabindex="7">I Agree</button>
-                    	<input type="checkbox" required="required" name="t_and_c" id="t_and_c" class="hidden" value="1">
+                    	<input type="checkbox" required="required" name="t&c" id="t&c" class="hidden" value="one">
 					</span>
 				</div>
 				<div class="col-xs-8 col-sm-9 col-md-9">

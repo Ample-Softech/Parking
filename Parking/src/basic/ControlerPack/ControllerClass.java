@@ -5,10 +5,9 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.List;
 import java.util.Map;
-import java.util.Properties;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,6 +47,12 @@ public class ControllerClass {
 	
 	//sagar...
 
+	@RequestMapping(value="/SignOut", method=RequestMethod.GET)
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/";
+	}
+	
 	@RequestMapping("/checkpin")
 	public ModelAndView pincode(@RequestParam Map<String,String> requestParams) {
 		modelAndView=new ModelAndView("find");
@@ -57,7 +62,6 @@ public class ControllerClass {
 		modelAndView.addObject("loc", requestParams.get("loc"));
 		return modelAndView;
 	}
-
 	
 	@RequestMapping(value="/logValid")
 	public ModelAndView logValid(Model model, @RequestParam Map<String,String> requestParams) {

@@ -178,7 +178,7 @@ function GetLocation() {
             area.value = street;
             city.value = city1;
             pincode.value = address;
-            alert("address: "+address+"\nLatitude: " + latitude + "\nLongitude: " + longitude);
+//            alert("address: "+address+"\nLatitude: " + latitude + "\nLongitude: " + longitude);
 //       		window.location = "/Parking/Checkpin.basic?loc="+address+"&lat=" + latitude + "&lng=" + longitude;
 
 	        var fenway = {lat: latitude, lng: longitude};
