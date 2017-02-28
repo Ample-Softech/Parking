@@ -3,6 +3,7 @@ package basic.ControlerPack;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
@@ -107,10 +108,9 @@ public class ControllerClass {
 		} else {
 			return new ModelAndView("PReg");			
 		}
-		
-		
+				
 	}	
-
+	
 	@RequestMapping(value="/reg")
 	public ModelAndView regcod(@RequestParam Map<String,String> requestParams) {
 		Users u1 = new Users();

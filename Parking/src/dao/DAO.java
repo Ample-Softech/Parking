@@ -113,6 +113,5 @@ public class DAO implements DaoInf {
 	public void setTemplate(JdbcTemplate template) {
 		this.template = template;
 	}
-
-
+	
 }

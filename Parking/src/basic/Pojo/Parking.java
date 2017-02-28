@@ -4,6 +4,8 @@ public class Parking {
 
 	int id, userId;
 	String area, city, state, country, pincode, latitude, longitude, image;
+	private String [] features;   
+
 	public int getId() {
 		return id;
 	}
@@ -63,6 +65,12 @@ public class Parking {
 	}
 	public void setImage(String image) {
 		this.image = image;
+	}
+	public String[] getFeatures() {
+		return features;
+	}
+	public void setFeatures(String[] features) {
+		this.features = features;
 	}
 
 	
