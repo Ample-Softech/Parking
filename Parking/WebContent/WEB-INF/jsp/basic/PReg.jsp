@@ -135,7 +135,7 @@
 <!--  -->
 
 <jsp:include page="/footer.jsp"></jsp:include>
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy0y-BGBgl6fjl1zDhcBpgHHo6ZR6PXvY&libraries=places&callback=initMap"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ5r7UKO1smUmapgSi3dLV9MWkbFMi45M&libraries=places&callback=initMap" async defer></script>
 <script type="text/javascript">
 function GetLocation() {
     var geocoder = new google.maps.Geocoder();

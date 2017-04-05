@@ -2,8 +2,8 @@ package basic.Pojo;
 
 public class Parking {
 
-	int id, userId;
-	String area, city, state, country, pincode, latitude, longitude, image;
+	private int id, userId;
+	private String area, city, state, country, pincode, latitude, longitude, image;
 	private String [] features;   
 
 	public int getId() {

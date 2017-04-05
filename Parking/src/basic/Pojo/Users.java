@@ -2,8 +2,8 @@ package basic.Pojo;
 
 public class Users
 {
-	int id;
-	String fname, mname, lname, gender, username, password, dob, latitude, longitude, area, state, city, country, pincode, usertype;
+	private int id;
+	private String fname, mname, lname, gender, username, password, dob, latitude, longitude, area, state, city, country, pincode, usertype;
 
 	public int getId() {
 		return id;

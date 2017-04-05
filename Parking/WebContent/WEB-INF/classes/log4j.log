@@ -1,0 +1,251 @@
+2017-03-26 13:23:11 DEBUG ControllerClass:59 - DEBUG
+  2017-03-26 13:23:11  INFO ControllerClass:60 - INFO
+  2017-03-26 13:23:11  WARN ControllerClass:61 - WARN
+  2017-03-26 13:23:11 ERROR ControllerClass:62 - ERROR
+  2017-03-26 13:24:23  INFO XmlWebApplicationContext:982 - Closing WebApplicationContext for namespace 'basic-servlet': startup date [Sun Mar 26 13:23:04 IST 2017]; root of context hierarchy
+  2017-03-26 13:27:52 DEBUG ControllerClass:59 - DEBUG
+  2017-03-26 13:27:52  INFO ControllerClass:60 - INFO
+  2017-03-26 13:27:52  WARN ControllerClass:61 - WARN
+  2017-03-26 13:27:52 ERROR ControllerClass:62 - ERROR
+  2017-03-26 13:30:19 DEBUG ControllerClass:59 - DEBUG
+  2017-03-26 13:30:19  INFO ControllerClass:60 - INFO
+  2017-03-26 13:30:19  WARN ControllerClass:61 - WARN
+  2017-03-26 13:30:19 ERROR ControllerClass:62 - ERROR
+  2017-04-01 11:53:06 DEBUG ControllerClass:59 - DEBUG
+  2017-04-01 11:53:06  INFO ControllerClass:60 - INFO
+  2017-04-01 11:53:06  WARN ControllerClass:61 - WARN
+  2017-04-01 11:53:06 ERROR ControllerClass:62 - ERROR
+  2017-04-01 11:53:59 DEBUG ControllerClass:59 - DEBUG
+  2017-04-01 11:53:59  INFO ControllerClass:60 - INFO
+  2017-04-01 11:53:59  WARN ControllerClass:61 - WARN
+  2017-04-01 11:53:59 ERROR ControllerClass:62 - ERROR
+  2017-04-03 19:57:12 DEBUG ControllerClass:59 - DEBUG
+  2017-04-03 19:57:12  INFO ControllerClass:60 - INFO
+  2017-04-03 19:57:12  WARN ControllerClass:61 - WARN
+  2017-04-03 19:57:12 ERROR ControllerClass:62 - ERROR
+  2017-04-03 20:01:51 DEBUG ControllerClass:59 - DEBUG
+  2017-04-03 20:01:51  INFO ControllerClass:60 - INFO
+  2017-04-03 20:01:51  WARN ControllerClass:61 - WARN
+  2017-04-03 20:01:51 ERROR ControllerClass:62 - ERROR
+  2017-04-03 20:02:08 DEBUG JdbcTemplate:682 - Executing prepared SQL query
+  2017-04-03 20:02:08 DEBUG JdbcTemplate:616 - Executing prepared SQL statement [SELECT * FROM parking.users where `username`=? and `password`=?;]
+  2017-04-03 20:02:08 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-03 20:02:08 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-03 20:02:10 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-03 20:02:39 DEBUG JdbcTemplate:682 - Executing prepared SQL query
+  2017-04-03 20:02:39 DEBUG JdbcTemplate:616 - Executing prepared SQL statement [SELECT * FROM parking.users where `username`=? and `password`=?;]
+  2017-04-03 20:02:39 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-03 20:02:39 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-03 20:02:39 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-03 20:03:35 DEBUG ControllerClass:59 - DEBUG
+  2017-04-03 20:03:35  INFO ControllerClass:60 - INFO
+  2017-04-03 20:03:35  WARN ControllerClass:61 - WARN
+  2017-04-03 20:03:35 ERROR ControllerClass:62 - ERROR
+  2017-04-03 20:03:39 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-03 20:03:39 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-03 20:03:39 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-03 20:03:39 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-03 20:03:50 DEBUG ControllerClass:59 - DEBUG
+  2017-04-03 20:03:50  INFO ControllerClass:60 - INFO
+  2017-04-03 20:03:50  WARN ControllerClass:61 - WARN
+  2017-04-03 20:03:50 ERROR ControllerClass:62 - ERROR
+  2017-04-03 20:05:27 DEBUG ControllerClass:59 - DEBUG
+  2017-04-03 20:05:27  INFO ControllerClass:60 - INFO
+  2017-04-03 20:05:27  WARN ControllerClass:61 - WARN
+  2017-04-03 20:05:27 ERROR ControllerClass:62 - ERROR
+  2017-04-03 20:06:33 DEBUG ControllerClass:59 - DEBUG
+  2017-04-03 20:06:33  INFO ControllerClass:60 - INFO
+  2017-04-03 20:06:33  WARN ControllerClass:61 - WARN
+  2017-04-03 20:06:33 ERROR ControllerClass:62 - ERROR
+  2017-04-04 20:44:23 DEBUG ControllerClass:59 - DEBUG
+  2017-04-04 20:44:23  INFO ControllerClass:60 - INFO
+  2017-04-04 20:44:23  WARN ControllerClass:61 - WARN
+  2017-04-04 20:44:23 ERROR ControllerClass:62 - ERROR
+  2017-04-04 20:45:00 DEBUG ControllerClass:59 - DEBUG
+  2017-04-04 20:45:00  INFO ControllerClass:60 - INFO
+  2017-04-04 20:45:00  WARN ControllerClass:61 - WARN
+  2017-04-04 20:45:00 ERROR ControllerClass:62 - ERROR
+  2017-04-04 20:45:15 DEBUG ControllerClass:59 - DEBUG
+  2017-04-04 20:45:15  INFO ControllerClass:60 - INFO
+  2017-04-04 20:45:15  WARN ControllerClass:61 - WARN
+  2017-04-04 20:45:15 ERROR ControllerClass:62 - ERROR
+  2017-04-04 20:45:21 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-04 20:45:21 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-04 20:45:21 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-04 20:45:23 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-04 20:46:21 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-04 20:46:21 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-04 20:46:21 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-04 20:46:21 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-04 20:46:31 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-04 20:46:31 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-04 20:46:31 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-04 20:46:31 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-04 20:46:47 DEBUG ControllerClass:59 - DEBUG
+  2017-04-04 20:46:47  INFO ControllerClass:60 - INFO
+  2017-04-04 20:46:47  WARN ControllerClass:61 - WARN
+  2017-04-04 20:46:47 ERROR ControllerClass:62 - ERROR
+  2017-04-04 20:46:50 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-04 20:46:50 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-04 20:46:50 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-04 20:46:50 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-04 20:55:10 DEBUG ControllerClass:59 - DEBUG
+  2017-04-04 20:55:10  INFO ControllerClass:60 - INFO
+  2017-04-04 20:55:10  WARN ControllerClass:61 - WARN
+  2017-04-04 20:55:10 ERROR ControllerClass:62 - ERROR
+  2017-04-04 20:55:26 DEBUG ControllerClass:59 - DEBUG
+  2017-04-04 20:55:26  INFO ControllerClass:60 - INFO
+  2017-04-04 20:55:26  WARN ControllerClass:61 - WARN
+  2017-04-04 20:55:26 ERROR ControllerClass:62 - ERROR
+  2017-04-04 20:55:41 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-04 20:55:41 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-04 20:55:41 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-04 20:55:42 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-04 20:57:49 DEBUG ControllerClass:59 - DEBUG
+  2017-04-04 20:57:49  INFO ControllerClass:60 - INFO
+  2017-04-04 20:57:49  WARN ControllerClass:61 - WARN
+  2017-04-04 20:57:49 ERROR ControllerClass:62 - ERROR
+  2017-04-04 20:57:53 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-04 20:57:53 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-04 20:57:53 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-04 20:57:53 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-04 20:58:08 DEBUG ControllerClass:59 - DEBUG
+  2017-04-04 20:58:08  INFO ControllerClass:60 - INFO
+  2017-04-04 20:58:08  WARN ControllerClass:61 - WARN
+  2017-04-04 20:58:08 ERROR ControllerClass:62 - ERROR
+  2017-04-04 20:58:15 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-04 20:58:15 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-04 20:58:15 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-04 20:58:15 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-04 21:00:04 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-04 21:00:04 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-04 21:00:04 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-04 21:00:04 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-04 21:01:33 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-04 21:01:33 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-04 21:01:33 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-04 21:01:33 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-04 21:01:36 DEBUG ControllerClass:59 - DEBUG
+  2017-04-04 21:01:36  INFO ControllerClass:60 - INFO
+  2017-04-04 21:01:36  WARN ControllerClass:61 - WARN
+  2017-04-04 21:01:36 ERROR ControllerClass:62 - ERROR
+  2017-04-04 21:01:43 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-04 21:01:43 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-04 21:01:43 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-04 21:01:43 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-04 21:04:36 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-04 21:04:36 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-04 21:04:36 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-04 21:04:36 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-04 21:04:42 DEBUG ControllerClass:59 - DEBUG
+  2017-04-04 21:04:42  INFO ControllerClass:60 - INFO
+  2017-04-04 21:04:42  WARN ControllerClass:61 - WARN
+  2017-04-04 21:04:42 ERROR ControllerClass:62 - ERROR
+  2017-04-04 21:04:51 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-04 21:04:51 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-04 21:04:51 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-04 21:04:51 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-04 21:05:38 DEBUG ControllerClass:59 - DEBUG
+  2017-04-04 21:05:38  INFO ControllerClass:60 - INFO
+  2017-04-04 21:05:38  WARN ControllerClass:61 - WARN
+  2017-04-04 21:05:38 ERROR ControllerClass:62 - ERROR
+  2017-04-04 21:06:06 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-04 21:06:06 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-04 21:06:06 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-04 21:06:06 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-04 21:09:00 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-04 21:09:00 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-04 21:09:00 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-04 21:09:00 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-05 13:44:38 DEBUG ControllerClass:59 - DEBUG
+  2017-04-05 13:44:39  INFO ControllerClass:60 - INFO
+  2017-04-05 13:44:39  WARN ControllerClass:61 - WARN
+  2017-04-05 13:44:39 ERROR ControllerClass:62 - ERROR
+  2017-04-05 13:45:06 DEBUG ControllerClass:59 - DEBUG
+  2017-04-05 13:45:06  INFO ControllerClass:60 - INFO
+  2017-04-05 13:45:06  WARN ControllerClass:61 - WARN
+  2017-04-05 13:45:06 ERROR ControllerClass:62 - ERROR
+  2017-04-05 13:45:16 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-05 13:45:16 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-05 13:45:16 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-05 13:45:17 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-05 13:45:17 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-05 13:45:17 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-05 13:45:18 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-05 13:45:18 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-05 13:46:49 DEBUG ControllerClass:59 - DEBUG
+  2017-04-05 13:46:49  INFO ControllerClass:60 - INFO
+  2017-04-05 13:46:49  WARN ControllerClass:61 - WARN
+  2017-04-05 13:46:49 ERROR ControllerClass:62 - ERROR
+  2017-04-05 13:47:32 DEBUG ControllerClass:59 - DEBUG
+  2017-04-05 13:47:32  INFO ControllerClass:60 - INFO
+  2017-04-05 13:47:32  WARN ControllerClass:61 - WARN
+  2017-04-05 13:47:32 ERROR ControllerClass:62 - ERROR
+  2017-04-05 13:47:51 DEBUG ControllerClass:59 - DEBUG
+  2017-04-05 13:47:51  INFO ControllerClass:60 - INFO
+  2017-04-05 13:47:51  WARN ControllerClass:61 - WARN
+  2017-04-05 13:47:51 ERROR ControllerClass:62 - ERROR
+  2017-04-05 13:48:30 DEBUG ControllerClass:59 - DEBUG
+  2017-04-05 13:48:30  INFO ControllerClass:60 - INFO
+  2017-04-05 13:48:30  WARN ControllerClass:61 - WARN
+  2017-04-05 13:48:30 ERROR ControllerClass:62 - ERROR
+  2017-04-05 13:48:47 DEBUG ControllerClass:59 - DEBUG
+  2017-04-05 13:48:47  INFO ControllerClass:60 - INFO
+  2017-04-05 13:48:47  WARN ControllerClass:61 - WARN
+  2017-04-05 13:48:47 ERROR ControllerClass:62 - ERROR
+  2017-04-05 13:48:47 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-05 13:48:47 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-05 13:48:47 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-05 13:48:47 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-05 13:49:01 DEBUG ControllerClass:59 - DEBUG
+  2017-04-05 13:49:01  INFO ControllerClass:60 - INFO
+  2017-04-05 13:49:01  WARN ControllerClass:61 - WARN
+  2017-04-05 13:49:01 ERROR ControllerClass:62 - ERROR
+  2017-04-05 13:49:21 DEBUG ControllerClass:59 - DEBUG
+  2017-04-05 13:49:21  INFO ControllerClass:60 - INFO
+  2017-04-05 13:49:21  WARN ControllerClass:61 - WARN
+  2017-04-05 13:49:21 ERROR ControllerClass:62 - ERROR
+  2017-04-05 13:52:40 DEBUG ControllerClass:59 - DEBUG
+  2017-04-05 13:52:40  INFO ControllerClass:60 - INFO
+  2017-04-05 13:52:40  WARN ControllerClass:61 - WARN
+  2017-04-05 13:52:40 ERROR ControllerClass:62 - ERROR
+  2017-04-05 13:52:53 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-05 13:52:53 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-05 13:52:53 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-05 13:52:53 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-05 13:52:57 DEBUG ControllerClass:59 - DEBUG
+  2017-04-05 13:52:57  INFO ControllerClass:60 - INFO
+  2017-04-05 13:52:57  WARN ControllerClass:61 - WARN
+  2017-04-05 13:52:57 ERROR ControllerClass:62 - ERROR
+  2017-04-05 13:53:20 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-05 13:53:20 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-05 13:53:20 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-05 13:53:20 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-05 13:55:54 DEBUG ControllerClass:59 - DEBUG
+  2017-04-05 13:55:54  INFO ControllerClass:60 - INFO
+  2017-04-05 13:55:54  WARN ControllerClass:61 - WARN
+  2017-04-05 13:55:54 ERROR ControllerClass:62 - ERROR
+  2017-04-05 13:55:59 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-05 13:55:59 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-05 13:55:59 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-05 13:55:59 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-05 13:56:51 DEBUG JdbcTemplate:682 - Executing prepared SQL query
+  2017-04-05 13:56:51 DEBUG JdbcTemplate:616 - Executing prepared SQL statement [SELECT * FROM parking.users where `username`=? and `password`=?;]
+  2017-04-05 13:56:51 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-05 13:56:51 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-05 13:56:51 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-05 13:57:02 DEBUG JdbcTemplate:682 - Executing prepared SQL query
+  2017-04-05 13:57:02 DEBUG JdbcTemplate:616 - Executing prepared SQL statement [SELECT * FROM parking.users where `username`=? and `password`=?;]
+  2017-04-05 13:57:02 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-05 13:57:02 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-05 13:57:02 DEBUG StatementCreatorUtils:266 - JDBC 3.0 getParameterType call not supported - using fallback method instead: java.sql.SQLException: Parameter metadata not available for the given statement
+  2017-04-05 13:57:02 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-05 13:57:28 DEBUG ControllerClass:59 - DEBUG
+  2017-04-05 13:57:28  INFO ControllerClass:60 - INFO
+  2017-04-05 13:57:28  WARN ControllerClass:61 - WARN
+  2017-04-05 13:57:28 ERROR ControllerClass:62 - ERROR
+  2017-04-05 13:57:41 DEBUG ControllerClass:59 - DEBUG
+  2017-04-05 13:57:41  INFO ControllerClass:60 - INFO
+  2017-04-05 13:57:41  WARN ControllerClass:61 - WARN
+  2017-04-05 13:57:41 ERROR ControllerClass:62 - ERROR
+  

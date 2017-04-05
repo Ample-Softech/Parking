@@ -33,9 +33,14 @@
 <script type="text/javascript" src='<c:url value="/chosen/chosen.proto.js"></c:url>'></script>
 <script type="text/javascript" src='<c:url value="/chosen/chosen.proto.min.js"></c:url>'></script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy0y-BGBgl6fjl1zDhcBpgHHo6ZR6PXvY&&libraries=places" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ5r7UKO1smUmapgSi3dLV9MWkbFMi45M&&libraries=places" async defer ></script>
 
-<script type="text/javascript" src='<c:url value="/bootstrap/js/bootstrap.js"></c:url>'></script>
+<!-- 													 AIzaSyDSp8fkmT6XkMdn_DgavGX1Z4fJQ1jwm_Q
+														 AIzaSyCy0y-BGBgl6fjl1zDhcBpgHHo6ZR6PXvY
+														 AIzaSyBQ5r7UKO1smUmapgSi3dLV9MWkbFMi45M	
+ -->
+ 
+ <script type="text/javascript" src='<c:url value="/bootstrap/js/bootstrap.js"></c:url>'></script>
 
 
 
@@ -47,3 +52,6 @@
 
 <!-- If you're using Stripe for payments -->
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+<link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>

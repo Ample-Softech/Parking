@@ -3,13 +3,14 @@ package basic.ControlerPack;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.PropertyConfigurator;
+import org.junit.Before;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,7 @@ public class ControllerClass {
 
 	private static final Logger logger = LoggerFactory.getLogger(ControllerClass.class);
 
+	
 	@Autowired
 	Services service = new Services();
 
@@ -48,6 +50,21 @@ public class ControllerClass {
 	HttpServletResponse response;
 	
 	//sagar...
+	
+	@RequestMapping(value="/home", method=RequestMethod.GET)
+	@Before
+	public ModelAndView homePage() {
+		PropertyConfigurator.configure("C:\\Users\\Sagar Pawar\\git\\Parking\\Parking\\WebContent\\WEB-INF\\classes\\log4j.properties");
+		logger.trace("TRACE");
+		logger.debug("DEBUG");
+		logger.info("INFO");
+		logger.warn("WARN");
+		logger.error("ERROR");
+
+		modelAndView.setViewName("index");
+		return modelAndView;
+	}
+
 
 	@RequestMapping(value = "/SignOut", method = RequestMethod.GET)
     public String loadApp() {
@@ -73,13 +90,15 @@ public class ControllerClass {
 		modelAndView.addObject("longitude", requestParams.get("lng"));		
 		modelAndView.addObject("loc", requestParams.get("loc"));
 		return modelAndView;
+		
 	}
 	
 	@RequestMapping(value="/logValid")
 	public ModelAndView logValid(Model model, @RequestParam Map<String,String> requestParams) {
 		Users u1 = service.getUser(requestParams.get("username"), requestParams.get("password"));
 		if (u1!=null) {
-			System.out.println("id= "+u1.getId());
+		
+			System.out.println("id= " + u1.getId());
 			model.addAttribute("Users", u1);
 			return new ModelAndView("PReg");			
 		} else {
@@ -193,11 +212,6 @@ public class ControllerClass {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value="/home", method=RequestMethod.GET)
-	public ModelAndView homePage() {
-		modelAndView.setViewName("index");
-		return modelAndView;
-	}
 	
 	@RequestMapping(value="/search",method=RequestMethod.POST)
 	public ModelAndView search(@ModelAttribute("demo")Demo demo){
@@ -216,14 +230,12 @@ public class ControllerClass {
 	}
 	
 	@RequestMapping(value="/register")
-	public ModelAndView register()
-	{		
+	public ModelAndView register(){		
 		return new ModelAndView("UReg");
 	}
 	
 	@RequestMapping(value="/regDone")
-	public ModelAndView regDone()
-	{		
+	public ModelAndView regDone(){		
 		return new ModelAndView("RegDone");
 	}		
 }

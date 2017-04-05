@@ -448,7 +448,7 @@ body
     
     <script>
     function initMap() {
-    	var fenway = {lat: ${latitude}, lng: ${longitude}};
+    	var fenway = {lat: ${latitude}, lng: ${longitude} };
         var map = new google.maps.Map(document.getElementById('map'), {
             center: fenway,
             zoom: 16,
@@ -520,7 +520,7 @@ body
 	<jsp:include page="/Payment.jsp"></jsp:include>
   	<jsp:include page="/footer.jsp" />
 	
-	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCy0y-BGBgl6fjl1zDhcBpgHHo6ZR6PXvY&libraries=places&callback=initMap"></script>
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ5r7UKO1smUmapgSi3dLV9MWkbFMi45M&libraries=places&callback=initMap"></script>
 
   </body>
 </html>

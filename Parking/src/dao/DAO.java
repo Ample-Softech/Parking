@@ -12,7 +12,7 @@ import basic.Pojo.Users;
 
 public class DAO implements DaoInf {
 
-	JdbcTemplate template;
+	private JdbcTemplate template;
 
 	@Override
 	public int insertImage(int uid, String path) {
