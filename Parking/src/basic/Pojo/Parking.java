@@ -5,7 +5,7 @@ public class Parking {
 	private int id, userId;
 	private String area, city, state, country, pincode, latitude, longitude, image;
 	private String [] features;   
-
+	
 	public int getId() {
 		return id;
 	}

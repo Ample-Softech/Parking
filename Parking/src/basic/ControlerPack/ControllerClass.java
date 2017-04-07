@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
@@ -50,21 +51,14 @@ public class ControllerClass {
 	HttpServletResponse response;
 	
 	//sagar...
-	
+	@ResponseBody
 	@RequestMapping(value="/home", method=RequestMethod.GET)
 	@Before
 	public ModelAndView homePage() {
-		PropertyConfigurator.configure("C:\\Users\\Sagar Pawar\\git\\Parking\\Parking\\WebContent\\WEB-INF\\classes\\log4j.properties");
-		logger.trace("TRACE");
-		logger.debug("DEBUG");
-		logger.info("INFO");
-		logger.warn("WARN");
-		logger.error("ERROR");
 
 		modelAndView.setViewName("index");
 		return modelAndView;
 	}
-
 
 	@RequestMapping(value = "/SignOut", method = RequestMethod.GET)
     public String loadApp() {
@@ -81,8 +75,8 @@ public class ControllerClass {
 //		session.invalidate();
 //		return "redirect:/";
 //	}
-	
-	@RequestMapping("/checkpin")
+	@ResponseBody
+	@RequestMapping(value="/checkpin", method=RequestMethod.GET)
 	public ModelAndView pincode(@RequestParam Map<String,String> requestParams) {
 		modelAndView=new ModelAndView("find");
 //		System.out.println("loc= "+requestParams.get("loc")+", lat= "+requestParams.get("lat")+", lng= "+requestParams.get("lng"));
@@ -93,11 +87,11 @@ public class ControllerClass {
 		
 	}
 	
-	@RequestMapping(value="/logValid")
+	@ResponseBody
+	@RequestMapping(value="/logValid", method=RequestMethod.POST)
 	public ModelAndView logValid(Model model, @RequestParam Map<String,String> requestParams) {
 		Users u1 = service.getUser(requestParams.get("username"), requestParams.get("password"));
-		if (u1!=null) {
-		
+		if (u1!=null) {		
 			System.out.println("id= " + u1.getId());
 			model.addAttribute("Users", u1);
 			return new ModelAndView("PReg");			
@@ -106,7 +100,8 @@ public class ControllerClass {
 		}
 	}	
 	
-	@RequestMapping(value="/psReg")
+	@ResponseBody
+	@RequestMapping(value="/psReg", method=RequestMethod.GET)
 	public ModelAndView psReg(Model model, @ModelAttribute("Users") Users u1, @RequestParam Map<String,String> requestParams) {
 		System.out.println("id= "+u1.getId());
 		Parking p1 = new Parking();
@@ -130,7 +125,8 @@ public class ControllerClass {
 				
 	}	
 	
-	@RequestMapping(value="/reg")
+	@ResponseBody
+	@RequestMapping(value="/reg", method=RequestMethod.GET)
 	public ModelAndView regcod(@RequestParam Map<String,String> requestParams) {
 		Users u1 = new Users();
 		u1.setFname(requestParams.get("fname"));
@@ -157,8 +153,8 @@ public class ControllerClass {
 		return new ModelAndView("UReg"); 		
 	}	
 	
-	
-	@RequestMapping("/imageUp")
+	@ResponseBody
+	@RequestMapping(value="/imageUp", method=RequestMethod.GET)
 	public ModelAndView imageUp(@ModelAttribute("Parking") Parking p1, @RequestParam("file") MultipartFile file) {
 		if (!file.isEmpty()) {
 			String content = file.getContentType();
@@ -196,8 +192,8 @@ public class ControllerClass {
 		return modelAndView;
 	}	
 	
-	
-	@RequestMapping("/Check")
+	@ResponseBody
+	@RequestMapping(value="/Check", method=RequestMethod.GET)
 	public ModelAndView print(@RequestParam Map<String,String> requestParams) {
 		modelAndView=new ModelAndView("find");
 //		System.out.println("loc= "+requestParams.get("loc")+", lat= "+requestParams.get("lat")+", lng= "+requestParams.get("lng"));
@@ -212,8 +208,8 @@ public class ControllerClass {
 		return modelAndView;
 	}
 	
-	
-	@RequestMapping(value="/search",method=RequestMethod.POST)
+	@ResponseBody
+	@RequestMapping(value="/search", method=RequestMethod.POST)
 	public ModelAndView search(@ModelAttribute("demo")Demo demo){
 		System.out.println(demo.getLat()+" "+demo.getLng());
 		String json = new Gson().toJson(demo);
@@ -222,20 +218,40 @@ public class ControllerClass {
 		return modelAndView;
 	}
 	
-	@RequestMapping(value="/LoginPage")
+	@ResponseBody
+	@RequestMapping(value="/LoginPage", method=RequestMethod.GET)
 	public ModelAndView login()
 	{
 		ModelAndView m= new ModelAndView("Login");
 		return  m;
 	}
 	
-	@RequestMapping(value="/register")
+	@ResponseBody
+	@RequestMapping(value="/register", method=RequestMethod.GET)
 	public ModelAndView register(){		
 		return new ModelAndView("UReg");
 	}
 	
-	@RequestMapping(value="/regDone")
+	@ResponseBody
+	@RequestMapping(value="/regDone", method=RequestMethod.GET)
 	public ModelAndView regDone(){		
 		return new ModelAndView("RegDone");
 	}		
+	
+	public void init() throws Exception {
+		PropertyConfigurator.configure("C:\\Users\\Sagar Pawar\\git\\Parking\\Parking\\WebContent\\WEB-INF\\classes\\log4j.properties");
+
+		System.out.println("\n**   Spring F/M Initialization(Started) invoking by init method..   **\n");
+
+		logger.trace("TRACE");
+		logger.debug("DEBUG");
+		logger.info("INFO");
+		logger.warn("WARN");
+		logger.error("ERROR");
+	}
+
+	public void destroy() throws Exception {
+		System.out.println("\n**   Spring F/M Destroying(Closed) invoking by destroy method..   **\n");
+	}
+
 }

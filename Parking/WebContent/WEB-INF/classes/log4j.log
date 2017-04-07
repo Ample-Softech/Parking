@@ -248,4 +248,327 @@
   2017-04-05 13:57:41  INFO ControllerClass:60 - INFO
   2017-04-05 13:57:41  WARN ControllerClass:61 - WARN
   2017-04-05 13:57:41 ERROR ControllerClass:62 - ERROR
+  2017-04-07 11:16:21 DEBUG ControllerClass:60 - DEBUG
+  2017-04-07 11:16:21  INFO ControllerClass:61 - INFO
+  2017-04-07 11:16:21  WARN ControllerClass:62 - WARN
+  2017-04-07 11:16:21 ERROR ControllerClass:63 - ERROR
+  2017-04-07 11:16:52 DEBUG ControllerClass:60 - DEBUG
+  2017-04-07 11:16:52  INFO ControllerClass:61 - INFO
+  2017-04-07 11:16:52  WARN ControllerClass:62 - WARN
+  2017-04-07 11:16:52 ERROR ControllerClass:63 - ERROR
+  2017-04-07 11:17:40 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-07 11:17:40 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-07 11:17:40 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-07 11:17:41 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-07 11:19:37  INFO XmlWebApplicationContext:982 - Closing WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 11:16:15 IST 2017]; root of context hierarchy
+  2017-04-07 11:23:20 DEBUG ControllerClass:60 - DEBUG
+  2017-04-07 11:23:20  INFO ControllerClass:61 - INFO
+  2017-04-07 11:23:20  WARN ControllerClass:62 - WARN
+  2017-04-07 11:23:20 ERROR ControllerClass:63 - ERROR
+  2017-04-07 11:23:34 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-07 11:23:34 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-07 11:23:34 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-07 11:23:35 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-07 11:23:46 DEBUG ControllerClass:60 - DEBUG
+  2017-04-07 11:23:46  INFO ControllerClass:61 - INFO
+  2017-04-07 11:23:46  WARN ControllerClass:62 - WARN
+  2017-04-07 11:23:46 ERROR ControllerClass:63 - ERROR
+  2017-04-07 11:23:53 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-07 11:23:53 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-07 11:23:53 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-07 11:23:53 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-07 11:23:55 DEBUG ControllerClass:60 - DEBUG
+  2017-04-07 11:23:55  INFO ControllerClass:61 - INFO
+  2017-04-07 11:23:55  WARN ControllerClass:62 - WARN
+  2017-04-07 11:23:55 ERROR ControllerClass:63 - ERROR
+  2017-04-07 11:24:11 DEBUG ControllerClass:60 - DEBUG
+  2017-04-07 11:24:11  INFO ControllerClass:61 - INFO
+  2017-04-07 11:24:11  WARN ControllerClass:62 - WARN
+  2017-04-07 11:24:11 ERROR ControllerClass:63 - ERROR
+  2017-04-07 11:25:00  INFO XmlWebApplicationContext:982 - Closing WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 11:23:13 IST 2017]; root of context hierarchy
+  2017-04-07 11:25:44 DEBUG ControllerClass:60 - DEBUG
+  2017-04-07 11:25:44  INFO ControllerClass:61 - INFO
+  2017-04-07 11:25:44  WARN ControllerClass:62 - WARN
+  2017-04-07 11:25:44 ERROR ControllerClass:63 - ERROR
+  2017-04-07 11:26:37 DEBUG ControllerClass:60 - DEBUG
+  2017-04-07 11:26:37  INFO ControllerClass:61 - INFO
+  2017-04-07 11:26:37  WARN ControllerClass:62 - WARN
+  2017-04-07 11:26:37 ERROR ControllerClass:63 - ERROR
+  2017-04-07 20:54:30 DEBUG ControllerClass:60 - DEBUG
+  2017-04-07 20:54:30  INFO ControllerClass:61 - INFO
+  2017-04-07 20:54:30  WARN ControllerClass:62 - WARN
+  2017-04-07 20:54:30 ERROR ControllerClass:63 - ERROR
+  2017-04-07 20:57:54  INFO XmlWebApplicationContext:982 - Closing WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 20:54:23 IST 2017]; root of context hierarchy
+  2017-04-07 20:59:05 DEBUG ControllerClass:60 - DEBUG
+  2017-04-07 20:59:05  INFO ControllerClass:61 - INFO
+  2017-04-07 20:59:05  WARN ControllerClass:62 - WARN
+  2017-04-07 20:59:05 ERROR ControllerClass:63 - ERROR
+  2017-04-07 21:06:40 DEBUG ControllerClass:60 - DEBUG
+  2017-04-07 21:06:40  INFO ControllerClass:61 - INFO
+  2017-04-07 21:06:40  WARN ControllerClass:62 - WARN
+  2017-04-07 21:06:40 ERROR ControllerClass:63 - ERROR
+  2017-04-07 21:07:30  INFO XmlWebApplicationContext:982 - Closing WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 21:06:33 IST 2017]; root of context hierarchy
+  2017-04-07 21:08:16 DEBUG ControllerClass:60 - DEBUG
+  2017-04-07 21:08:16  INFO ControllerClass:61 - INFO
+  2017-04-07 21:08:16  WARN ControllerClass:62 - WARN
+  2017-04-07 21:08:16 ERROR ControllerClass:63 - ERROR
+  2017-04-07 21:08:42  INFO XmlWebApplicationContext:982 - Closing WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 21:08:10 IST 2017]; root of context hierarchy
+  2017-04-07 21:12:53 DEBUG ControllerClass:60 - DEBUG
+  2017-04-07 21:12:53  INFO ControllerClass:61 - INFO
+  2017-04-07 21:12:53  WARN ControllerClass:62 - WARN
+  2017-04-07 21:12:53 ERROR ControllerClass:63 - ERROR
+  2017-04-07 21:14:43  INFO XmlWebApplicationContext:982 - Closing WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 21:12:47 IST 2017]; root of context hierarchy
+  2017-04-07 21:17:50 DEBUG ControllerClass:60 - DEBUG
+  2017-04-07 21:17:50  INFO ControllerClass:61 - INFO
+  2017-04-07 21:17:50  WARN ControllerClass:62 - WARN
+  2017-04-07 21:17:51 ERROR ControllerClass:63 - ERROR
+  2017-04-07 21:18:24 DEBUG ControllerClass:60 - DEBUG
+  2017-04-07 21:18:24  INFO ControllerClass:61 - INFO
+  2017-04-07 21:18:24  WARN ControllerClass:62 - WARN
+  2017-04-07 21:18:24 ERROR ControllerClass:63 - ERROR
+  2017-04-07 21:19:45  INFO XmlWebApplicationContext:982 - Closing WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 21:17:45 IST 2017]; root of context hierarchy
+  2017-04-07 21:22:10 DEBUG ControllerClass:249 - DEBUG
+  2017-04-07 21:22:10  INFO ControllerClass:250 - INFO
+  2017-04-07 21:22:10  WARN ControllerClass:251 - WARN
+  2017-04-07 21:22:10 ERROR ControllerClass:252 - ERROR
+  2017-04-07 21:22:11  INFO RequestMappingHandlerMapping:543 - Mapped "{[/register],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.register()
+  2017-04-07 21:22:11  INFO RequestMappingHandlerMapping:543 - Mapped "{[/Check],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.print(java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:22:11  INFO RequestMappingHandlerMapping:543 - Mapped "{[/search],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.search(basic.Pojo.Demo)
+  2017-04-07 21:22:11  INFO RequestMappingHandlerMapping:543 - Mapped "{[/psReg],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.psReg(org.springframework.ui.Model,basic.Pojo.Users,java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:22:11  INFO RequestMappingHandlerMapping:543 - Mapped "{[/imageUp],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.imageUp(basic.Pojo.Parking,org.springframework.web.multipart.MultipartFile)
+  2017-04-07 21:22:11  INFO RequestMappingHandlerMapping:543 - Mapped "{[/reg],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.regcod(java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:22:11  INFO RequestMappingHandlerMapping:543 - Mapped "{[/regDone],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.regDone()
+  2017-04-07 21:22:11  INFO RequestMappingHandlerMapping:543 - Mapped "{[/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.homePage()
+  2017-04-07 21:22:11  INFO RequestMappingHandlerMapping:543 - Mapped "{[/checkpin],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.pincode(java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:22:11  INFO RequestMappingHandlerMapping:543 - Mapped "{[/SignOut],methods=[GET]}" onto public java.lang.String basic.ControlerPack.ControllerClass.loadApp()
+  2017-04-07 21:22:11  INFO RequestMappingHandlerMapping:543 - Mapped "{[/logValid],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.logValid(org.springframework.ui.Model,java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:22:11  INFO RequestMappingHandlerMapping:543 - Mapped "{[/LoginPage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.login()
+  2017-04-07 21:22:12  INFO RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 21:22:07 IST 2017]; root of context hierarchy
+  2017-04-07 21:22:12  INFO RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 21:22:07 IST 2017]; root of context hierarchy
+  2017-04-07 21:22:13  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+  2017-04-07 21:22:13  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/bootstrap/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+  2017-04-07 21:22:13  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/Images/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+  2017-04-07 21:22:13  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+  2017-04-07 21:22:13  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/chosen/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#4'
+  2017-04-07 21:22:13 DEBUG JndiTemplate:150 - Looking up JNDI object with name [java:comp/env/spring.liveBeansView.mbeanDomain]
+  2017-04-07 21:22:13 DEBUG JndiLocatorDelegate:101 - Converted JNDI name [java:comp/env/spring.liveBeansView.mbeanDomain] not found - trying original name [spring.liveBeansView.mbeanDomain]. javax.naming.NameNotFoundException: Name [spring.liveBeansView.mbeanDomain] is not bound in this Context. Unable to find [spring.liveBeansView.mbeanDomain].
+  2017-04-07 21:22:13 DEBUG JndiTemplate:150 - Looking up JNDI object with name [spring.liveBeansView.mbeanDomain]
+  2017-04-07 21:22:13 DEBUG JndiPropertySource:99 - JNDI lookup for name [spring.liveBeansView.mbeanDomain] threw NamingException with message: Name [spring.liveBeansView.mbeanDomain] is not bound in this Context. Unable to find [spring.liveBeansView.mbeanDomain].. Returning null.
+  2017-04-07 21:22:13  INFO DispatcherServlet:508 - FrameworkServlet 'basic': initialization completed in 6327 ms
+  2017-04-07 21:26:39  WARN PageNotFound:210 - Request method 'POST' not supported
+  2017-04-07 21:28:41  INFO XmlWebApplicationContext:982 - Closing WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 21:22:07 IST 2017]; root of context hierarchy
+  2017-04-07 21:29:07 DEBUG ControllerClass:248 - DEBUG
+  2017-04-07 21:29:07  INFO ControllerClass:249 - INFO
+  2017-04-07 21:29:07  WARN ControllerClass:250 - WARN
+  2017-04-07 21:29:07 ERROR ControllerClass:251 - ERROR
+  2017-04-07 21:29:08  INFO RequestMappingHandlerMapping:543 - Mapped "{[/register],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.register()
+  2017-04-07 21:29:08  INFO RequestMappingHandlerMapping:543 - Mapped "{[/Check],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.print(java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:29:08  INFO RequestMappingHandlerMapping:543 - Mapped "{[/search],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.search(basic.Pojo.Demo)
+  2017-04-07 21:29:08  INFO RequestMappingHandlerMapping:543 - Mapped "{[/psReg],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.psReg(org.springframework.ui.Model,basic.Pojo.Users,java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:29:08  INFO RequestMappingHandlerMapping:543 - Mapped "{[/imageUp],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.imageUp(basic.Pojo.Parking,org.springframework.web.multipart.MultipartFile)
+  2017-04-07 21:29:08  INFO RequestMappingHandlerMapping:543 - Mapped "{[/reg],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.regcod(java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:29:08  INFO RequestMappingHandlerMapping:543 - Mapped "{[/regDone],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.regDone()
+  2017-04-07 21:29:08  INFO RequestMappingHandlerMapping:543 - Mapped "{[/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.homePage()
+  2017-04-07 21:29:08  INFO RequestMappingHandlerMapping:543 - Mapped "{[/checkpin],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.pincode(java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:29:08  INFO RequestMappingHandlerMapping:543 - Mapped "{[/SignOut],methods=[GET]}" onto public java.lang.String basic.ControlerPack.ControllerClass.loadApp()
+  2017-04-07 21:29:08  INFO RequestMappingHandlerMapping:543 - Mapped "{[/logValid],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.logValid(org.springframework.ui.Model,java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:29:08  INFO RequestMappingHandlerMapping:543 - Mapped "{[/LoginPage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.login()
+  2017-04-07 21:29:09  INFO RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 21:29:05 IST 2017]; root of context hierarchy
+  2017-04-07 21:29:10  INFO RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 21:29:05 IST 2017]; root of context hierarchy
+  2017-04-07 21:29:10  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+  2017-04-07 21:29:10  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/bootstrap/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+  2017-04-07 21:29:10  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/Images/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+  2017-04-07 21:29:10  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+  2017-04-07 21:29:10  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/chosen/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#4'
+  2017-04-07 21:29:11 DEBUG JndiTemplate:150 - Looking up JNDI object with name [java:comp/env/spring.liveBeansView.mbeanDomain]
+  2017-04-07 21:29:11 DEBUG JndiLocatorDelegate:101 - Converted JNDI name [java:comp/env/spring.liveBeansView.mbeanDomain] not found - trying original name [spring.liveBeansView.mbeanDomain]. javax.naming.NameNotFoundException: Name [spring.liveBeansView.mbeanDomain] is not bound in this Context. Unable to find [spring.liveBeansView.mbeanDomain].
+  2017-04-07 21:29:11 DEBUG JndiTemplate:150 - Looking up JNDI object with name [spring.liveBeansView.mbeanDomain]
+  2017-04-07 21:29:11 DEBUG JndiPropertySource:99 - JNDI lookup for name [spring.liveBeansView.mbeanDomain] threw NamingException with message: Name [spring.liveBeansView.mbeanDomain] is not bound in this Context. Unable to find [spring.liveBeansView.mbeanDomain].. Returning null.
+  2017-04-07 21:29:11  INFO DispatcherServlet:508 - FrameworkServlet 'basic': initialization completed in 5967 ms
+  2017-04-07 21:29:18 DEBUG JdbcTemplate:682 - Executing prepared SQL query
+  2017-04-07 21:29:18 DEBUG JdbcTemplate:616 - Executing prepared SQL statement [SELECT * FROM parking.users where `username`=? and `password`=?;]
+  2017-04-07 21:29:18 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-07 21:29:18 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-07 21:29:19 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-07 21:34:43 DEBUG ControllerClass:248 - DEBUG
+  2017-04-07 21:34:43  INFO ControllerClass:249 - INFO
+  2017-04-07 21:34:43  WARN ControllerClass:250 - WARN
+  2017-04-07 21:34:43 ERROR ControllerClass:251 - ERROR
+  2017-04-07 21:34:44  INFO RequestMappingHandlerMapping:543 - Mapped "{[/register],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.register()
+  2017-04-07 21:34:44  INFO RequestMappingHandlerMapping:543 - Mapped "{[/Check],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.print(java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:34:44  INFO RequestMappingHandlerMapping:543 - Mapped "{[/search],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.search(basic.Pojo.Demo)
+  2017-04-07 21:34:44  INFO RequestMappingHandlerMapping:543 - Mapped "{[/LoginPage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.login()
+  2017-04-07 21:34:44  INFO RequestMappingHandlerMapping:543 - Mapped "{[/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.homePage()
+  2017-04-07 21:34:44  INFO RequestMappingHandlerMapping:543 - Mapped "{[/SignOut],methods=[GET]}" onto public java.lang.String basic.ControlerPack.ControllerClass.loadApp()
+  2017-04-07 21:34:44  INFO RequestMappingHandlerMapping:543 - Mapped "{[/checkpin],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.pincode(java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:34:44  INFO RequestMappingHandlerMapping:543 - Mapped "{[/psReg],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.psReg(org.springframework.ui.Model,basic.Pojo.Users,java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:34:44  INFO RequestMappingHandlerMapping:543 - Mapped "{[/logValid],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.logValid(org.springframework.ui.Model,java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:34:44  INFO RequestMappingHandlerMapping:543 - Mapped "{[/imageUp],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.imageUp(basic.Pojo.Parking,org.springframework.web.multipart.MultipartFile)
+  2017-04-07 21:34:44  INFO RequestMappingHandlerMapping:543 - Mapped "{[/reg],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.regcod(java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:34:44  INFO RequestMappingHandlerMapping:543 - Mapped "{[/regDone],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.regDone()
+  2017-04-07 21:34:45  INFO RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 21:34:41 IST 2017]; root of context hierarchy
+  2017-04-07 21:34:46  INFO RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 21:34:41 IST 2017]; root of context hierarchy
+  2017-04-07 21:34:46  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+  2017-04-07 21:34:46  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/bootstrap/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+  2017-04-07 21:34:46  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/Images/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+  2017-04-07 21:34:46  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+  2017-04-07 21:34:46  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/chosen/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#4'
+  2017-04-07 21:34:46 DEBUG JndiTemplate:150 - Looking up JNDI object with name [java:comp/env/spring.liveBeansView.mbeanDomain]
+  2017-04-07 21:34:46 DEBUG JndiLocatorDelegate:101 - Converted JNDI name [java:comp/env/spring.liveBeansView.mbeanDomain] not found - trying original name [spring.liveBeansView.mbeanDomain]. javax.naming.NameNotFoundException: Name [spring.liveBeansView.mbeanDomain] is not bound in this Context. Unable to find [spring.liveBeansView.mbeanDomain].
+  2017-04-07 21:34:46 DEBUG JndiTemplate:150 - Looking up JNDI object with name [spring.liveBeansView.mbeanDomain]
+  2017-04-07 21:34:46 DEBUG JndiPropertySource:99 - JNDI lookup for name [spring.liveBeansView.mbeanDomain] threw NamingException with message: Name [spring.liveBeansView.mbeanDomain] is not bound in this Context. Unable to find [spring.liveBeansView.mbeanDomain].. Returning null.
+  2017-04-07 21:34:46  INFO DispatcherServlet:508 - FrameworkServlet 'basic': initialization completed in 6053 ms
+  2017-04-07 21:36:36 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-07 21:36:36 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-07 21:36:36 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-07 21:36:36 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-07 21:37:59 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-07 21:37:59 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-07 21:37:59 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-07 21:37:59 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-07 21:39:44 DEBUG JdbcTemplate:682 - Executing prepared SQL query
+  2017-04-07 21:39:44 DEBUG JdbcTemplate:616 - Executing prepared SQL statement [SELECT * FROM parking.users where `username`=? and `password`=?;]
+  2017-04-07 21:39:44 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-07 21:39:44 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-07 21:39:44 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-07 21:40:06 DEBUG JdbcTemplate:682 - Executing prepared SQL query
+  2017-04-07 21:40:06 DEBUG JdbcTemplate:616 - Executing prepared SQL statement [SELECT * FROM parking.users where `username`=? and `password`=?;]
+  2017-04-07 21:40:06 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-07 21:40:06 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-07 21:40:06 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-07 21:41:07  INFO XmlWebApplicationContext:982 - Closing WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 21:34:41 IST 2017]; root of context hierarchy
+  2017-04-07 21:41:17 DEBUG ControllerClass:248 - DEBUG
+  2017-04-07 21:41:17  INFO ControllerClass:249 - INFO
+  2017-04-07 21:41:17  WARN ControllerClass:250 - WARN
+  2017-04-07 21:41:17 ERROR ControllerClass:251 - ERROR
+  2017-04-07 21:41:18  INFO RequestMappingHandlerMapping:543 - Mapped "{[/register],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.register()
+  2017-04-07 21:41:18  INFO RequestMappingHandlerMapping:543 - Mapped "{[/Check],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.print(java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:41:18  INFO RequestMappingHandlerMapping:543 - Mapped "{[/search],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.search(basic.Pojo.Demo)
+  2017-04-07 21:41:18  INFO RequestMappingHandlerMapping:543 - Mapped "{[/LoginPage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.login()
+  2017-04-07 21:41:18  INFO RequestMappingHandlerMapping:543 - Mapped "{[/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.homePage()
+  2017-04-07 21:41:18  INFO RequestMappingHandlerMapping:543 - Mapped "{[/SignOut],methods=[POST]}" onto public java.lang.String basic.ControlerPack.ControllerClass.loadApp()
+  2017-04-07 21:41:18  INFO RequestMappingHandlerMapping:543 - Mapped "{[/checkpin],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.pincode(java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:41:18  INFO RequestMappingHandlerMapping:543 - Mapped "{[/psReg],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.psReg(org.springframework.ui.Model,basic.Pojo.Users,java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:41:18  INFO RequestMappingHandlerMapping:543 - Mapped "{[/logValid],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.logValid(org.springframework.ui.Model,java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:41:18  INFO RequestMappingHandlerMapping:543 - Mapped "{[/imageUp],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.imageUp(basic.Pojo.Parking,org.springframework.web.multipart.MultipartFile)
+  2017-04-07 21:41:18  INFO RequestMappingHandlerMapping:543 - Mapped "{[/reg],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.regcod(java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:41:18  INFO RequestMappingHandlerMapping:543 - Mapped "{[/regDone],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.regDone()
+  2017-04-07 21:41:19  INFO RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 21:41:14 IST 2017]; root of context hierarchy
+  2017-04-07 21:41:20  INFO RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 21:41:14 IST 2017]; root of context hierarchy
+  2017-04-07 21:41:20  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+  2017-04-07 21:41:20  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/bootstrap/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+  2017-04-07 21:41:20  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/Images/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+  2017-04-07 21:41:20  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+  2017-04-07 21:41:20  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/chosen/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#4'
+  2017-04-07 21:41:20 DEBUG JndiTemplate:150 - Looking up JNDI object with name [java:comp/env/spring.liveBeansView.mbeanDomain]
+  2017-04-07 21:41:20 DEBUG JndiLocatorDelegate:101 - Converted JNDI name [java:comp/env/spring.liveBeansView.mbeanDomain] not found - trying original name [spring.liveBeansView.mbeanDomain]. javax.naming.NameNotFoundException: Name [spring.liveBeansView.mbeanDomain] is not bound in this Context. Unable to find [spring.liveBeansView.mbeanDomain].
+  2017-04-07 21:41:20 DEBUG JndiTemplate:150 - Looking up JNDI object with name [spring.liveBeansView.mbeanDomain]
+  2017-04-07 21:41:20 DEBUG JndiPropertySource:99 - JNDI lookup for name [spring.liveBeansView.mbeanDomain] threw NamingException with message: Name [spring.liveBeansView.mbeanDomain] is not bound in this Context. Unable to find [spring.liveBeansView.mbeanDomain].. Returning null.
+  2017-04-07 21:41:20  INFO DispatcherServlet:508 - FrameworkServlet 'basic': initialization completed in 6354 ms
+  2017-04-07 21:41:42  INFO XmlWebApplicationContext:982 - Closing WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 21:41:14 IST 2017]; root of context hierarchy
+  2017-04-07 21:42:16 DEBUG ControllerClass:248 - DEBUG
+  2017-04-07 21:42:16  INFO ControllerClass:249 - INFO
+  2017-04-07 21:42:16  WARN ControllerClass:250 - WARN
+  2017-04-07 21:42:16 ERROR ControllerClass:251 - ERROR
+  2017-04-07 21:42:16  INFO RequestMappingHandlerMapping:543 - Mapped "{[/register],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.register()
+  2017-04-07 21:42:16  INFO RequestMappingHandlerMapping:543 - Mapped "{[/Check],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.print(java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:42:16  INFO RequestMappingHandlerMapping:543 - Mapped "{[/search],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.search(basic.Pojo.Demo)
+  2017-04-07 21:42:16  INFO RequestMappingHandlerMapping:543 - Mapped "{[/LoginPage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.login()
+  2017-04-07 21:42:16  INFO RequestMappingHandlerMapping:543 - Mapped "{[/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.homePage()
+  2017-04-07 21:42:16  INFO RequestMappingHandlerMapping:543 - Mapped "{[/SignOut],methods=[GET]}" onto public java.lang.String basic.ControlerPack.ControllerClass.loadApp()
+  2017-04-07 21:42:16  INFO RequestMappingHandlerMapping:543 - Mapped "{[/checkpin],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.pincode(java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:42:16  INFO RequestMappingHandlerMapping:543 - Mapped "{[/psReg],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.psReg(org.springframework.ui.Model,basic.Pojo.Users,java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:42:16  INFO RequestMappingHandlerMapping:543 - Mapped "{[/logValid],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.logValid(org.springframework.ui.Model,java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:42:16  INFO RequestMappingHandlerMapping:543 - Mapped "{[/imageUp],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.imageUp(basic.Pojo.Parking,org.springframework.web.multipart.MultipartFile)
+  2017-04-07 21:42:16  INFO RequestMappingHandlerMapping:543 - Mapped "{[/reg],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.regcod(java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:42:16  INFO RequestMappingHandlerMapping:543 - Mapped "{[/regDone],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.regDone()
+  2017-04-07 21:42:18  INFO RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 21:42:13 IST 2017]; root of context hierarchy
+  2017-04-07 21:42:18  INFO RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 21:42:13 IST 2017]; root of context hierarchy
+  2017-04-07 21:42:19  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+  2017-04-07 21:42:19  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/bootstrap/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+  2017-04-07 21:42:19  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/Images/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+  2017-04-07 21:42:19  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+  2017-04-07 21:42:19  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/chosen/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#4'
+  2017-04-07 21:42:19 DEBUG JndiTemplate:150 - Looking up JNDI object with name [java:comp/env/spring.liveBeansView.mbeanDomain]
+  2017-04-07 21:42:19 DEBUG JndiLocatorDelegate:101 - Converted JNDI name [java:comp/env/spring.liveBeansView.mbeanDomain] not found - trying original name [spring.liveBeansView.mbeanDomain]. javax.naming.NameNotFoundException: Name [spring.liveBeansView.mbeanDomain] is not bound in this Context. Unable to find [spring.liveBeansView.mbeanDomain].
+  2017-04-07 21:42:19 DEBUG JndiTemplate:150 - Looking up JNDI object with name [spring.liveBeansView.mbeanDomain]
+  2017-04-07 21:42:19 DEBUG JndiPropertySource:99 - JNDI lookup for name [spring.liveBeansView.mbeanDomain] threw NamingException with message: Name [spring.liveBeansView.mbeanDomain] is not bound in this Context. Unable to find [spring.liveBeansView.mbeanDomain].. Returning null.
+  2017-04-07 21:42:19  INFO DispatcherServlet:508 - FrameworkServlet 'basic': initialization completed in 5691 ms
+  2017-04-07 21:42:19 DEBUG JdbcTemplate:682 - Executing prepared SQL query
+  2017-04-07 21:42:19 DEBUG JdbcTemplate:616 - Executing prepared SQL statement [SELECT * FROM parking.users where `username`=? and `password`=?;]
+  2017-04-07 21:42:19 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-07 21:42:19 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-07 21:42:20 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-07 21:42:56  INFO XmlWebApplicationContext:982 - Closing WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 21:42:13 IST 2017]; root of context hierarchy
+  2017-04-07 21:43:07 DEBUG ControllerClass:248 - DEBUG
+  2017-04-07 21:43:07  INFO ControllerClass:249 - INFO
+  2017-04-07 21:43:07  WARN ControllerClass:250 - WARN
+  2017-04-07 21:43:07 ERROR ControllerClass:251 - ERROR
+  2017-04-07 21:43:08  INFO RequestMappingHandlerMapping:543 - Mapped "{[/register],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.register()
+  2017-04-07 21:43:08  INFO RequestMappingHandlerMapping:543 - Mapped "{[/Check],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.print(java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:43:08  INFO RequestMappingHandlerMapping:543 - Mapped "{[/search],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.search(basic.Pojo.Demo)
+  2017-04-07 21:43:08  INFO RequestMappingHandlerMapping:543 - Mapped "{[/LoginPage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.login()
+  2017-04-07 21:43:08  INFO RequestMappingHandlerMapping:543 - Mapped "{[/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.homePage()
+  2017-04-07 21:43:08  INFO RequestMappingHandlerMapping:543 - Mapped "{[/SignOut],methods=[GET]}" onto public java.lang.String basic.ControlerPack.ControllerClass.loadApp()
+  2017-04-07 21:43:08  INFO RequestMappingHandlerMapping:543 - Mapped "{[/checkpin],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.pincode(java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:43:08  INFO RequestMappingHandlerMapping:543 - Mapped "{[/psReg],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.psReg(org.springframework.ui.Model,basic.Pojo.Users,java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:43:08  INFO RequestMappingHandlerMapping:543 - Mapped "{[/logValid],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.logValid(org.springframework.ui.Model,java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:43:08  INFO RequestMappingHandlerMapping:543 - Mapped "{[/imageUp],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.imageUp(basic.Pojo.Parking,org.springframework.web.multipart.MultipartFile)
+  2017-04-07 21:43:08  INFO RequestMappingHandlerMapping:543 - Mapped "{[/reg],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.regcod(java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:43:08  INFO RequestMappingHandlerMapping:543 - Mapped "{[/regDone],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.regDone()
+  2017-04-07 21:43:10  INFO RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 21:43:05 IST 2017]; root of context hierarchy
+  2017-04-07 21:43:10  INFO RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 21:43:05 IST 2017]; root of context hierarchy
+  2017-04-07 21:43:10  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+  2017-04-07 21:43:10  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/bootstrap/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+  2017-04-07 21:43:10  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/Images/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+  2017-04-07 21:43:10  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+  2017-04-07 21:43:10  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/chosen/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#4'
+  2017-04-07 21:43:11 DEBUG JndiTemplate:150 - Looking up JNDI object with name [java:comp/env/spring.liveBeansView.mbeanDomain]
+  2017-04-07 21:43:11 DEBUG JndiLocatorDelegate:101 - Converted JNDI name [java:comp/env/spring.liveBeansView.mbeanDomain] not found - trying original name [spring.liveBeansView.mbeanDomain]. javax.naming.NameNotFoundException: Name [spring.liveBeansView.mbeanDomain] is not bound in this Context. Unable to find [spring.liveBeansView.mbeanDomain].
+  2017-04-07 21:43:11 DEBUG JndiTemplate:150 - Looking up JNDI object with name [spring.liveBeansView.mbeanDomain]
+  2017-04-07 21:43:11 DEBUG JndiPropertySource:99 - JNDI lookup for name [spring.liveBeansView.mbeanDomain] threw NamingException with message: Name [spring.liveBeansView.mbeanDomain] is not bound in this Context. Unable to find [spring.liveBeansView.mbeanDomain].. Returning null.
+  2017-04-07 21:43:11  INFO DispatcherServlet:508 - FrameworkServlet 'basic': initialization completed in 5613 ms
+  2017-04-07 21:43:11 DEBUG JdbcTemplate:682 - Executing prepared SQL query
+  2017-04-07 21:43:11 DEBUG JdbcTemplate:616 - Executing prepared SQL statement [SELECT * FROM parking.users where `username`=? and `password`=?;]
+  2017-04-07 21:43:11 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-07 21:43:11 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-07 21:43:12 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-07 21:44:15  INFO XmlWebApplicationContext:982 - Closing WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 21:43:05 IST 2017]; root of context hierarchy
+  2017-04-07 21:46:00 DEBUG ControllerClass:247 - DEBUG
+  2017-04-07 21:46:00  INFO ControllerClass:248 - INFO
+  2017-04-07 21:46:00  WARN ControllerClass:249 - WARN
+  2017-04-07 21:46:00 ERROR ControllerClass:250 - ERROR
+  2017-04-07 21:46:01  INFO RequestMappingHandlerMapping:543 - Mapped "{[/register],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.register()
+  2017-04-07 21:46:01  INFO RequestMappingHandlerMapping:543 - Mapped "{[/Check],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.print(java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:46:01  INFO RequestMappingHandlerMapping:543 - Mapped "{[/search],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.search(basic.Pojo.Demo)
+  2017-04-07 21:46:01  INFO RequestMappingHandlerMapping:543 - Mapped "{[/LoginPage],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.login()
+  2017-04-07 21:46:01  INFO RequestMappingHandlerMapping:543 - Mapped "{[/home],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.homePage()
+  2017-04-07 21:46:01  INFO RequestMappingHandlerMapping:543 - Mapped "{[/SignOut],methods=[GET]}" onto public java.lang.String basic.ControlerPack.ControllerClass.loadApp()
+  2017-04-07 21:46:01  INFO RequestMappingHandlerMapping:543 - Mapped "{[/checkpin],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.pincode(java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:46:01  INFO RequestMappingHandlerMapping:543 - Mapped "{[/psReg],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.psReg(org.springframework.ui.Model,basic.Pojo.Users,java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:46:01  INFO RequestMappingHandlerMapping:543 - Mapped "{[/logValid],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.logValid(org.springframework.ui.Model,java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:46:01  INFO RequestMappingHandlerMapping:543 - Mapped "{[/imageUp],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.imageUp(basic.Pojo.Parking,org.springframework.web.multipart.MultipartFile)
+  2017-04-07 21:46:01  INFO RequestMappingHandlerMapping:543 - Mapped "{[/reg],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.regcod(java.util.Map<java.lang.String, java.lang.String>)
+  2017-04-07 21:46:01  INFO RequestMappingHandlerMapping:543 - Mapped "{[/regDone],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView basic.ControlerPack.ControllerClass.regDone()
+  2017-04-07 21:46:02  INFO RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 21:45:58 IST 2017]; root of context hierarchy
+  2017-04-07 21:46:03  INFO RequestMappingHandlerAdapter:534 - Looking for @ControllerAdvice: WebApplicationContext for namespace 'basic-servlet': startup date [Fri Apr 07 21:45:58 IST 2017]; root of context hierarchy
+  2017-04-07 21:46:03  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/css/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+  2017-04-07 21:46:03  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/bootstrap/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#1'
+  2017-04-07 21:46:03  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/Images/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#2'
+  2017-04-07 21:46:03  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/js/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#3'
+  2017-04-07 21:46:03  INFO SimpleUrlHandlerMapping:354 - Mapped URL path [/chosen/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#4'
+  2017-04-07 21:46:04 DEBUG JndiTemplate:150 - Looking up JNDI object with name [java:comp/env/spring.liveBeansView.mbeanDomain]
+  2017-04-07 21:46:04 DEBUG JndiLocatorDelegate:101 - Converted JNDI name [java:comp/env/spring.liveBeansView.mbeanDomain] not found - trying original name [spring.liveBeansView.mbeanDomain]. javax.naming.NameNotFoundException: Name [spring.liveBeansView.mbeanDomain] is not bound in this Context. Unable to find [spring.liveBeansView.mbeanDomain].
+  2017-04-07 21:46:04 DEBUG JndiTemplate:150 - Looking up JNDI object with name [spring.liveBeansView.mbeanDomain]
+  2017-04-07 21:46:04 DEBUG JndiPropertySource:99 - JNDI lookup for name [spring.liveBeansView.mbeanDomain] threw NamingException with message: Name [spring.liveBeansView.mbeanDomain] is not bound in this Context. Unable to find [spring.liveBeansView.mbeanDomain].. Returning null.
+  2017-04-07 21:46:04  INFO DispatcherServlet:508 - FrameworkServlet 'basic': initialization completed in 5924 ms
+  2017-04-07 21:46:04 DEBUG JdbcTemplate:682 - Executing prepared SQL query
+  2017-04-07 21:46:04 DEBUG JdbcTemplate:616 - Executing prepared SQL statement [SELECT * FROM parking.users where `username`=? and `password`=?;]
+  2017-04-07 21:46:04 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-07 21:46:04 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-07 21:46:05 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
+  2017-04-07 21:47:01 DEBUG JdbcTemplate:451 - Executing SQL query [SELECT * FROM parkspace;]
+  2017-04-07 21:47:01 DEBUG DataSourceUtils:110 - Fetching JDBC Connection from DataSource
+  2017-04-07 21:47:01 DEBUG DriverManagerDataSource:142 - Creating new JDBC DriverManager Connection to [jdbc:mysql://localhost:3306/parking]
+  2017-04-07 21:47:01 DEBUG DataSourceUtils:327 - Returning JDBC Connection to DataSource
   
