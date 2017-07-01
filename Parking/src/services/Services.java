@@ -1,14 +1,19 @@
 package services;
 
 import java.util.List;
-import basic.Pojo.Parking;
-import basic.Pojo.Users;
-import dao.DAO;
+import org.springframework.beans.factory.annotation.Autowired;
+import basic.Pojo.*;
+import dao.*;
 
 public class Services implements ServicesInf {
 
-	DAO dao = new DAO();
+	@Autowired
+	DAO dao;
 	
+	public Services() {
+		System.out.println("Services");
+	}
+
 	public DAO getDao() {
 		return dao;
 	}

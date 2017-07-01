@@ -3,16 +3,20 @@ package dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-
+import basic.ControlerPack.HibernateUtilities;
 import basic.Pojo.Parking;
 import basic.Pojo.Users;
 
 public class DAO implements DaoInf {
-
+	
+	private static SessionFactory sessionFactory=HibernateUtilities.getsSessionFactory();	
 	private JdbcTemplate template;
+	private Session session;
 
 	@Override
 	public int insertImage(int uid, String path) {
@@ -44,9 +48,46 @@ public class DAO implements DaoInf {
 
 	@Override
 	public List<Parking> getParkings() {
+		try{
+			System.out.println("getParkings..");
+			this.session = sessionFactory.openSession();
+			this.session.beginTransaction();
+			System.out.println("beginTransaction..");
+		} catch (Exception e) {
+			exceptional();
+			System.err.println(e);
+		} finally {
+			closeSession();
+		}		
 		return template.query("SELECT * FROM parkspace;", new ParkMapping());
 	}
 
+	public void closeSession(){
+		if(this.session.isConnected()){
+			this.session.getTransaction().commit();
+			this.session.close();
+			System.out.println("Session closed..");
+		}else{
+			System.out.println("Session already Disabled..");
+		}
+		
+	}
+	
+	public void exceptional(){
+		if(this.session.isConnected()){
+			this.session.getTransaction().commit();
+			this.session.close();
+			System.out.println("Session closed..");
+			sessionFactory.close();
+			System.out.println("Hibernate SessionFactory closed..");
+		} else {
+			sessionFactory.close();
+//			HibernateUtilities.getsSessionFactory().close();
+			System.out.println("Hibernate SessionFactory closed..");
+		}
+	}
+	
+	
 	@Override
 	public int insertUser(Users u1) {
 		String sql = "INSERT INTO `parking`.`users` (`fname`, `mname`, `lname`, `gender`, `username`, `password`, `dob`, `latitude`, `longitude`, `area`, `city`, `state`, `country`, `pincode`, `usertype`) VALUES "
@@ -112,6 +153,10 @@ public class DAO implements DaoInf {
 
 	public void setTemplate(JdbcTemplate template) {
 		this.template = template;
+	}
+
+	public DAO() {
+		System.out.println("DAO");
 	}
 	
 }

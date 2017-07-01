@@ -1,6 +1,8 @@
 package basic.Pojo;
 
-public class Users
+import java.io.Serializable;
+
+public class Users implements Serializable, Cloneable
 {
 	private int id;
 	private String fname, mname, lname, gender, username, password, dob, latitude, longitude, area, state, city, country, pincode, usertype;
@@ -100,6 +102,61 @@ public class Users
 	}
 	public void setPincode(String pincode) {
 		this.pincode = pincode;
+	}
+	
+	@Override
+	public String toString() {
+		return "Users [id=" + id + ", fname=" + fname + ", mname=" + mname + ", lname=" + lname + ", gender=" + gender
+				+ ", username=" + username + ", password=" + password + ", dob=" + dob + ", latitude=" + latitude
+				+ ", longitude=" + longitude + ", area=" + area + ", state=" + state + ", city=" + city + ", country="
+				+ country + ", pincode=" + pincode + ", usertype=" + usertype + "]";
+	}
+	public Users(int id, String fname, String mname, String lname, String gender, String username, String password,
+			String dob, String latitude, String longitude, String area, String state, String city, String country,
+			String pincode, String usertype) {
+		super();
+		this.id = id;
+		this.fname = fname;
+		this.mname = mname;
+		this.lname = lname;
+		this.gender = gender;
+		this.username = username;
+		this.password = password;
+		this.dob = dob;
+		this.latitude = latitude;
+		this.longitude = longitude;
+		this.area = area;
+		this.state = state;
+		this.city = city;
+		this.country = country;
+		this.pincode = pincode;
+		this.usertype = usertype;
 	} 
+	
+	public Users(){
+		super();
+		this.id = 0;
+		this.fname = null;
+		this.mname = null;
+		this.lname = null;
+		this.gender = null;
+		this.username = null;
+		this.password = null;
+		this.dob = null;
+		this.latitude = null;
+		this.longitude = null;
+		this.area = null;
+		this.state = null;
+		this.city = null;
+		this.country = null;
+		this.pincode = null;
+		this.usertype = null;
+		
+	}
+	
+	public Object clone() throws CloneNotSupportedException{
+		return super.clone();
+	}
+	
 		
 }

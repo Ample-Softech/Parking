@@ -1,6 +1,9 @@
 package basic.Pojo;
 
-public class Parking {
+import java.io.Serializable;
+import java.util.Arrays;
+
+public class Parking implements Serializable, Cloneable {
 
 	private int id, userId;
 	private String area, city, state, country, pincode, latitude, longitude, image;
@@ -73,5 +76,46 @@ public class Parking {
 		this.features = features;
 	}
 
+	public Parking(int id, int userId, String area, String city, String state, String country, String pincode,
+			String latitude, String longitude, String image, String[] features) {
+		super();
+		this.id = id;
+		this.userId = userId;
+		this.area = area;
+		this.city = city;
+		this.state = state;
+		this.country = country;
+		this.pincode = pincode;
+		this.latitude = latitude;
+		this.longitude = longitude;
+		this.image = image;
+		this.features = features;
+	}
+	
+	public Parking() {
+		super();
+		this.id = 0;
+		this.userId = 0;
+		this.area = null;
+		this.city = null;
+		this.state = null;
+		this.country = null;
+		this.pincode = null;
+		this.latitude = null;
+		this.longitude = null;
+		this.image = null;
+		this.features = null;
+		
+	}
+	@Override
+	public String toString() {
+		return "Parking [id=" + id + ", userId=" + userId + ", area=" + area + ", city=" + city + ", state=" + state
+				+ ", country=" + country + ", pincode=" + pincode + ", latitude=" + latitude + ", longitude="
+				+ longitude + ", image=" + image + ", features=" + Arrays.toString(features) + "]";
+	}
+
+	public Object clone() throws CloneNotSupportedException{
+		return super.clone();
+	}
 	
 }

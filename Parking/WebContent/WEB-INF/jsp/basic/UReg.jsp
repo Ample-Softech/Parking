@@ -147,7 +147,7 @@
 
 	<jsp:include page="/mainMenu.jsp" />
 
-<form action="/Parking/reg.basic" method="post" id="myForm" name="myForm" onsubmit="return getLocation()">  
+<form action="/Parking/reg.basic" method="post" id="myForm" name="myForm" onsubmit="return getLocation()">
 	<input type="hidden" name="latitude" id="latitude" />
 	<input type="hidden" name="longitude" id="longitude" />
 <div class="container register well">

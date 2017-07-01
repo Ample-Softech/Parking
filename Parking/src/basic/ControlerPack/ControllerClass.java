@@ -1,19 +1,21 @@
+
 package basic.ControlerPack;
 
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.List;
-import java.util.Map;
+import java.io.*;
+import java.util.*;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import org.apache.log4j.PropertyConfigurator;
-import org.junit.Before;
+import org.junit.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,22 +28,22 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import com.google.gson.Gson;
-import basic.Pojo.Demo;
-import basic.Pojo.Parking;
-import basic.Pojo.Users;
+import basic.Pojo.*;
 import services.Services;
 
 @Controller
 @SessionAttributes({"Users","Parking"})
+@PropertySource(value = { "classpath:Parking.properties" })
 public class ControllerClass {
 
 	private static final Logger logger = LoggerFactory.getLogger(ControllerClass.class);
 
-	
 	@Autowired
-	Services service = new Services();
+	@Qualifier("service")
+	Services service;
 
 	@Autowired
+	@Qualifier("modelAndView")
 	ModelAndView modelAndView;
 	
 	@Autowired
@@ -50,10 +52,12 @@ public class ControllerClass {
 	@Autowired
 	HttpServletResponse response;
 	
+	@Autowired
+	private Environment environment;
+	
 	//sagar...
 	@ResponseBody
 	@RequestMapping(value="/home", method=RequestMethod.GET)
-	@Before
 	public ModelAndView homePage() {
 
 		modelAndView.setViewName("index");
@@ -128,22 +132,14 @@ public class ControllerClass {
 	@ResponseBody
 	@RequestMapping(value="/reg", method=RequestMethod.GET)
 	public ModelAndView regcod(@RequestParam Map<String,String> requestParams) {
-		Users u1 = new Users();
-		u1.setFname(requestParams.get("fname"));
-		u1.setMname(requestParams.get("mname"));
-		u1.setLname(requestParams.get("lname"));
-		u1.setGender(requestParams.get("gender"));
-		u1.setUsername(requestParams.get("username"));
-		u1.setPassword(requestParams.get("password"));
-		u1.setDob(requestParams.get("dob"));
-		u1.setLatitude(requestParams.get("latitude"));
-		u1.setLongitude(requestParams.get("longitude"));
-		u1.setArea(requestParams.get("area"));
-		u1.setCity(requestParams.get("city"));
-		u1.setState(requestParams.get("state"));
-		u1.setCountry(requestParams.get("country"));
-		u1.setPincode(requestParams.get("pincode"));
-		u1.setUsertype("user");
+		Users u1 = new Users(0, requestParams.get("fname"),
+				requestParams.get("mname"), requestParams.get("lname"), 
+				requestParams.get("gender"), requestParams.get("username"),
+				requestParams.get("password"), requestParams.get("dob"),
+				requestParams.get("latitude"), requestParams.get("longitude"),
+				requestParams.get("area"), requestParams.get("state"),
+				requestParams.get("city"), requestParams.get("country"), 
+				requestParams.get("pincode"), "user");
 		if ((!(u1.getLatitude().equals("")) && u1.getLatitude()!=null) || (!(u1.getLongitude().equals("")) && u1.getLongitude()!=null)) {
 			System.out.println(u1);
 			if (service.insertUser(u1)==1) {
@@ -163,7 +159,7 @@ public class ControllerClass {
 				if (content.equals("image/jpeg") || content.equals("image/gif") || content.equals("image/png")) {
 					byte[] bytes = file.getBytes();
 					// Create the file on server
-					File serverFile = new File("C:\\Users\\Sagar Pawar\\git\\Parking\\Parking\\WebContent\\images\\parkinks" + File.separator + file.getOriginalFilename());
+					File serverFile = new File(environment.getRequiredProperty("imagePath") + File.separator + file.getOriginalFilename());
 					BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
 					stream.write(bytes);
 					stream.close();
@@ -234,22 +230,26 @@ public class ControllerClass {
 	
 	@ResponseBody
 	@RequestMapping(value="/regDone", method=RequestMethod.GET)
-	public ModelAndView regDone(){		
+	public ModelAndView regDone(){
 		return new ModelAndView("RegDone");
 	}		
-	
+
+	@Test
+	@PostConstruct
 	public void init() throws Exception {
-		PropertyConfigurator.configure("C:\\Users\\Sagar Pawar\\git\\Parking\\Parking\\WebContent\\WEB-INF\\classes\\log4j.properties");
-
+		PropertyConfigurator.configure(environment.getRequiredProperty("log4j.properties.file"));
+		
 		System.out.println("\n**   Spring F/M Initialization(Started) invoking by init method..   **\n");
-
+	
 		logger.trace("TRACE");
 		logger.debug("DEBUG");
 		logger.info("INFO");
 		logger.warn("WARN");
-		logger.error("ERROR");
+		logger.error("ERROR");		
 	}
 
+	@Test
+	@PreDestroy
 	public void destroy() throws Exception {
 		System.out.println("\n**   Spring F/M Destroying(Closed) invoking by destroy method..   **\n");
 	}
