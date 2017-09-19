@@ -53,12 +53,9 @@ public class DAO implements DaoInf {
 		try {
 			this.session = sessionFactory.openSession();
 			this.session.beginTransaction();
-//			a1.add((Parking) this.session.get(Parking.class, 1));
 			org.hibernate.Query queryResult = this.session.createQuery("FROM Parking");
 			a1 = (List<Parking>) queryResult.list(); 
 			a1.forEach(System.out::println);
-//			return template.query("SELECT * FROM parkspace;", new ParkMapping());
-
 		} catch (Exception e) {
 			this.exceptional();
 			System.err.println(e);
@@ -121,9 +118,9 @@ public class DAO implements DaoInf {
 			p1.setCity(rs.getString("city"));
 			p1.setState(rs.getString("state"));
 			p1.setCountry(rs.getString("country"));
-			p1.setPincode(rs.getString("pincode"));
-			p1.setLatitude(rs.getString("latitude"));
-			p1.setLongitude(rs.getString("longitude"));
+			p1.setPincode(rs.getInt("pincode"));
+			p1.setLatitude(rs.getFloat("latitude"));
+			p1.setLongitude(rs.getFloat("longitude"));
 			p1.setImage(rs.getString("image"));
 			return p1;
 		}		

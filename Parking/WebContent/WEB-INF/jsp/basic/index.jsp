@@ -7,6 +7,7 @@
     	<meta charset="utf-8">
 		
 		<jsp:include page="/link.jsp" />
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ5r7UKO1smUmapgSi3dLV9MWkbFMi45M&&libraries=places" async defer ></script>
 		<script type="text/javascript">
 			$(document).ready(function() {    		
    		 		$("#searchPlace").click(function(){

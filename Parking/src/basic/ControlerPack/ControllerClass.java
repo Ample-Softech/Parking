@@ -3,6 +3,8 @@ package basic.ControlerPack;
 
 import java.io.*;
 import java.util.*;
+import java.util.stream.Collectors;
+
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.servlet.http.HttpServletRequest;
@@ -113,9 +115,9 @@ public class ControllerClass {
 		p1.setCity(requestParams.get("city"));
 		p1.setState("Maharashtra");
 		p1.setCountry("India");
-		p1.setPincode(requestParams.get("pincode"));
-		p1.setLatitude(requestParams.get("latitude"));
-		p1.setLongitude(requestParams.get("longitude"));
+		p1.setPincode(Integer.parseInt(requestParams.get("pincode")));
+		p1.setLatitude(Float.parseFloat(requestParams.get("latitude")));
+		p1.setLongitude(Float.parseFloat(requestParams.get("longitude")));
 		p1.setUserId(u1.getId());
 		
 		p2 = service.inserPark(p1);
@@ -190,13 +192,18 @@ public class ControllerClass {
 	@RequestMapping(value="/Check", method=RequestMethod.GET)
 	public ModelAndView print(@RequestParam Map<String,String> requestParams) {
 		modelAndView=new ModelAndView("find");
-		System.out.println("loc= "+requestParams.get("loc")+", lat= "+requestParams.get("lat")+", lng= "+requestParams.get("lng"));
+//		System.out.println("loc= "+requestParams.get("loc")+", lat= "+requestParams.get("lat")+", lng= "+requestParams.get("lng"));
 		modelAndView.addObject("latitude", requestParams.get("lat"));
 		modelAndView.addObject("longitude", requestParams.get("lng"));		
 		modelAndView.addObject("loc", requestParams.get("loc"));
-		List<Parking> l1 = service.getParkings();
-		System.out.println("list= "+l1);
-		modelAndView.addObject("parking", l1);			
+		float lat = Float.parseFloat(requestParams.get("lat"));
+		float lng = Float.parseFloat(requestParams.get("lng"));
+//		List<Parking> l1 = service.getParkings();
+
+		List<Parking> l1 = service.getParkings().stream().filter(p->p.getLatitude()>(lat-0.01) && p.getLatitude()<(lat+0.1)).collect(Collectors.toList());
+		modelAndView.addObject("parking", l1);
+		modelAndView.addObject("json", new Gson().toJson(l1));
+
 		return modelAndView;
 	}
 	
