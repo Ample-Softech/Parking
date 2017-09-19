@@ -28,9 +28,6 @@
 	function getLocation() {
     	var geocoder = new google.maps.Geocoder();
     	var address = document.forms["myForm"]["pincode"].value;
-    	var fname = document.forms["myForm"]["fname"].value;
-    	var mname = document.forms["myForm"]["mname"].value;
-    	var lname = document.forms["myForm"]["lname"].value;
     	var gender = document.forms["myForm"]["gender"].value;
     	var dob = document.forms["myForm"]["dob"].value;
     	var area = document.forms["myForm"]["area"].value;
@@ -159,19 +156,19 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-        	                <input type="text" name="fname" id="fname" class="form-control input-lg" placeholder="First Name" tabindex="1" required="required" />
+        	                <input type="text" pattern="[a-zA-Z][a-zA-Z0-9\s]*" name="fname" id="fname" class="form-control input-lg" placeholder="First Name" tabindex="1" required="required" />
 						</div>
 					</div>
 					
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-           	            	<input type="text" required="required" name="mname" id="mname" class="form-control input-lg" placeholder="Middle Name" tabindex="1">
+           	            	<input type="text" pattern="[a-zA-Z][a-zA-Z0-9\s]*" required="required" name="mname" id="mname" class="form-control input-lg" placeholder="Middle Name" tabindex="1">
 						</div>
 					</div>
 				
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-							<input type="text" required="required" name="lname" id="lname" class="form-control input-lg" placeholder="Last Name" tabindex="2">
+							<input type="text" pattern="[a-zA-Z][a-zA-Z0-9\s]*" required="required" name="lname" id="lname" class="form-control input-lg" placeholder="Last Name" tabindex="2">
 						</div>
 					</div>
 				</div>		
@@ -246,12 +243,12 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-							<input type="password" name="password" required="required" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
+							<input type="password" pattern="[a-zA-Z][a-zA-Z0-9\s]*{3}" name="password" required="required" id="password" class="form-control input-lg" placeholder="Password" tabindex="5">
 						</div>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-							<input type="password" name="passconf" required="required" id="passconf" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
+							<input type="password" pattern="[a-zA-Z][a-zA-Z0-9\s]*{3}" name="passconf" required="required" id="passconf" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
 						</div>
 					</div>
 				</div>
@@ -263,12 +260,12 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-							<input type="text" name="city" id="city" required="required" class="form-control input-lg" placeholder="City" tabindex="5">
+							<input type="text" pattern="[a-zA-Z][a-zA-Z0-9\s]*" name="city" id="city" required="required" class="form-control input-lg" placeholder="City" tabindex="5">
 						</div>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-						<input type="text" name="state" id="state" class="form-control input-lg" placeholder="State" required="required" tabindex="6">
+						<input type="text" pattern="[a-zA-Z][a-zA-Z0-9\s]*" name="state" id="state" class="form-control input-lg" placeholder="State" required="required" tabindex="6">
 					</div>
 				</div>
 			</div>
@@ -276,12 +273,12 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<input type="text" name="country" id="country" class="form-control input-lg" required="required" placeholder="Country" tabindex="5">
+						<input type="text" pattern="[a-zA-Z][a-zA-Z0-9\s]*" name="country" id="country" class="form-control input-lg" required="required" placeholder="Country" tabindex="5">
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
-						<input type="text" name="pincode" id="pincode" class="form-control input-lg" required="required" placeholder="Pincode" tabindex="6" />
+						<input type="text" pattern="[0-9]{6}" name="pincode" id="pincode" class="form-control input-lg" required="required" placeholder="Pincode" tabindex="6" />
 					</div>
 				</div>
 			</div>

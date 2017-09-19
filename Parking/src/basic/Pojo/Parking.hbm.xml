@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 18, 2017 11:43:31 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="basic.Pojo.Parking" table="PARKING">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="area" type="java.lang.String">
+            <column name="AREA" />
+        </property>
+        <property name="city" type="java.lang.String">
+            <column name="CITY" />
+        </property>
+        <property name="state" type="java.lang.String">
+            <column name="STATE" />
+        </property>
+        <property name="country" type="java.lang.String">
+            <column name="COUNTRY" />
+        </property>
+        <property name="pincode" type="java.lang.String">
+            <column name="PINCODE" />
+        </property>
+        <property name="latitude" type="java.lang.String">
+            <column name="LATITUDE" />
+        </property>
+        <property name="longitude" type="java.lang.String">
+            <column name="LONGITUDE" />
+        </property>
+        <property name="image" type="java.lang.String">
+            <column name="IMAGE" />
+        </property>
+        <property name="userId" type="int">
+            <column name="USERID" />
+        </property>
+    </class>
+</hibernate-mapping>

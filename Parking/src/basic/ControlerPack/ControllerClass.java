@@ -59,7 +59,6 @@ public class ControllerClass {
 	@ResponseBody
 	@RequestMapping(value="/home", method=RequestMethod.GET)
 	public ModelAndView homePage() {
-
 		modelAndView.setViewName("index");
 		return modelAndView;
 	}
@@ -125,12 +124,11 @@ public class ControllerClass {
 			return new ModelAndView("IUpload");			
 		} else {
 			return new ModelAndView("PReg");			
-		}
-				
+		}		
 	}	
 	
 	@ResponseBody
-	@RequestMapping(value="/reg", method=RequestMethod.GET)
+	@RequestMapping("/reg")
 	public ModelAndView regcod(@RequestParam Map<String,String> requestParams) {
 		Users u1 = new Users(0, requestParams.get("fname"),
 				requestParams.get("mname"), requestParams.get("lname"), 
@@ -192,15 +190,13 @@ public class ControllerClass {
 	@RequestMapping(value="/Check", method=RequestMethod.GET)
 	public ModelAndView print(@RequestParam Map<String,String> requestParams) {
 		modelAndView=new ModelAndView("find");
-//		System.out.println("loc= "+requestParams.get("loc")+", lat= "+requestParams.get("lat")+", lng= "+requestParams.get("lng"));
+		System.out.println("loc= "+requestParams.get("loc")+", lat= "+requestParams.get("lat")+", lng= "+requestParams.get("lng"));
 		modelAndView.addObject("latitude", requestParams.get("lat"));
 		modelAndView.addObject("longitude", requestParams.get("lng"));		
 		modelAndView.addObject("loc", requestParams.get("loc"));
-		List<Parking> l1 = service.getParkings();		
-		for (Parking parking : l1) {
-//			System.out.println(parking.getArea());			
-			modelAndView.addObject("parking", parking);			
-		}
+		List<Parking> l1 = service.getParkings();
+		System.out.println("list= "+l1);
+		modelAndView.addObject("parking", l1);			
 		return modelAndView;
 	}
 	

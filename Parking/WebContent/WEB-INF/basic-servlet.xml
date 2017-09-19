@@ -10,6 +10,7 @@
                            http://www.springframework.org/schema/mvc
                            http://www.springframework.org/schema/mvc/spring-mvc.xsd"
                            default-init-method="init" default-destroy-method="destroy">
+	
 	<context:annotation-config />
     <context:property-placeholder location="classpath:/Parking.properties" />
 	<context:component-scan base-package="basic.ControlerPack" />

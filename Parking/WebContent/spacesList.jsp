@@ -2,7 +2,7 @@
 	<div class="box">
   		<div class="container-fluid navbar2">
     		<div class="header">
-      			<a class="brand" >${loc }</a>
+      			<label class="brand" >${loc }</label>>
     		</div>
   		</div>
 	</div>

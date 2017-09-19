@@ -7,7 +7,7 @@ public class Parking implements Serializable, Cloneable {
 
 	private int id, userId;
 	private String area, city, state, country, pincode, latitude, longitude, image;
-	private String [] features;   
+//	private String [] features;   
 	
 	public int getId() {
 		return id;
@@ -69,12 +69,6 @@ public class Parking implements Serializable, Cloneable {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	public String[] getFeatures() {
-		return features;
-	}
-	public void setFeatures(String[] features) {
-		this.features = features;
-	}
 
 	public Parking(int id, int userId, String area, String city, String state, String country, String pincode,
 			String latitude, String longitude, String image, String[] features) {
@@ -89,7 +83,7 @@ public class Parking implements Serializable, Cloneable {
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.image = image;
-		this.features = features;
+	//	this.features = features;
 	}
 	
 	public Parking() {
@@ -104,14 +98,14 @@ public class Parking implements Serializable, Cloneable {
 		this.latitude = null;
 		this.longitude = null;
 		this.image = null;
-		this.features = null;
+//		this.features = null;
 		
 	}
 	@Override
 	public String toString() {
 		return "Parking [id=" + id + ", userId=" + userId + ", area=" + area + ", city=" + city + ", state=" + state
 				+ ", country=" + country + ", pincode=" + pincode + ", latitude=" + latitude + ", longitude="
-				+ longitude + ", image=" + image + ", features=" + Arrays.toString(features) + "]";
+				+ longitude + ", image=" + image  + "]";
 	}
 
 	public Object clone() throws CloneNotSupportedException{
