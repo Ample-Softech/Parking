@@ -1,6 +1,9 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta http-equiv="cache-control" content="no-cache" />
+	<meta http-equiv="expires" content="0" />
+	<meta http-equiv="pragma" content="no-cache" />
 
   <link rel="stylesheet" href='<c:url value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></c:url>'>
   <script src='<c:url value="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></c:url>'></script>
@@ -35,8 +38,8 @@
 <script type="text/javascript" src='<c:url value="/chosen/chosen.proto.js"></c:url>'></script>
 <script type="text/javascript" src='<c:url value="/chosen/chosen.proto.min.js"></c:url>'></script>
 
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ5r7UKO1smUmapgSi3dLV9MWkbFMi45M&&libraries=places" async defer ></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ5r7UKO1smUmapgSi3dLV9MWkbFMi45M&libraries=places&sensor=false"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ5r7UKO1smUmapgSi3dLV9MWkbFMi45M&&libraries=places" async defer ></script>
+<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ5r7UKO1smUmapgSi3dLV9MWkbFMi45M&libraries=places&sensor=false"></script>
  -->
 <!-- 													 AIzaSyDSp8fkmT6XkMdn_DgavGX1Z4fJQ1jwm_Q
 														 AIzaSyCy0y-BGBgl6fjl1zDhcBpgHHo6ZR6PXvY

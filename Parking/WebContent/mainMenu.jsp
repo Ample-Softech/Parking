@@ -17,7 +17,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="#">Drivers</a></li>
-        <li><a href="#">Space Owners</a></li>
+        <li><a href="/Parking/SpaceOwners.basic">Space Owners</a></li>
       </ul>
       	<c:if test="${Users!=null}">
       		<c:out value="${Users.fname }"></c:out>

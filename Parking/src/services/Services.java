@@ -47,4 +47,14 @@ public class Services implements ServicesInf {
 		return dao.insertImage(uid, path);
 	}
 
+	@Override
+	public List<Users> spaceOwners() {
+		return this.dao.spaceOwners();
+	}
+
+	@Override
+	public List<Parking> showParkings(int id) {
+		return this.dao.showParkings(id);
+	}
+
 }

@@ -22,6 +22,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -131,22 +132,9 @@ public class ControllerClass {
 	
 	@ResponseBody
 	@RequestMapping("/reg")
-	public ModelAndView regcod(@RequestParam Map<String,String> requestParams) {
-		Users u1 = new Users(0, requestParams.get("fname"),
-				requestParams.get("mname"), requestParams.get("lname"), 
-				requestParams.get("gender"), requestParams.get("username"),
-				requestParams.get("password"), requestParams.get("dob"),
-				requestParams.get("latitude"), requestParams.get("longitude"),
-				requestParams.get("area"), requestParams.get("state"),
-				requestParams.get("city"), requestParams.get("country"), 
-				requestParams.get("pincode"), "user");
-		if ((!(u1.getLatitude().equals("")) && u1.getLatitude()!=null) || (!(u1.getLongitude().equals("")) && u1.getLongitude()!=null)) {
-			System.out.println(u1);
-			if (service.insertUser(u1)==1) {
-				return new ModelAndView("Login");				
-			}
-		} 
-		return new ModelAndView("UReg"); 		
+	public ModelAndView regcod(@ModelAttribute("user") Users u) {
+		System.out.println("User= "+u);	
+		return new ModelAndView("UReg");
 	}	
 	
 	@ResponseBody
@@ -187,6 +175,29 @@ public class ControllerClass {
 		}
 		return modelAndView;
 	}	
+	
+	@ResponseBody
+	@RequestMapping(value="/SpaceOwners", method=RequestMethod.GET)
+	public ModelAndView spaceOwners(@RequestParam Map<String,String> requestParams) {
+		return new ModelAndView("SpaceOwners", "users", service.spaceOwners());
+	}
+
+	@ResponseBody
+	@RequestMapping("/ShowParkings/{id}")
+	public ModelAndView showParkings(@PathVariable("id") int id) {
+		modelAndView=new ModelAndView("find");
+		List<Parking> l1 = service.showParkings(id);
+		modelAndView.addObject("parking", l1);
+		modelAndView.addObject("json", new Gson().toJson(l1));
+		if(l1.size()>0) { 
+			int s = l1.size()-1;
+			modelAndView.addObject("latitude", l1.get(s).getLatitude());
+			modelAndView.addObject("longitude", l1.get(s).getLongitude());
+			modelAndView.addObject("loc", l1.get(s).getArea());
+		}
+		return modelAndView;
+	}
+
 	
 	@ResponseBody
 	@RequestMapping(value="/Check", method=RequestMethod.GET)

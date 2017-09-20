@@ -1,5 +1,6 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -24,127 +25,12 @@
 }
 </style>
 
-<script type="text/javascript">
-	function getLocation() {
-    	var geocoder = new google.maps.Geocoder();
-    	var address = document.forms["myForm"]["pincode"].value;
-    	var gender = document.forms["myForm"]["gender"].value;
-    	var dob = document.forms["myForm"]["dob"].value;
-    	var area = document.forms["myForm"]["area"].value;
-    	var city = document.forms["myForm"]["city"].value;
-    	var state = document.forms["myForm"]["state"].value;
-    	var country = document.forms["myForm"]["country"].value;
-    	var pass1 = document.forms["myForm"]["password"].value;
-    	var pass2 = document.forms["myForm"]["passconf"].value;
-    	var tc = document.forms["myForm"]["t&c"].value;
-    	
-        if(fname=="" || fname!=(fname.split(' ').join('+'))){
-    		window.alert("Firstname Field should not be blank or with spaces..");
-        	document.getElementById("fname").focus();
-    		return false;
-    	}
-        if(mname=="" || mname!=(mname.split(' ').join('+'))){
-    		window.alert("Middlename Field should not be blank or with spaces..");
-        	document.getElementById("mname").focus();
-    		return false;
-    	}
-        if(lname=="" || lname!=(lname.split(' ').join('+'))){
-    		window.alert("Lastname Field should not be blank or with spaces..");
-        	document.getElementById("lname").focus();
-    		return false;
-    	}
-        if(gender=="" || gender!=(gender.split(' ').join('+'))){
-    		window.alert("Gender Field should not be blank..");
-        	document.getElementById("gender").focus();
-    		return false;
-    	}
-        if(dob=="" || dob!=(dob.split(' ').join('+'))){
-    		window.alert("DOB Field should not be blank or with spaces..");
-        	document.getElementById("dob").focus();
-    		return false;
-    	}
-        if(area=="" || area!=area.trim()){
-    		window.alert("Area Field should not be blank or with outer spaces..");
-        	document.getElementById("area").focus();
-    		return false;
-    	}
-        if(city=="" || city!=(city.split(' ').join('+'))){
-    		window.alert("City Field should not be blank or with spaces..");
-        	document.getElementById("city").focus();
-    		return false;
-    	}
-        if(state=="" || state!=state.trim()){
-    		window.alert("State Field should not be blank or with spaces..");
-        	document.getElementById("state").focus();
-    		return false;
-    	}
-        if(country=="" || country!=(country.split(' ').join('+'))){
-    		window.alert("Country Field should not be blank or with spaces..");
-        	document.getElementById("country").focus();
-    		return false;
-    	}
-
-        if(tc!='one'){
-    		window.alert("T&C not Check..");
-        	document.getElementById("t&c").focus();
-    		return false;
-    	}
-
-        
-        //Password
-    	if((pass1!="") && (pass1==(pass1.split(' ').join('+')))){
-			if(pass1.length > 3){
-				if(pass1!=pass2){
-		    		window.alert("Password Fields not macthed");
-		    		document.getElementById("password").focus();
-		    		document.getElementById("passconf").focus();
-		    		return false;    							
-				}
-			} else {
-	    		window.alert("password Field should not be less than lenth 3..");				
-	    		document.getElementById("password").focus();
-	    		return false;    		
-			}
-    	} else {
-//    		document.getElementById("errorMessage").innerHTML="username Field should not be blank or with spaces..";
-    		window.alert("password Field should not be blank or with spaces..");
-    		document.getElementById("password").focus();
-    		document.getElementById("passconf").focus();
-    		return false;    		
-    	}
-    	
-        //GeoLocation
-    	if((address!="") && (address==(address.split(' ').join('+')))){
-        	geocoder.geocode({'address': address }, function (results, status) {
-            	if (status == google.maps.GeocoderStatus.OK) {
-                	var latitude = results[0].geometry.location.lat();
-                	var longitude = results[0].geometry.location.lng();
-    				document.getElementById("latitude").value = latitude;
-    				document.getElementById("longitude").value = longitude;
-    				document.getElementById("myForm").submit();
-//    	  			alert("address: "+address+"\nLatitude: " + latitude + "\nLongitude: " + longitude);
-//    				window.location = "/Parking/reg.basic?latitude=" + latitude + "&longitude=" + longitude;
-      				return true;
-            	} else {
-                	alert("GeoLocation Request failed.");
-                	return false;
-            	}
-        	});        	
-    	} else {
-//    		document.getElementById("errorMessage").innerHTML="username Field should not be blank or with spaces..";
-    		window.alert("Pincode Field should not be blank or with spaces..");
-    		document.getElementById("pincode").focus();    		
-    		return false;
-    	}
-    	
-	}
-</script>
 </head>
 <body>
 
 	<jsp:include page="/mainMenu.jsp" />
-
-<form action="/Parking/reg.basic" method="post" id="myForm" name="myForm" onsubmit="return getLocation()">
+<br>
+<form action="/Parking/reg.basic" method="post" id="myForm" name="myForm" onsubmit='return(getLocationValid())'>
 	<input type="hidden" name="latitude" id="latitude" />
 	<input type="hidden" name="longitude" id="longitude" />
 <div class="container register well">
@@ -158,13 +44,7 @@
 						<div class="form-group">
         	                <input type="text" pattern="[a-zA-Z][a-zA-Z0-9\s]*" name="fname" id="fname" class="form-control input-lg" placeholder="First Name" tabindex="1" required="required" />
 						</div>
-					</div>
-					
-					<div class="col-xs-12 col-sm-6 col-md-6">
-						<div class="form-group">
-           	            	<input type="text" pattern="[a-zA-Z][a-zA-Z0-9\s]*" required="required" name="mname" id="mname" class="form-control input-lg" placeholder="Middle Name" tabindex="1">
-						</div>
-					</div>
+					</div>					
 				
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
@@ -178,9 +58,9 @@
 						<div class="form-group form-inline">
 							<label for="gen form-control">Gender : </label>
 							<div class="form-control gen">
-								<input class="radio" type="radio" name="gender" value="male" />
+								<input class="radio" type="radio" id="gender" name="gender" value="Male" />
 								<label for="gender form-control">Male</label>
-								<input class="radio"  type="radio" name="gender" value="female" />
+								<input class="radio"  type="radio" id="gender" name="gender" value="Female" />
 								<label for="gender">Female</label>
 							</div>
 						</div>
@@ -254,7 +134,7 @@
 				</div>
 			
 				<div class="form-group">
-					<input type="text" name="area" required="required" id="area" class="form-control input-lg" placeholder="Address" tabindex="4">
+					<input type="text" name="area" required="required" id="area" class="form-control input-lg" placeholder="Street" tabindex="4">
 				</div>
 			
 				<div class="row">
@@ -334,6 +214,74 @@
 	</div><!-- /.modal -->
 
 </div>
+<script type="text/javascript">
+function getLocationValid() {
+	var pass1 = document.forms["myForm"]["password"].value;
+	var pass2 = document.forms["myForm"]["passconf"].value;
+	var gender = document.forms["myForm"]["gender"].value;
+	var address = document.forms["myForm"]["pincode"].value;
+	var tc = document.getElementById('t&c').value;
+	var psj = pass1.split(' ').join('+');
+	var pcsj = pass2.split(' ').join('+');
+	var gsj = gender.split(' ').join('+');
+	var asj = address.split(' ').join('+');
+	
+    if(gender=="" || gender!=gsj){
+		window.alert("Gender Field should not be blank..!");
+    	document.getElementById("gender").focus();
+		return false;
+	}
+
+	if(pass1=="" || psj!=pass1 || pass2=="" || pcsj!=pass2) {
+		window.alert("Password Field should not be blank or Spaces..");
+		document.myForm.password.focus();
+		return false;
+	} else {
+		if(psj.length<2){
+			window.alert("Password Size atleast 2..");
+			document.myForm.password.focus();
+			return false;
+		} else {
+			if((psj!=pcsj)||(pass1!=pass2)){
+				window.alert("Password & Re-enter Password Both are not matched..!");
+				document.myForm.password.focus();
+				return false;
+			}
+		}
+	}
+
+	//GeoLocation
+	if(address!="" && address!=asj){
+		window.alert("Pincode Field should not be blank or with spaces..");
+		document.getElementById("pincode").focus();    		
+		return false;
+	} else {
+		var geocoder = new google.maps.Geocoder();
+    	geocoder.geocode({'address': address }, function (results, status) {
+        	if (status == google.maps.GeocoderStatus.OK) {
+            	var latitude = results[0].geometry.location.lat();
+            	var longitude = results[0].geometry.location.lng();
+				document.getElementById("latitude").innerText = latitude;
+				document.getElementById("longitude").innerText = longitude;
+//				document.getElementById("myForm").submit();
+//	  			alert("address: "+address+"\nLatitude: " + latitude + "\nLongitude: " + longitude);
+//				window.location = "/Parking/reg.basic?latitude=" + latitude + "&longitude=" + longitude;
+        	} else {
+            	alert("GeoLocation Request failed.");
+            	return false;
+        	}
+    	});        	
+	}    	
+    if(tc!="one"){
+		window.alert("T&C not Check..!");
+    	document.getElementById("t&c").focus();
+		return false;
+	}
+
+	return true;
+}
+</script>
+
 </form>
 <!-- End register  -->
 

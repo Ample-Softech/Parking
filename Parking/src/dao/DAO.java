@@ -4,6 +4,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +22,88 @@ public class DAO implements DaoInf {
 	private JdbcTemplate template;
 	private Session session;
 
+	
+	@Override
+	public List<Users> spaceOwners() {
+		List<Users> a1 = new ArrayList<>();
+		List<Integer> uids = getParkings().stream().map(Parking::getUserId).distinct().collect(Collectors.toList());
+		try {
+			this.session = sessionFactory.openSession();
+			this.session.beginTransaction();
+			uids.forEach(id->a1.add((Users) this.session.get(Users.class, id)));
+//			a1.forEach(System.out::println);
+		} catch (Exception e) {
+			this.exceptional();
+			System.err.println(e);
+		} finally {
+			this.closeSession();
+		}		
+		return a1;		
+	}
+	
+	
+	@Override
+	public List<Parking> showParkings(int id) {
+		List<Parking> a1 = new ArrayList<>();
+		try {
+			this.session = sessionFactory.openSession();
+			this.session.beginTransaction();
+			org.hibernate.Query queryResult = this.session.createQuery("FROM Parking WHERE userid = :userId");
+			queryResult.setInteger("userId", id);
+			a1 = (List<Parking>) queryResult.list(); 
+//			a1.forEach(System.out::println);
+		} catch (Exception e) {
+			this.exceptional();
+			System.err.println(e);
+		} finally {
+			this.closeSession();
+		}		
+		return a1;		
+	}
+
+	@Override
+	public List<Parking> getParkings() {
+		List<Parking> a1 = new ArrayList<>();
+		try {
+			this.session = sessionFactory.openSession();
+			this.session.beginTransaction();
+			org.hibernate.Query queryResult = this.session.createQuery("FROM Parking");
+			a1 = (List<Parking>) queryResult.list(); 
+//			a1.forEach(System.out::println);
+		} catch (Exception e) {
+			this.exceptional();
+			System.err.println(e);
+		} finally {
+			this.closeSession();
+		}		
+		return a1;		
+	}
+
+	public void closeSession(){
+		if(this.session.isConnected()){
+			this.session.getTransaction().commit();
+			this.session.close();
+			System.out.println("Session closed..");
+		}else{
+			System.out.println("Session already Disabled..");
+		}
+		
+	}
+	
+	public void exceptional(){
+		if(this.session.isConnected()){
+			this.session.getTransaction().commit();
+			this.session.close();
+			sessionFactory.close();
+			System.out.println("Hibernate Session & SessionFactory closed..");
+		} else {
+			sessionFactory.close();
+//			HibernateUtilities.getsSessionFactory().close();
+			System.out.println("Hibernate SessionFactory closed..");
+		}
+	}
+
+	
 	@Override
 	public int insertImage(int uid, String path) {
 		try {
@@ -42,29 +127,10 @@ public class DAO implements DaoInf {
 			} else {
 				return null;
 			}
-		} catch (Exception e) {
+		} catch (Exception e) { 
 			return null;
 		}		
 	}
-
-	@Override
-	public List<Parking> getParkings() {
-		List<Parking> a1 = new ArrayList<>();
-		try {
-			this.session = sessionFactory.openSession();
-			this.session.beginTransaction();
-			org.hibernate.Query queryResult = this.session.createQuery("FROM Parking");
-			a1 = (List<Parking>) queryResult.list(); 
-			a1.forEach(System.out::println);
-		} catch (Exception e) {
-			this.exceptional();
-			System.err.println(e);
-		} finally {
-			this.closeSession();
-		}		
-		return a1;		
-	}
-
 	
 	
 	@Override
@@ -97,13 +163,13 @@ public class DAO implements DaoInf {
 			u1.setUsername(rs.getString("username"));
 			u1.setPassword(rs.getString("password"));
 			u1.setDob(rs.getString("dob"));
-			u1.setLatitude(rs.getString("latitude"));
-			u1.setLongitude(rs.getString("longitude"));
+			u1.setLatitude(rs.getFloat("latitude"));
+			u1.setLongitude(rs.getFloat("longitude"));
 			u1.setArea(rs.getString("area"));
 			u1.setCity(rs.getString("city"));			
 			u1.setState(rs.getString("state"));
 			u1.setCountry(rs.getString("country"));
-			u1.setPincode(rs.getString("pincode"));
+			u1.setPincode(rs.getInt("pincode"));
 			u1.setUsertype(rs.getString("usertype"));
 			return u1;
 		}
@@ -138,29 +204,6 @@ public class DAO implements DaoInf {
 		System.out.println("DAO");
 	}
 	
-	public void closeSession(){
-		if(this.session.isConnected()){
-			this.session.getTransaction().commit();
-			this.session.close();
-			System.out.println("Session closed..");
-		}else{
-			System.out.println("Session already Disabled..");
-		}
-		
-	}
-	
-	public void exceptional(){
-		if(this.session.isConnected()){
-			this.session.getTransaction().commit();
-			this.session.close();
-			sessionFactory.close();
-			System.out.println("Hibernate Session & SessionFactory closed..");
-		} else {
-			sessionFactory.close();
-//			HibernateUtilities.getsSessionFactory().close();
-			System.out.println("Hibernate SessionFactory closed..");
-		}
-	}
 	
 }
 

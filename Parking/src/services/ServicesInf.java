@@ -11,5 +11,6 @@ public interface ServicesInf {
 	public Parking inserPark(Parking p1);
 	public int insertImage(int uid, String path);	
 	public Users getUser(String username, String password);
-	
+	public List<Users> spaceOwners();
+	public List<Parking> showParkings(int id);
 }
