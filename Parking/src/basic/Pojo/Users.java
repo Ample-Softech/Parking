@@ -4,40 +4,12 @@ import java.io.Serializable;
 
 public class Users implements Serializable, Cloneable
 {
+	private String fname, lname, gender, username, password, dob, area, state, city, country, usertype;
 	private int id, pincode;
 	float latitude, longitude;
-	private String fname, mname, lname, gender, username, password, dob, area, state, city, country, usertype;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public int getPincode() {
-		return pincode;
-	}
-
-	public void setPincode(int pincode) {
-		this.pincode = pincode;
-	}
-
-	public float getLatitude() {
-		return latitude;
-	}
-
-	public void setLatitude(float latitude) {
-		this.latitude = latitude;
-	}
-
-	public float getLongitude() {
-		return longitude;
-	}
-
-	public void setLongitude(float longitude) {
-		this.longitude = longitude;
+	
+	public Object clone() throws CloneNotSupportedException{
+		return super.clone();
 	}
 
 	public String getFname() {
@@ -46,14 +18,6 @@ public class Users implements Serializable, Cloneable
 
 	public void setFname(String fname) {
 		this.fname = fname;
-	}
-
-	public String getMname() {
-		return mname;
-	}
-
-	public void setMname(String mname) {
-		this.mname = mname;
 	}
 
 	public String getLname() {
@@ -136,37 +100,43 @@ public class Users implements Serializable, Cloneable
 		this.usertype = usertype;
 	}
 
-	public Users(){
-		super();
-		this.id = 0;
-		this.fname = null;
-		this.mname = null;
-		this.lname = null;
-		this.gender = null;
-		this.username = null;
-		this.password = null;
-		this.dob = null;
-		this.latitude = 0.0f;
-		this.longitude = 0.0f;
-		this.area = null;
-		this.state = null;
-		this.city = null;
-		this.country = null;
-		this.pincode = 0;
-		this.usertype = null;
-		
+	public int getId() {
+		return id;
 	}
-	
-	public Users(int id, int pincode, float latitude, float longitude, String fname, String mname, String lname,
-			String gender, String username, String password, String dob, String area, String state, String city,
-			String country, String usertype) {
-		super();
+
+	public void setId(int id) {
 		this.id = id;
+	}
+
+	public int getPincode() {
+		return pincode;
+	}
+
+	public void setPincode(int pincode) {
 		this.pincode = pincode;
+	}
+
+	public float getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(float latitude) {
 		this.latitude = latitude;
+	}
+
+	public float getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(float longitude) {
 		this.longitude = longitude;
+	}
+
+	public Users(String fname, String lname, String gender, String username, String password, String dob, String area,
+			String state, String city, String country, String usertype, int id, int pincode, float latitude,
+			float longitude) {
+		super();
 		this.fname = fname;
-		this.mname = mname;
 		this.lname = lname;
 		this.gender = gender;
 		this.username = username;
@@ -177,18 +147,37 @@ public class Users implements Serializable, Cloneable
 		this.city = city;
 		this.country = country;
 		this.usertype = usertype;
+		this.id = id;
+		this.pincode = pincode;
+		this.latitude = latitude;
+		this.longitude = longitude;
+	}
+
+	public Users() {
+		super();
+		this.fname = null;
+		this.lname = null;
+		this.gender = null;
+		this.username = null;
+		this.password = null;
+		this.dob = null;
+		this.area = null;
+		this.state = null;
+		this.city = null;
+		this.country = null;
+		this.usertype = null;
+		this.id = 0;
+		this.pincode = 0;
+		this.latitude = 0.0f;
+		this.longitude = 0.0f;
 	}
 
 	@Override
 	public String toString() {
-		return "Users [id=" + id + ", pincode=" + pincode + ", latitude=" + latitude + ", longitude=" + longitude
-				+ ", fname=" + fname + ", mname=" + mname + ", lname=" + lname + ", gender=" + gender + ", username="
-				+ username + ", password=" + password + ", dob=" + dob + ", area=" + area + ", state=" + state
-				+ ", city=" + city + ", country=" + country + ", usertype=" + usertype + "]";
-	}
-
-	public Object clone() throws CloneNotSupportedException{
-		return super.clone();
+		return "Users [fname=" + fname + ", lname=" + lname + ", gender=" + gender + ", username=" + username
+				+ ", password=" + password + ", dob=" + dob + ", area=" + area + ", state=" + state + ", city=" + city
+				+ ", country=" + country + ", usertype=" + usertype + ", id=" + id + ", pincode=" + pincode
+				+ ", latitude=" + latitude + ", longitude=" + longitude + "]";
 	}
 
 	@Override
@@ -205,7 +194,6 @@ public class Users implements Serializable, Cloneable
 		result = prime * result + Float.floatToIntBits(latitude);
 		result = prime * result + ((lname == null) ? 0 : lname.hashCode());
 		result = prime * result + Float.floatToIntBits(longitude);
-		result = prime * result + ((mname == null) ? 0 : mname.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + pincode;
 		result = prime * result + ((state == null) ? 0 : state.hashCode());
@@ -264,11 +252,6 @@ public class Users implements Serializable, Cloneable
 			return false;
 		if (Float.floatToIntBits(longitude) != Float.floatToIntBits(other.longitude))
 			return false;
-		if (mname == null) {
-			if (other.mname != null)
-				return false;
-		} else if (!mname.equals(other.mname))
-			return false;
 		if (password == null) {
 			if (other.password != null)
 				return false;
@@ -293,5 +276,5 @@ public class Users implements Serializable, Cloneable
 			return false;
 		return true;
 	}
-		
+	
 }

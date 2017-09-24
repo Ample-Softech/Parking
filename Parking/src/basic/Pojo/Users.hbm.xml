@@ -1,57 +1,54 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated Sep 9, 2017 10:29:07 PM by Hibernate Tools 3.5.0.Final -->
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Sep 21, 2017 10:13:18 AM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="basic.Pojo.Users" table="USERS">
-        <id name="id" type="int">
-            <column name="ID" />
-            <generator class="assigned" />
-        </id>
-        <property name="fname" type="java.lang.String">
-            <column name="FNAME" />
-        </property>
-        <property name="mname" type="java.lang.String">
-            <column name="MNAME" />
-        </property>
-        <property name="lname" type="java.lang.String">
-            <column name="LNAME" />
-        </property>
-        <property name="gender" type="java.lang.String">
-            <column name="GENDER" />
-        </property>
-        <property name="username" type="java.lang.String">
-            <column name="USERNAME" />
-        </property>
-        <property name="password" type="java.lang.String">
-            <column name="PASSWORD" />
-        </property>
-        <property name="dob" type="java.lang.String">
-            <column name="DOB" />
-        </property>
-        <property name="latitude" type="java.lang.String">
-            <column name="LATITUDE" />
-        </property>
-        <property name="longitude" type="java.lang.String">
-            <column name="LONGITUDE" />
-        </property>
-        <property name="area" type="java.lang.String">
-            <column name="AREA" />
-        </property>
-        <property name="state" type="java.lang.String">
-            <column name="STATE" />
-        </property>
-        <property name="city" type="java.lang.String">
-            <column name="CITY" />
-        </property>
-        <property name="country" type="java.lang.String">
-            <column name="COUNTRY" />
-        </property>
-        <property name="pincode" type="java.lang.String">
-            <column name="PINCODE" />
-        </property>
-        <property name="usertype" type="java.lang.String">
-            <column name="USERTYPE" />
-        </property>
-    </class>
+ <class name="basic.Pojo.Users" table="USERS">
+  <id name="id" type="int">
+   <column name="ID"/>
+   <generator class="increment"/>
+  </id>
+  <property generated="never" lazy="false" name="fname" type="java.lang.String">
+   <column name="FNAME"/>
+  </property>
+  <property generated="never" lazy="false" name="lname" type="java.lang.String">
+   <column name="LNAME"/>
+  </property>
+  <property generated="never" lazy="false" name="gender" type="java.lang.String">
+   <column name="GENDER"/>
+  </property>
+  <property generated="never" lazy="false" name="username" type="java.lang.String">
+   <column name="USERNAME"/>
+  </property>
+  <property generated="never" lazy="false" name="password" type="java.lang.String">
+   <column name="PASSWORD"/>
+  </property>
+  <property generated="never" lazy="false" name="dob" type="java.lang.String">
+   <column name="DOB"/>
+  </property>
+  <property generated="never" lazy="false" name="latitude" type="float">
+   <column name="LATITUDE"/>
+  </property>
+  <property generated="never" lazy="false" name="longitude" type="float">
+   <column name="LONGITUDE"/>
+  </property>
+  <property generated="never" lazy="false" name="area" type="java.lang.String">
+   <column name="AREA"/>
+  </property>
+  <property generated="never" lazy="false" name="state" type="java.lang.String">
+   <column name="STATE"/>
+  </property>
+  <property generated="never" lazy="false" name="city" type="java.lang.String">
+   <column name="CITY"/>
+  </property>
+  <property generated="never" lazy="false" name="country" type="java.lang.String">
+   <column name="COUNTRY"/>
+  </property>
+  <property generated="never" lazy="false" name="pincode" type="int">
+   <column name="PINCODE"/>
+  </property>
+  <property generated="never" lazy="false" name="usertype" type="java.lang.String">
+   <column name="USERTYPE"/>
+  </property>
+ </class>
 </hibernate-mapping>

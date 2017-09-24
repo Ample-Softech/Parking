@@ -16,10 +16,8 @@
       
       #map {
  		height: 250px;
-        width: 1170px;
-        margin-left: 90px;
-        margin-top: -3%;
-		margin-bottom: -0.5%;
+        width: 1168px;
+        margin: 0px 0px 0px 99px;  
       }
       
         /* Register(Page) : Credit to bootsnipp.com for the css for the color graph */
@@ -35,6 +33,8 @@
 }
 
 .prfind {
+	margin-top: 20px;
+	margin-bottom: 0px;
 }
 
 .prinfo {
@@ -60,7 +60,7 @@
 				<div class="row">
 					<div class=" form col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-                    	    <input type="text" required="required" name="street" id="street" class="form-control input-lg" placeholder=" Street/Area " tabindex="1">
+                    	    <input type="text" required="required" name="area1" id="area1" class="form-control input-lg" placeholder=" Street/Area " tabindex="1">
 						</div>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6">
@@ -71,7 +71,7 @@
 					
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-							<input type="text" required="required" name="pin" id="pin" class="form-control input-lg" placeholder=" Pincode " tabindex="2">
+							<input type="text" required="required" name="pincode1" id="pincode1" class="form-control input-lg" placeholder=" Pincode " tabindex="2">
 						</div>
 					</div>				
 
@@ -83,33 +83,36 @@
 	</div>
 </div>
 
-
 				<div id="map"></div>
 
+<form action="/Parking/parkSpace.basic" method="post" id="psForm" name="psForm" role="form" class="form" onsubmit='return(getPSpaceValid())'>
 
 <div class="container register well prinfo">
 	<div class="row">
     	<div class="  text-center col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-				<form role="form" class="form" method="post" action="/Parking/psReg.basic">
-					<input type="hidden" required="required" name="area" id="area" class="form-control input-lg" placeholder=" Pincode " tabindex="2">
-					<input type="hidden" required="required" name="city" id="city" class="form-control input-lg" placeholder=" Pincode " tabindex="2">
-					<input type="hidden" required="required" name="pincode" id="pincode" class="form-control input-lg" placeholder=" Pincode " tabindex="2">
+					<input type="hidden" required="required" name="userId" id="userId" value="${user.id }" />
+					<input type="hidden" pattern="[a-zA-Z][a-zA-Z0-9\s]*" required="required" name="area" id="area" />
+					<input type="hidden" pattern="[a-zA-Z][a-zA-Z0-9\s]*" required="required" name="city" id="city" />
+					<input type="hidden" pattern="[a-zA-Z][a-zA-Z0-9\s]*" required="required" name="state" id="state" value="MH" />
+					<input type="hidden" pattern="[a-zA-Z][a-zA-Z0-9\s]*" required="required" name="country" id="country" value="India" />					
+					<input type="hidden" pattern="[0-9]{6}" required="required" name="pincode" id="pincode" />
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-							<input type="hidden" required="required" name="latitude" id="latitude" class="form-control input-lg" placeholder=" Latitude " tabindex="2">
+							<input type="text"" required="required" name="latituded" id="latituded" class="form-control input-lg" placeholder=" Latitude " tabindex="2" disabled="disabled">
+							<input type="hidden" required="required" name="latitude" id="latitude" />
 						</div>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-							<input type="hidden" required="required" name="longitude" id="longitude" class="form-control input-lg" placeholder=" Logitude " tabindex="2">
+							<input type="text" required="required" name="longituded" id="longituded" class="form-control input-lg" placeholder=" Logitude " tabindex="2" disabled="disabled">
+							<input type="hidden" required="required" name="longitude" id="longitude" />
 						</div>
 					</div>										
 				</div>
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12">
 						<label >Features: </label>
-						
 						<input type="checkbox" class="" value="" name="" /><label for="">CCTV</label>
 						<input type="checkbox" class="" value="" name="" /><label for="">Garage</label>
 						<input type="checkbox" class="" value="" name="" /><label for="">Washing</label>
@@ -128,71 +131,52 @@
 						<a href="/Parking/home.basic" class="btn btn-success btn-block btn-lg"> Skip </a>
 					</div>
 				</div>
-			</form>
 		</div>
 	</div>
 </div>
+</form>
 <!--  -->
 
 <jsp:include page="/footer.jsp"></jsp:include>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ5r7UKO1smUmapgSi3dLV9MWkbFMi45M&libraries=places&callback=initMap" async defer></script>
 <script type="text/javascript">
 function GetLocation() {
-    var geocoder = new google.maps.Geocoder();
-    //var address = document.form.pincode.value; 
-    var address = document.getElementById("pin").value;
+    var address = document.getElementById("pincode1").value;
     var city1 = document.getElementById("city1").value;
-    var street = document.getElementById("street").value;
+    var street = document.getElementById("area1").value;
+    var location = street+", "+city1+", "+address;
 
-    var lat = document.getElementById("latitude");
-    var lng = document.getElementById("longitude");
     var area = document.getElementById("area");
     var city = document.getElementById("city");
-    var pincode = document.getElementById("pincode");
+    var pincode = document.getElementById("pincode");    
+    var lat = document.getElementById("latitude");
+    var lng = document.getElementById("longitude");
+    var latd = document.getElementById("latituded");
+    var lngd = document.getElementById("longituded");
 
-    if(street=="" || street!=(street.split(' ').join('+'))){
-//		document.getElementById("errorMessage").innerHTML="username Field should not be blank or with spaces..";
-//		window.alert("username Field should not be blank or with spaces..");
-		document.getElementById("street").focus();
-		return false;
-	}
-    
-    if(city1=="" || city1!=(city1.split(' ').join('+'))){
-//		document.getElementById("errorMessage").innerHTML="username Field should not be blank or with spaces..";
-//		window.alert("username Field should not be blank or with spaces..");
-		document.getElementById("city1").focus();
-		return false;
-	}
-    
-    if(address=="" || address!=(address.split(' ').join('+'))){
-//		document.getElementById("errorMessage").innerHTML="username Field should not be blank or with spaces..";
-//		window.alert("username Field should not be blank or with spaces..");
-		document.getElementById("pin").focus();
-		return false;
-	}
-    
-    geocoder.geocode({ 'address': address }, function (results, status) {
+    var geocoder = new google.maps.Geocoder();    
+    geocoder.geocode({ 'address': location }, function (results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
             var latitude = results[0].geometry.location.lat();
             var longitude = results[0].geometry.location.lng();
             lat.value = latitude;
             lng.value = longitude;
+            latd.value = latitude;
+            lngd.value = longitude;
             area.value = street;
             city.value = city1;
             pincode.value = address;
-//            alert("address: "+address+"\nLatitude: " + latitude + "\nLongitude: " + longitude);
-//       		window.location = "/Parking/Checkpin.basic?loc="+address+"&lat=" + latitude + "&lng=" + longitude;
-
+            
 	        var fenway = {lat: latitude, lng: longitude};
             var map = new google.maps.Map(document.getElementById('map'), {
                 center: fenway,
-                zoom: 16,
+                zoom: 15,
                 mapTypeId:google.maps.MapTypeId.ROADMAP
             });
 
             var infowindow = new google.maps.InfoWindow();
             var service = new google.maps.places.PlacesService(map);
-            var geocoder = new google.maps.Geocoder;
+            geocoder = new google.maps.Geocoder;
 
     		geocoder.geocode({'location': fenway}, function(results, status) {
         		if (status === google.maps.GeocoderStatus.OK) {
@@ -201,15 +185,16 @@ function GetLocation() {
             	      		map: map,
                 	  		draggable: true,
                   			animation: google.maps.Animation.DROP,
-                  			position: fenway,
-                  			title: 'Google '
+                  			position: fenway
                 		});
-    	      			var title = marker.getTitle();
-        		      		google.maps.event.addListener(marker, 'click', function() {          		
-                			infowindow.setContent('<div><strong>' + marker.getTitle() + '</strong><br>' +
-                    		'Place ID: ' + results[0].place_id + '<br>' +'Address: '+ results[0].formatted_address + '</div>');
-                  			infowindow.open(map, this);
-                		});
+        		      	google.maps.event.addListener(marker, 'dragend', function (event) {
+        		                latitude = this.getPosition().lat();
+        		                longitude = this.getPosition().lng();
+        		                lat.value = latitude;
+        		                lng.value = longitude;
+        		                latd.value = latitude;
+        		                lngd.value = longitude;
+        		      	});
     	      		} else {
             			window.alert('No results found');
           			}
@@ -225,46 +210,26 @@ function GetLocation() {
 };  
 
 //init s
-		function initMap() {
-    	var fenway = {lat: 18.5204303, lng: 73.85674369999992};
+	function initMap() {
+		var fenway = {lat: ${user.latitude}, lng: ${user.longitude}};
         var map = new google.maps.Map(document.getElementById('map'), {
             center: fenway,
-            zoom: 16,
+            zoom: 13,
             mapTypeId:google.maps.MapTypeId.ROADMAP
         });
-
-        var infowindow = new google.maps.InfoWindow();
-        var service = new google.maps.places.PlacesService(map);
-        var geocoder = new google.maps.Geocoder;
-
-		geocoder.geocode({'location': fenway}, function(results, status) {
-    		if (status === google.maps.GeocoderStatus.OK) {
-	      		if (results[0]) {
-/*            	      		var marker = new google.maps.Marker({
-        	      		map: map,
-            	  		draggable: true,
-              			animation: google.maps.Animation.DROP,
-              			position: fenway,
-              			title: 'Google '
-            		});
-*/        	      			var title = marker.getTitle();
-    		      		google.maps.event.addListener(marker, 'click', function() {          		
-            			infowindow.setContent('<div><strong>' + marker.getTitle() + '</strong><br>' +
-                		'Place ID: ' + results[0].place_id + '<br>' +'Address: '+ results[0].formatted_address + '</div>');
-              			infowindow.open(map, this);
-            		});
-	      		} else {
-        			window.alert('No results found');
-      			}
-    		} else {
-      			window.alert('Geocoder failed due to: ' + status);
-    		}
-	  	});
-
+	}	
+</script>
+<script type="text/javascript">
+function getPSpaceValid(){
+	var lat = document.psForm.latitude.value;
+	var lng = document.psForm.longitude.value;
+	var latsj = lat.split(' ').join('+');
+	var lngsj = lng.split(' ').join('+');
+    if(lat=="" || lat!=latsj || lng=="" || lng!=lngsj) {
+		window.alert("LatLong Field should not be blank..!");
+		return false;
 	}
-        //init e
-
-
+}
 </script>
 </body>
 </html>

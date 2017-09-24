@@ -13,4 +13,7 @@ public interface ServicesInf {
 	public Users getUser(String username, String password);
 	public List<Users> spaceOwners();
 	public List<Parking> showParkings(int id);
+	public boolean saveUser(Users u);
+	public Users validateUser(String username, String password);
+
 }

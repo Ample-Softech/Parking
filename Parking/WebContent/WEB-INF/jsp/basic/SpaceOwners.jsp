@@ -5,7 +5,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Space Owners List</title>
-			<jsp:include page="/link.jsp"></jsp:include>
+	<jsp:include page="/link.jsp"></jsp:include>
 	<link rel="stylesheet" href='<c:url value="https://www.w3schools.com/w3css/4/w3.css"></c:url>'  />
 	
 </head>

@@ -3,14 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>User Registration</title>
+	<title>User Registration</title>
+	
+	<jsp:include page="/link.jsp" />
 
-<jsp:include page="/link.jsp" />
-
-<script src="http://momentjs.com/downloads/moment-with-locales.js"></script>
-<script src="http://momentjs.com/downloads/moment-timezone-with-data.js"></script>
-
+<!-- 	<script src="http://momentjs.com/downloads/moment-with-locales.js"></script>
+	<script src="http://momentjs.com/downloads/moment-timezone-with-data.js"></script>
+ -->
 <style type="text/css">
         /* Register(Page) : Credit to bootsnipp.com for the css for the color graph */
 .colorgraph {
@@ -30,9 +29,11 @@
 
 	<jsp:include page="/mainMenu.jsp" />
 <br>
-<form action="/Parking/reg.basic" method="post" id="myForm" name="myForm" onsubmit='return(getLocationValid())'>
+<form action="/Parking/UserReg.basic" method="post" id="myForm" name="myForm" onsubmit='return(getLocationValid())'>
 	<input type="hidden" name="latitude" id="latitude" />
 	<input type="hidden" name="longitude" id="longitude" />
+	<input type="hidden" name="usertype" id="usertype" value="user" />
+
 <div class="container register well">
 	<div class="row">
     	<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
@@ -69,7 +70,7 @@
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
 							<div class="input-group date" id="datetimepicker">
-            	        		<input class="form-control input-lg" required="required" type="date" name="dob" id="dob" placeholder="DOB" />
+            	        		<input class="form-control input-lg" name="dob" id="dob" required="required" type="date" placeholder="DOB" />
         	            		<span class="input-group-addon add-on">
 	               	         		<span class="glyphicon glyphicon-calendar"></span>
                 	    		</span>
@@ -167,7 +168,7 @@
 				<div class="col-xs-4 col-sm-3 col-md-3">
 					<span class="button-checkbox">
 						<button type="button" class="btn" data-color="info" tabindex="7">I Agree</button>
-                    	<input type="checkbox" required="required" name="t&c" id="t&c" class="hidden" value="one" />
+                    	<input type="checkbox" required="required" name="tac" id="tac" class="hidden" value="one" />
 					</span>
 				</div>
 				<div class="col-xs-8 col-sm-9 col-md-9">
@@ -179,7 +180,7 @@
 
 			<div class="row">
 				<div class="col-xs-12 col-md-6">
-					<button id="Register" onclick="getLocation()" class="btn btn-primary btn-block btn-lg"> Register </button>
+					<button id="Register" type="submit" class="btn btn-primary btn-block btn-lg"> Register </button>
 				</div>
 				<div class="col-xs-12 col-md-6">
 					<a href="/Parking/LoginPage.basic" class="btn btn-success btn-block btn-lg"> Sign In </a>
@@ -216,11 +217,11 @@
 </div>
 <script type="text/javascript">
 function getLocationValid() {
-	var pass1 = document.forms["myForm"]["password"].value;
-	var pass2 = document.forms["myForm"]["passconf"].value;
-	var gender = document.forms["myForm"]["gender"].value;
-	var address = document.forms["myForm"]["pincode"].value;
-	var tc = document.getElementById('t&c').value;
+	var pass1 = document.myForm.password.value;
+	var pass2 = document.myForm.passconf.value;
+	var gender = document.myForm.gender.value;
+	var address = document.myForm.pincode.value;
+	var tc = document.myForm.tac.value;
 	var psj = pass1.split(' ').join('+');
 	var pcsj = pass2.split(' ').join('+');
 	var gsj = gender.split(' ').join('+');
@@ -249,6 +250,11 @@ function getLocationValid() {
 			}
 		}
 	}
+    if(tc!="one"){
+		window.alert("T&C not Check..!");
+    	document.getElementById("t&c").focus();
+		return false;
+	}
 
 	//GeoLocation
 	if(address!="" && address!=asj){
@@ -261,9 +267,9 @@ function getLocationValid() {
         	if (status == google.maps.GeocoderStatus.OK) {
             	var latitude = results[0].geometry.location.lat();
             	var longitude = results[0].geometry.location.lng();
-				document.getElementById("latitude").innerText = latitude;
-				document.getElementById("longitude").innerText = longitude;
-//				document.getElementById("myForm").submit();
+				document.getElementById("latitude").value = latitude;
+				document.getElementById("longitude").value = longitude;
+				document.getElementById("myForm").submit();
 //	  			alert("address: "+address+"\nLatitude: " + latitude + "\nLongitude: " + longitude);
 //				window.location = "/Parking/reg.basic?latitude=" + latitude + "&longitude=" + longitude;
         	} else {
@@ -272,13 +278,6 @@ function getLocationValid() {
         	}
     	});        	
 	}    	
-    if(tc!="one"){
-		window.alert("T&C not Check..!");
-    	document.getElementById("t&c").focus();
-		return false;
-	}
-
-	return true;
 }
 </script>
 

@@ -57,4 +57,14 @@ public class Services implements ServicesInf {
 		return this.dao.showParkings(id);
 	}
 
+	@Override
+	public boolean saveUser(Users u) {
+		return this.dao.saveUser(u);
+	}
+
+	@Override
+	public Users validateUser(String username, String password) {
+		return this.dao.validateUser(username, password);
+	}
+
 }

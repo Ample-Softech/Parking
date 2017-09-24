@@ -21,7 +21,45 @@ public class DAO implements DaoInf {
 	private static SessionFactory sessionFactory = HibernateUtilities.getsSessionFactory();
 	private JdbcTemplate template;
 	private Session session;
+	
+	public Users validateUser(String username, String password) {
+		try {		
+			this.session = sessionFactory.openSession();
+			this.session.beginTransaction();
+			String queryString = "from Users where username = :username and password = :pass";
+			org.hibernate.Query query = this.session.createQuery(queryString);
+			query.setString("username", username);
+			query.setString("pass", password);
+			Object queryResult = query.uniqueResult();
+			return ((Users)queryResult);
+		} catch (Exception e) {
+			this.exceptional();
+			System.err.println("e= "+e);
+			return new Users();
+		} finally {
+			this.closeSession();
+		}		
+	}
 
+	
+	@Override
+	public boolean saveUser(Users u) {
+		try {
+			if (validateUser(u.getUsername(), u.getPassword())==null) {
+				this.session = sessionFactory.openSession();
+				this.session.beginTransaction();
+				this.session.save(u);
+				return true;
+			}
+		} catch (Exception e) {
+			this.exceptional();
+			System.err.println(e);
+		} finally {
+			this.closeSession();			
+		}
+		return false;
+	}
+	
 	
 	@Override
 	public List<Users> spaceOwners() {
@@ -135,8 +173,8 @@ public class DAO implements DaoInf {
 	
 	@Override
 	public int insertUser(Users u1) {
-		String sql = "INSERT INTO `parking`.`users` (`fname`, `mname`, `lname`, `gender`, `username`, `password`, `dob`, `latitude`, `longitude`, `area`, `city`, `state`, `country`, `pincode`, `usertype`) VALUES "
-				+ "('"+u1.getFname()+"', '"+u1.getMname()+"', '"+u1.getLname()+"', '"+u1.getGender()+"', '"+u1.getUsername()+"', '"+u1.getPassword()+"', '"+u1.getDob()
+		String sql = "INSERT INTO `parking`.`users` (`fname`, `lname`, `gender`, `username`, `password`, `dob`, `latitude`, `longitude`, `area`, `city`, `state`, `country`, `pincode`, `usertype`) VALUES "
+				+ "('"+u1.getFname()+"', '"+u1.getLname()+"', '"+u1.getGender()+"', '"+u1.getUsername()+"', '"+u1.getPassword()+"', '"+u1.getDob()
 				+"', '"+u1.getLatitude()+"', '"+u1.getLongitude()+"', '"+u1.getArea()+"', '"+u1.getCity()+"', '"+u1.getState()+"', '"+u1.getCountry()+"','"+u1.getPincode()+"','"+u1.getUsertype()+"');";
 		return template.update(sql);
 	}
@@ -157,7 +195,6 @@ public class DAO implements DaoInf {
 			Users u1 = new Users();
 			u1.setId(rs.getInt("id"));
 			u1.setFname(rs.getString("fname"));
-			u1.setMname(rs.getString("mname"));
 			u1.setLname(rs.getString("lname"));
 			u1.setGender(rs.getString("gender"));
 			u1.setUsername(rs.getString("username"));
@@ -203,6 +240,8 @@ public class DAO implements DaoInf {
 	public DAO() {
 		System.out.println("DAO");
 	}
+
+
 	
 	
 }

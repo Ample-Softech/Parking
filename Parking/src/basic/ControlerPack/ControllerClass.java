@@ -35,7 +35,6 @@ import basic.Pojo.*;
 import services.Services;
 
 @Controller
-@SessionAttributes({"Users","Parking"})
 @PropertySource(value = { "classpath:Parking.properties" })
 public class ControllerClass {
 
@@ -48,6 +47,9 @@ public class ControllerClass {
 	@Autowired
 	@Qualifier("modelAndView")
 	ModelAndView modelAndView;
+	
+	@Autowired
+	HttpSession sess;
 	
 	@Autowired
 	HttpServletRequest request;
@@ -63,6 +65,13 @@ public class ControllerClass {
 	@RequestMapping(value="/home", method=RequestMethod.GET)
 	public ModelAndView homePage() {
 		modelAndView.setViewName("index");
+		return modelAndView;
+	}
+
+	@ResponseBody
+	@RequestMapping(value="/PReg", method=RequestMethod.GET)
+	public ModelAndView link() {
+		modelAndView.setViewName("PReg");
 		return modelAndView;
 	}
 
@@ -95,11 +104,11 @@ public class ControllerClass {
 	
 	@ResponseBody
 	@RequestMapping(value="/logValid", method=RequestMethod.POST)
-	public ModelAndView logValid(Model model, @RequestParam Map<String,String> requestParams) {
-		Users u1 = service.getUser(requestParams.get("username"), requestParams.get("password"));
-		if (u1!=null) {		
+	public ModelAndView logValid(@ModelAttribute Users u) {
+		Users u1 = service.validateUser(u.getUsername(), u.getPassword());
+		if (u1!=null) {
 			System.out.println("id= " + u1.getId());
-			model.addAttribute("Users", u1);
+			sess.setAttribute("user", u1);
 			return new ModelAndView("PReg");			
 		} else {
 			return new ModelAndView("Login");			
@@ -107,35 +116,29 @@ public class ControllerClass {
 	}	
 	
 	@ResponseBody
-	@RequestMapping(value="/psReg", method=RequestMethod.GET)
-	public ModelAndView psReg(Model model, @ModelAttribute("Users") Users u1, @RequestParam Map<String,String> requestParams) {
-		System.out.println("id= "+u1.getId());
-		Parking p1 = new Parking();
-		Parking p2 = null;
-		p1.setArea(requestParams.get("area"));
-		p1.setCity(requestParams.get("city"));
-		p1.setState("Maharashtra");
-		p1.setCountry("India");
-		p1.setPincode(Integer.parseInt(requestParams.get("pincode")));
-		p1.setLatitude(Float.parseFloat(requestParams.get("latitude")));
-		p1.setLongitude(Float.parseFloat(requestParams.get("longitude")));
-		p1.setUserId(u1.getId());
-		
-		p2 = service.inserPark(p1);
-		if (p2!=null) {
-			model.addAttribute("Parking", p2);
-			return new ModelAndView("IUpload");			
-		} else {
-			return new ModelAndView("PReg");			
-		}		
+	@RequestMapping("/parkSpace")
+	public ModelAndView psReg(@ModelAttribute Parking p) {
+		System.out.println("p= "+p);
+		return new ModelAndView("PReg");			
 	}	
-	
+
 	@ResponseBody
-	@RequestMapping("/reg")
-	public ModelAndView regcod(@ModelAttribute("user") Users u) {
-		System.out.println("User= "+u);	
+	@RequestMapping(value="/register", method=RequestMethod.GET)
+	public ModelAndView register(){		
 		return new ModelAndView("UReg");
+	}
+
+	@ResponseBody
+	@RequestMapping("/UserReg")
+	public ModelAndView regcod(@ModelAttribute("user") Users u) {
+		System.out.println("User= "+u);
+		if (service.saveUser(u)) {
+			return new ModelAndView("Login");
+		} else {
+			return new ModelAndView("UReg");
+		}
 	}	
+
 	
 	@ResponseBody
 	@RequestMapping(value="/imageUp", method=RequestMethod.GET)
@@ -236,11 +239,6 @@ public class ControllerClass {
 		return  m;
 	}
 	
-	@ResponseBody
-	@RequestMapping(value="/register", method=RequestMethod.GET)
-	public ModelAndView register(){		
-		return new ModelAndView("UReg");
-	}
 	
 	@ResponseBody
 	@RequestMapping(value="/regDone", method=RequestMethod.GET)
