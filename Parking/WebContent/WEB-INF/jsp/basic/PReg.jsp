@@ -54,7 +54,7 @@
 
 <div class="container register  well prfind">
 	<div class="row">
-    	<div class=" text-center  col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+    	<div class="text-center col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 				<h2 > Parkink-Space <small> Please Provide Space for Parking. </small></h2>
 				<hr class="colorgraph">
 				<div class="row">

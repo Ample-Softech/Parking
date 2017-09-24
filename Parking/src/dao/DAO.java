@@ -1,5 +1,6 @@
 package dao;
 
+import java.io.Serializable;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -22,6 +23,76 @@ public class DAO implements DaoInf {
 	private JdbcTemplate template;
 	private Session session;
 	
+	@Override
+	public Parking getParking(int id) {
+		Parking p = null;
+		try {
+			this.session = sessionFactory.openSession();
+			this.session.beginTransaction();
+			p = (Parking) this.session.get(Parking.class, id); 
+			return p;
+		} catch (Exception e) {
+			this.exceptional();
+			System.err.println("e= "+e);			
+		} finally {
+			this.closeSession();			
+		}
+		return p;
+	}
+
+	@Override
+	public Users getUser(int id) {
+		Users u = null;
+		try {
+			this.session = sessionFactory.openSession();
+			this.session.beginTransaction();
+			u = (Users) this.session.get(Users.class, id);
+			return u;
+		} catch (Exception e) {
+			this.exceptional();
+			System.err.println("e= "+e);
+		} finally {
+			this.closeSession();			
+		}		
+		return u;
+	}
+	
+	@Override
+	public boolean uploadImg(int id, String path) {
+		Parking p = getParking(id);
+		try {
+			this.session = sessionFactory.openSession();
+			this.session.beginTransaction();
+			if(p!=null){
+				p.setImage(path);
+				this.session.update(p);
+				return true;
+			}			
+		} catch (Exception e) {
+			this.exceptional();
+			System.err.println("e= "+e);			
+		} finally {
+			this.closeSession();			
+		}
+		return false;
+	}
+	
+	@Override
+	public Serializable saveParking(Parking p) {
+		try {
+			this.session = sessionFactory.openSession();
+			this.session.beginTransaction();
+			return this.session.save(p);
+		} catch (Exception e) {
+			this.exceptional();
+			System.err.println("e= "+e);
+		} finally {
+			this.closeSession();			
+		}
+		return 0;
+	}
+	
+	@Override
 	public Users validateUser(String username, String password) {
 		try {		
 			this.session = sessionFactory.openSession();
@@ -240,6 +311,10 @@ public class DAO implements DaoInf {
 	public DAO() {
 		System.out.println("DAO");
 	}
+
+
+
+
 
 
 	

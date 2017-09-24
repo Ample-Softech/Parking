@@ -21,6 +21,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -116,11 +117,18 @@ public class ControllerClass {
 	}	
 	
 	@ResponseBody
-	@RequestMapping("/parkSpace")
-	public ModelAndView psReg(@ModelAttribute Parking p) {
-		System.out.println("p= "+p);
-		return new ModelAndView("PReg");			
-	}	
+	@RequestMapping(value="/parkSpace", method=RequestMethod.POST)
+	public ModelAndView psReg(@ModelAttribute Parking p, BindingResult br) {
+		System.out.println("parking reg= " + p);
+		int id = (int) service.saveParking(p);
+		System.out.println("parking space id= " + id);
+		if (id!=0) {
+			sess.setAttribute("prImgId", id);
+			return new ModelAndView("IUpload");						
+		} else {
+			return new ModelAndView("PReg");
+		}
+	}
 
 	@ResponseBody
 	@RequestMapping(value="/register", method=RequestMethod.GET)
@@ -141,28 +149,29 @@ public class ControllerClass {
 
 	
 	@ResponseBody
-	@RequestMapping(value="/imageUp", method=RequestMethod.GET)
-	public ModelAndView imageUp(@ModelAttribute("Parking") Parking p1, @RequestParam("file") MultipartFile file) {
+	@RequestMapping(value="/imageUp", method=RequestMethod.POST)
+	public ModelAndView imageUp(@RequestParam("file") MultipartFile file) {
 		if (!file.isEmpty()) {
 			String content = file.getContentType();
 			try {
-				System.out.println(p1.getId());
-				if (content.equals("image/jpeg") || content.equals("image/gif") || content.equals("image/png")) {
+				int id = (int) sess.getAttribute("prImgId");
+				System.out.println(id+" "+content);
+				if (content.equals("image/jpeg") || content.equals("image/png")) {
 					byte[] bytes = file.getBytes();
 					// Create the file on server
-					File serverFile = new File(environment.getRequiredProperty("imagePath") + File.separator + file.getOriginalFilename());
+					File serverFile = new File(environment.getRequiredProperty("imagePath") + File.separator + "psImg_" + id + ".jpeg");
 					BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
 					stream.write(bytes);
 					stream.close();
 					logger.info("Server File Location=" + serverFile.getAbsolutePath());
-					String path = "images/parkinks/"+ file.getOriginalFilename();
-					System.out.println("(for db) images/parkinks/"+ file.getOriginalFilename());
-					if (service.insertImage(p1.getId(), path)==1) {
+					String path = "images/parkinks/psImg_" + id + ".jpeg";
+					System.out.println("(for db) images/parkinks/psImg_" + id + ".jpeg");
+					if (service.uploadImg(id, path)) {
 						modelAndView=new ModelAndView("RegDone");
 						System.out.println("You successfully uploaded file");
 					} else {
 						modelAndView=new ModelAndView("IUpload");
-						System.out.println("You failed to upload(in SQL insertion)  => " + path +"for park id= "+p1.getId());
+						System.out.println("You failed to upload(in SQL insertion)  => " + path +"for park id= "+id);
 					}
 				} else {
 					modelAndView=new ModelAndView("IUpload");

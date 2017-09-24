@@ -1,5 +1,6 @@
 package services;
 
+import java.io.Serializable;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import basic.Pojo.*;
@@ -66,5 +67,26 @@ public class Services implements ServicesInf {
 	public Users validateUser(String username, String password) {
 		return this.dao.validateUser(username, password);
 	}
+
+	@Override
+	public Serializable saveParking(Parking p) {
+		return this.dao.saveParking(p);
+	}
+
+	@Override
+	public boolean uploadImg(int id, String path) {
+		return this.dao.uploadImg(id, path);
+	}
+
+	@Override
+	public Parking getParking(int id) {
+		return this.dao.getParking(id);
+	}
+
+	@Override
+	public Users getUser(int id) {
+		return this.dao.getUser(id);
+	}
+
 
 }

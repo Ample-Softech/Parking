@@ -20,28 +20,30 @@
   background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
   background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
 }
+.fndn{
+	margin-top: 20px;
+}
 </style>
 
 </head>
 <body>
 <jsp:include page="/mainMenu.jsp" />
 
-<div class="container">
-
-<div class="row"> 
-<hr class="colorgraph">
-	    <div class="col-md-12 well text-center">  
-                <h1 class="text-center"> FINALLY </h1>
-					<form></form>         
-					<br><br>
-					<a href="/Parking/home.basic" class="btn btn-lg btn-success"> Done </a>
-            </div>
-	<hr class="colorgraph">
-</div>	
-    </div>
+<div class="container fndn">
+	<div class="well row"> 
+    	<div class="text-center col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+  	 		<h1 class="text-center"> FINALLY </h1>
+         	<hr class="colorgraph">    	
+        	<form></form>      
+			<br><label><small>finally you done Registration, So you would need to clicking on Done button</small></label><br><br>
+			<a href="/Parking/home.basic" class="btn btn-success"> Done </a>
+			<hr class="colorgraph">
+      	</div>
+	</div>	
+</div>
     
-    <br><br>
-    			<jsp:include page="/footer.jsp"></jsp:include>
+<br><br>
+<jsp:include page="/footer.jsp"></jsp:include>
 
 </body>
 </html>

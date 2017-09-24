@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/xml" prefix="x" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -35,7 +35,7 @@
 
 <div class="container">
 
-<div class="row" style="margin-top:20px">
+<div class="well row" style="margin-top:20px">
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3 auth-block">
 		<form name="myForm" action="/Parking/logValid.basic" method="post" role="form">
 			<fieldset>
@@ -48,8 +48,8 @@
                     <input required="required" type="password" pattern="[a-zA-Z][a-zA-Z0-9\s]*" name="password" id="password" class="form-control input-lg" placeholder="Password">
 				</div>
 				<span class="button-checkbox">
-					<button type="button" class="btn" data-color="info">Remember Me</button>
-                    <input type="checkbox" name="remember_me" id="remember_me" checked="checked" class="hidden">
+					<button type="button" class="btn" data-color="info"> Remember Me</button>
+                    <input type="checkbox" name="remember_me" id="remember_me" class="hidden" >
 					<a href="" class="btn btn-link pull-right">Forgot Password?</a>
 				</span>
 				<hr class="colorgraph">
