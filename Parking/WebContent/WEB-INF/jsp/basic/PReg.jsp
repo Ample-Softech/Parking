@@ -1,7 +1,6 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<%@ page errorPage="error.jsp" language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -93,7 +92,7 @@
 					<input type="hidden" required="required" name="userId" id="userId" value="${user.id }" />
 					<input type="hidden" pattern="[a-zA-Z][a-zA-Z0-9\s]*" required="required" name="area" id="area" />
 					<input type="hidden" pattern="[a-zA-Z][a-zA-Z0-9\s]*" required="required" name="city" id="city" />
-					<input type="hidden" pattern="[a-zA-Z][a-zA-Z0-9\s]*" required="required" name="state" id="state" value="MH" />
+					<input type="hidden" pattern="[a-zA-Z][a-zA-Z0-9\s]*" required="required" name="state" id="state" value="Maharashtra" />
 					<input type="hidden" pattern="[a-zA-Z][a-zA-Z0-9\s]*" required="required" name="country" id="country" value="India" />					
 					<input type="hidden" pattern="[0-9]{6}" required="required" name="pincode" id="pincode" />
 				<div class="row">

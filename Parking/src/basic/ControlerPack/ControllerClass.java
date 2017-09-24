@@ -4,9 +4,9 @@ package basic.ControlerPack;
 import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
-
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -20,7 +20,6 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,7 +27,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import com.google.gson.Gson;
@@ -61,36 +59,7 @@ public class ControllerClass {
 	@Autowired
 	private Environment environment;
 	
-	//sagar...
-	@ResponseBody
-	@RequestMapping(value="/home", method=RequestMethod.GET)
-	public ModelAndView homePage() {
-		modelAndView.setViewName("index");
-		return modelAndView;
-	}
-
-	@ResponseBody
-	@RequestMapping(value="/PReg", method=RequestMethod.GET)
-	public ModelAndView link() {
-		modelAndView.setViewName("PReg");
-		return modelAndView;
-	}
-
-	@RequestMapping(value = "/SignOut", method = RequestMethod.GET)
-    public String loadApp() {
-        HttpSession session= request.getSession(false);
-        SecurityContextHolder.clearContext();
-        if(session != null) {
-            session.invalidate();
-        }
-        return "redirect:/";
-    }
-	
-//	@RequestMapping(value="/SignOut", method=RequestMethod.GET)
-//	public String logout(HttpSession session) {		
-//		session.invalidate();
-//		return "redirect:/";
-//	}
+	//Sagar..!
 	@ResponseBody
 	@RequestMapping(value="/checkpin", method=RequestMethod.GET)
 	public ModelAndView pincode(@RequestParam Map<String,String> requestParams) {
@@ -99,16 +68,21 @@ public class ControllerClass {
 		modelAndView.addObject("latitude", requestParams.get("lat"));
 		modelAndView.addObject("longitude", requestParams.get("lng"));		
 		modelAndView.addObject("loc", requestParams.get("loc"));
-		return modelAndView;
-		
+		return modelAndView;		
 	}
 	
 	@ResponseBody
 	@RequestMapping(value="/logValid", method=RequestMethod.POST)
-	public ModelAndView logValid(@ModelAttribute Users u) {
+	public ModelAndView logValid(@ModelAttribute Users u, BindingResult br) {
+		if(br.hasErrors()){
+			System.out.println("errors= " + br.getErrorCount());
+			System.out.println(br.getAllErrors());
+			return new ModelAndView("Login");			
+		}		
 		Users u1 = service.validateUser(u.getUsername(), u.getPassword());
 		if (u1!=null) {
-			System.out.println("id= " + u1.getId());
+			System.out.println("id= " + u1);
+			sess.setAttribute("userLog", "login");
 			sess.setAttribute("user", u1);
 			return new ModelAndView("PReg");			
 		} else {
@@ -119,6 +93,11 @@ public class ControllerClass {
 	@ResponseBody
 	@RequestMapping(value="/parkSpace", method=RequestMethod.POST)
 	public ModelAndView psReg(@ModelAttribute Parking p, BindingResult br) {
+		if(br.hasErrors()){
+			System.out.println("errors= " + br.getErrorCount());
+			System.out.println(br.getAllErrors());
+			return new ModelAndView("PReg");
+		}
 		System.out.println("parking reg= " + p);
 		int id = (int) service.saveParking(p);
 		System.out.println("parking space id= " + id);
@@ -131,13 +110,7 @@ public class ControllerClass {
 	}
 
 	@ResponseBody
-	@RequestMapping(value="/register", method=RequestMethod.GET)
-	public ModelAndView register(){		
-		return new ModelAndView("UReg");
-	}
-
-	@ResponseBody
-	@RequestMapping("/UserReg")
+	@RequestMapping(value="/UserReg", method=RequestMethod.POST)
 	public ModelAndView regcod(@ModelAttribute("user") Users u) {
 		System.out.println("User= "+u);
 		if (service.saveUser(u)) {
@@ -146,7 +119,6 @@ public class ControllerClass {
 			return new ModelAndView("UReg");
 		}
 	}	
-
 	
 	@ResponseBody
 	@RequestMapping(value="/imageUp", method=RequestMethod.POST)
@@ -187,12 +159,6 @@ public class ControllerClass {
 		}
 		return modelAndView;
 	}	
-	
-	@ResponseBody
-	@RequestMapping(value="/SpaceOwners", method=RequestMethod.GET)
-	public ModelAndView spaceOwners(@RequestParam Map<String,String> requestParams) {
-		return new ModelAndView("SpaceOwners", "users", service.spaceOwners());
-	}
 
 	@ResponseBody
 	@RequestMapping("/ShowParkings/{id}")
@@ -209,7 +175,16 @@ public class ControllerClass {
 		}
 		return modelAndView;
 	}
-
+	
+	@ResponseBody
+	@RequestMapping(value="/search", method=RequestMethod.POST)
+	public ModelAndView search(@ModelAttribute("demo") Demo demo){
+		System.out.println(demo.getLat()+" "+demo.getLng());
+		String json = new Gson().toJson(demo);
+		modelAndView.addObject("result",json);
+		modelAndView.setViewName("result");
+		return modelAndView;
+	}
 	
 	@ResponseBody
 	@RequestMapping(value="/Check", method=RequestMethod.GET)
@@ -231,23 +206,10 @@ public class ControllerClass {
 	}
 	
 	@ResponseBody
-	@RequestMapping(value="/search", method=RequestMethod.POST)
-	public ModelAndView search(@ModelAttribute("demo")Demo demo){
-		System.out.println(demo.getLat()+" "+demo.getLng());
-		String json = new Gson().toJson(demo);
-		modelAndView.addObject("result",json);
-		modelAndView.setViewName("result");
-		return modelAndView;
-	}
-	
-	@ResponseBody
 	@RequestMapping(value="/LoginPage", method=RequestMethod.GET)
-	public ModelAndView login()
-	{
-		ModelAndView m= new ModelAndView("Login");
-		return  m;
+	public ModelAndView login() {
+		return new ModelAndView("Login");
 	}
-	
 	
 	@ResponseBody
 	@RequestMapping(value="/regDone", method=RequestMethod.GET)
@@ -255,6 +217,59 @@ public class ControllerClass {
 		return new ModelAndView("RegDone");
 	}		
 
+	@ResponseBody
+	@RequestMapping(value="/home", method=RequestMethod.GET)
+	public ModelAndView homePage() {
+		modelAndView.setViewName("index");
+		return modelAndView;
+	}
+
+	@ResponseBody
+	@RequestMapping(value="/PReg", method=RequestMethod.GET)
+	public ModelAndView link() {
+		modelAndView.setViewName("PReg");
+		return modelAndView;
+	}
+
+	@ResponseBody
+	@RequestMapping(value="/register", method=RequestMethod.GET)
+	public ModelAndView register(){		
+		return new ModelAndView("UReg");
+	}
+
+	@ResponseBody
+	@RequestMapping(value="/SpaceOwners", method=RequestMethod.GET)
+	public ModelAndView spaceOwners() {
+		return new ModelAndView("SpaceOwners", "users", service.spaceOwners());
+	}
+
+	@RequestMapping(value = "/SignOut", method = RequestMethod.GET)
+    public String loadApp() {
+		try {
+			sess.setAttribute("userLog", "logout");
+	        SecurityContextHolder.clearContext();
+	        if(sess != null) {
+	            sess.invalidate();
+	        }
+			Cookie c = new Cookie("name", "");
+			c.setMaxAge(0);
+
+			System.gc();
+			System.out.println("logout");					
+		} catch (NullPointerException e) { 
+			Cookie c = new Cookie("name", "");
+			c.setMaxAge(0);
+			System.gc();
+			System.out.println("logout");		
+		} catch (Exception e) {
+			Cookie c = new Cookie("name", "");
+			c.setMaxAge(0);
+			System.gc();
+			System.out.println("logout");		
+		}
+        return "redirect:/";
+    }
+	
 	@Test
 	@PostConstruct
 	public void init() throws Exception {

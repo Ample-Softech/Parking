@@ -1,4 +1,5 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<%@ page errorPage="error.jsp" language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <html>
 <head>
 
@@ -10,7 +11,7 @@
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
+        <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="/Parking/">YourParkingSpace</a>
     </div>
@@ -19,17 +20,17 @@
         <li><a href="#">Drivers</a></li>
         <li><a href="/Parking/SpaceOwners.basic">Space Owners</a></li>
       </ul>
-      	<c:if test="${Users!=null}">
+      	<c:if test="${userLog=='login'}">
       		<c:out value="${Users.fname }"></c:out>
-            <ul class="nav navbar-nav navbar-right">	
+            <ul class="nav navbar-nav navbar-right">
+            	<li><a href="/Parking/register.basic"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 	    	    <li><a href="/Parking/SignOut.basic"><span class="glyphicon glyphicon-log-out"></span> Logout </a></li>
 		    </ul>
  		</c:if>
-      	<c:if test="${Users==null}">	
-      	    <c:out value="${Users.fname }"></c:out>
+      	<c:if test="${userLog!='login'}">
 			<ul class="nav navbar-nav navbar-right">
         		<li><a href="/Parking/register.basic"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        		<li><a href="/Parking/LoginPage.basic"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> 
+        		<li><a href="/Parking/LoginPage.basic"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       		</ul>
  		</c:if>
     </div>

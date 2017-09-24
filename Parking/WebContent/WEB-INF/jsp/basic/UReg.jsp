@@ -1,5 +1,5 @@
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<%@ page errorPage="error.jsp" language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,7 +26,11 @@
 
 </head>
 <body>
-
+<%
+	if(!(session.isNew() || (session.getAttribute("userLog")!="login"))) {
+		response.sendRedirect("/Parking/SignOut.basic");
+	} 
+%>
 	<jsp:include page="/mainMenu.jsp" />
 <br>
 <form action="/Parking/UserReg.basic" method="post" id="myForm" name="myForm" onsubmit='return(getLocationValid())'>
@@ -263,15 +267,15 @@ function getLocationValid() {
 		return false;
 	} else {
 		var geocoder = new google.maps.Geocoder();
+    	var latitude = 0.0;
+    	var longitude = 0.0;		
     	geocoder.geocode({'address': address }, function (results, status) {
         	if (status == google.maps.GeocoderStatus.OK) {
-            	var latitude = results[0].geometry.location.lat();
-            	var longitude = results[0].geometry.location.lng();
+            	latitude = results[0].geometry.location.lat();
+            	longitude = results[0].geometry.location.lng();
 				document.getElementById("latitude").value = latitude;
 				document.getElementById("longitude").value = longitude;
 				document.getElementById("myForm").submit();
-//	  			alert("address: "+address+"\nLatitude: " + latitude + "\nLongitude: " + longitude);
-//				window.location = "/Parking/reg.basic?latitude=" + latitude + "&longitude=" + longitude;
         	} else {
             	alert("GeoLocation Request failed.");
             	return false;
