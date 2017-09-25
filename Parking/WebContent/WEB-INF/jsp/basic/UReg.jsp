@@ -6,10 +6,7 @@
 	<title>User Registration</title>
 	
 	<jsp:include page="/link.jsp" />
-
-<!-- 	<script src="http://momentjs.com/downloads/moment-with-locales.js"></script>
-	<script src="http://momentjs.com/downloads/moment-timezone-with-data.js"></script>
- -->
+	
 <style type="text/css">
         /* Register(Page) : Credit to bootsnipp.com for the css for the color graph */
 .colorgraph {
@@ -33,11 +30,8 @@
 %>
 	<jsp:include page="/mainMenu.jsp" />
 <br>
-<form action="/Parking/UserReg.basic" method="post" id="myForm" name="myForm" onsubmit='return(getLocationValid())'>
-	<input type="hidden" name="latitude" id="latitude" />
-	<input type="hidden" name="longitude" id="longitude" />
+<form action="/Parking/UserReg.basic" method="post" id="myForm" name="myForm" onsubmit="return getLocationValid()">
 	<input type="hidden" name="usertype" id="usertype" value="user" />
-
 <div class="container register well">
 	<div class="row">
     	<div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
@@ -81,49 +75,10 @@
                 			</div>
 						</div>
 					</div>
-		<script>
-         $(document).ready(function() {
-        	 var date = new Date();
-        	    $('#dateRangePicker')
-        	        .datepicker({
-        	            format: 'mm/dd/yyyy',
-        	            startDate: '01/01/1950',
-        	            endDate: (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear()
-        	        })
-        	        .on('changeDate', function(e) {
-        	            // Revalidate the date field
-        	            $('#dateRangeForm').formValidation('revalidateField', 'date');
-        	        });
-
-        	    $('#dateRangeForm').formValidation({
-        	        framework: 'bootstrap',
-        	        icon: {
-        	            valid: 'glyphicon glyphicon-ok',
-        	            invalid: 'glyphicon glyphicon-remove',
-        	            validating: 'glyphicon glyphicon-refresh'
-        	        },
-        	        fields: {
-        	            date: {
-        	                validators: {
-        	                    notEmpty: {
-        	                        message: 'The date is required'
-        	                    },
-        	                    date: {
-        	                        format: 'MM/DD/YYYY',
-        	                        min: '01/01/1950',
-        	                        max: (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear(),
-        	                        message: 'The date is not a valid'
-        	                    }
-        	                }
-        	            }
-        	        }
-        	    });
-        	});
-         </script>
 				</div>
 			
 				<div class="form-group">
-					<input type="email" name="username" required="required" id="username" class="form-control input-lg" placeholder="Email Address" tabindex="4">
+					<input type="email" name="username" required="required" id="username" class="form-control input-lg" placeholder="Email Address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" tabindex="4">
 				</div>
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-6">
@@ -139,7 +94,7 @@
 				</div>
 			
 				<div class="form-group">
-					<input type="text" name="area" required="required" id="area" class="form-control input-lg" placeholder="Street" tabindex="4">
+					<input type="text" name="area" required="required" pattern="[a-zA-Z][a-zA-Z0-9\s]*" id="area" class="form-control input-lg" placeholder="Street" tabindex="4">
 				</div>
 			
 				<div class="row">
@@ -164,6 +119,8 @@
 				<div class="col-xs-12 col-sm-6 col-md-6">
 					<div class="form-group">
 						<input type="text" pattern="[0-9]{6}" name="pincode" id="pincode" class="form-control input-lg" required="required" placeholder="Pincode" tabindex="6" />
+						<input type="hidden" required="required" name="latitude" id="latitude" />
+						<input type="hidden" required="required" name="longitude" id="longitude" />
 					</div>
 				</div>
 			</div>
@@ -230,7 +187,6 @@ function getLocationValid() {
 	var pcsj = pass2.split(' ').join('+');
 	var gsj = gender.split(' ').join('+');
 	var asj = address.split(' ').join('+');
-	
     if(gender=="" || gender!=gsj){
 		window.alert("Gender Field should not be blank..!");
     	document.getElementById("gender").focus();
@@ -262,13 +218,11 @@ function getLocationValid() {
 
 	//GeoLocation
 	if(address!="" && address!=asj){
-		window.alert("Pincode Field should not be blank or with spaces..");
+		window.alert("Pincode Invalid..!");
 		document.getElementById("pincode").focus();    		
 		return false;
 	} else {
 		var geocoder = new google.maps.Geocoder();
-    	var latitude = 0.0;
-    	var longitude = 0.0;		
     	geocoder.geocode({'address': address }, function (results, status) {
         	if (status == google.maps.GeocoderStatus.OK) {
             	latitude = results[0].geometry.location.lat();

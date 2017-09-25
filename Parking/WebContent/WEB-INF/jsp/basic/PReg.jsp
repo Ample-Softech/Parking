@@ -47,6 +47,12 @@
 
 </head>
 <body>
+<%
+	if(session.getAttribute("userLog")!="login") {
+		response.sendRedirect("/Parking/LoginPage.basic");
+	} 
+%>
+
 <jsp:include page="/mainMenu.jsp" />
 
 <!--  -->
@@ -184,7 +190,14 @@ function GetLocation() {
             	      		map: map,
                 	  		draggable: true,
                   			animation: google.maps.Animation.DROP,
-                  			position: fenway
+                  			position: fenway,
+                   			title: results[0].formatted_address
+                		});
+        	 			var title = marker.getTitle();
+     		      		google.maps.event.addListener(marker, 'click', function() { 
+      		    			infowindow.setContent('<div><strong>' + title + '</strong><br>' +
+    		            		'Place ID: ' + results[0].place_id + '<br>' +'Address: '+ results[0].formatted_address + '</div>');
+    		          			infowindow.open(map, this);
                 		});
         		      	google.maps.event.addListener(marker, 'dragend', function (event) {
         		                latitude = this.getPosition().lat();

@@ -20,19 +20,16 @@
         <li><a href="#">Drivers</a></li>
         <li><a href="/Parking/SpaceOwners.basic">Space Owners</a></li>
       </ul>
-      	<c:if test="${userLog=='login'}">
-      		<c:out value="${Users.fname }"></c:out>
-            <ul class="nav navbar-nav navbar-right">
-            	<li><a href="/Parking/register.basic"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      
+      <ul class="nav navbar-nav navbar-right">
+      		<li><a href="/Parking/PReg.basic"><span class="glyphicon glyphicon-map-marker"></span> Space/Land </a></li>
+	      	<c:if test="${userLog=='login'}">
 	    	    <li><a href="/Parking/SignOut.basic"><span class="glyphicon glyphicon-log-out"></span> Logout </a></li>
-		    </ul>
- 		</c:if>
-      	<c:if test="${userLog!='login'}">
-			<ul class="nav navbar-nav navbar-right">
-        		<li><a href="/Parking/register.basic"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+ 			</c:if>
+      		<c:if test="${userLog!='login'}">
         		<li><a href="/Parking/LoginPage.basic"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      		</ul>
- 		</c:if>
+	 		</c:if>
+      </ul>	
     </div>
   </div>
 </nav>

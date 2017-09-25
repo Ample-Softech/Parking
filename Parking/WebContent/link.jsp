@@ -27,7 +27,7 @@
 <link rel="stylesheet" href='<c:url value="/css/datepicker.css"></c:url>'>
 <link href='//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css' rel='stylesheet' type='text/css'>
  --%>
-
+ 
 <!-- 
 <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
  -->

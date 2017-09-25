@@ -111,7 +111,12 @@ public class ControllerClass {
 
 	@ResponseBody
 	@RequestMapping(value="/UserReg", method=RequestMethod.POST)
-	public ModelAndView regcod(@ModelAttribute("user") Users u) {
+	public ModelAndView regcod(@ModelAttribute("user") Users u, BindingResult br) {
+		if(br.hasErrors()){
+			System.out.println("errors= " + br.getErrorCount());
+			System.out.println(br.getAllErrors());
+			return new ModelAndView("UReg");
+		}
 		System.out.println("User= "+u);
 		if (service.saveUser(u)) {
 			return new ModelAndView("Login");
@@ -198,7 +203,7 @@ public class ControllerClass {
 		float lng = Float.parseFloat(requestParams.get("lng"));
 //		List<Parking> l1 = service.getParkings();
 
-		List<Parking> l1 = service.getParkings().stream().filter(p->p.getLatitude()>(lat-0.01) && p.getLatitude()<(lat+0.1)).collect(Collectors.toList());
+		List<Parking> l1 = service.getParkings().stream().filter(p->p.getLongitude()>(lng-0.02) && p.getLongitude()<(lng+0.02)).sorted(new LngCmrtr()).collect(Collectors.toList());
 		modelAndView.addObject("parking", l1);
 		modelAndView.addObject("json", new Gson().toJson(l1));
 

@@ -17,7 +17,7 @@
     	var fenway = {lat: parseFloat(${latitude}), lng: parseFloat(${longitude}) };
         var map = new google.maps.Map(document.getElementById('map'), {
             center: fenway,
-            zoom: 13,
+            zoom: 15,
             mapTypeId:google.maps.MapTypeId.ROADMAP
         });
 
