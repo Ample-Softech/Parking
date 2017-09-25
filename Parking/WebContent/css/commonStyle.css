@@ -1,41 +1,10 @@
-/* spacesList page css code start  */
-
-.list-group {border-radius: 0;}
-.list-group .list-group-item {background-color: transparent;overflow: hidden;border: 0;border-radius: 0;padding: 0 16px;}
-.list-group .list-group-item .row-picture,
-.list-group .list-group-item .row-action-primary {float: left;display: inline-block;padding-right: 16px;padding-top: 8px;}
-.list-group .list-group-item .row-picture img,
-.list-group .list-group-item .row-action-primary img,
-.list-group .list-group-item .row-picture i,
-.list-group .list-group-item .row-action-primary i,
-.list-group .list-group-item .row-picture label,
-.list-group .list-group-item .row-action-primary label {display: block;width: 56px;height: 56px;}
-.list-group .list-group-item .row-picture img,
-.list-group .list-group-item .row-action-primary img {background: rgba(0, 0, 0, 0.1);padding: 1px;}
-.list-group .list-group-item .row-picture img.circle,
-.list-group .list-group-item .row-action-primary img.circle {border-radius: 100%;}
-.list-group .list-group-item .row-picture i,
-.list-group .list-group-item .row-action-primary i {background: rgba(0, 0, 0, 0.25);border-radius: 100%;text-align: center;line-height: 56px;font-size: 20px;color: white;}
-.list-group .list-group-item .row-picture label,
-.list-group .list-group-item .row-action-primary label {margin-left: 7px;margin-right: -7px;margin-top: 5px;margin-bottom: -5px;}
-.list-group .list-group-item .row-content {display: inline-block;width: calc(100% - 92px);min-height: 66px;}
-.list-group .list-group-item .row-content .action-secondary {position: absolute;right: 16px;top: 16px;}
-.list-group .list-group-item .row-content .action-secondary i {font-size: 20px;color: rgba(0, 0, 0, 0.25);cursor: pointer;}
-.list-group .list-group-item .row-content .action-secondary ~ * {max-width: calc(100% - 30px);}
-.list-group .list-group-item .row-content .least-content {position: absolute;right: 16px;top: 0px;color: rgba(0, 0, 0, 0.54);font-size: 14px;}
-.list-group .list-group-item .list-group-item-heading {color: rgba(0, 0, 0, 0.77);font-size: 20px;line-height: 29px;}
-.list-group .list-group-separator {clear: both;overflow: hidden;margin-top: 10px;margin-bottom: 10px;}
-.list-group .list-group-separator:before {content: "";width: calc(100% - 90px);border-bottom: 1px solid rgba(0, 0, 0, 0.1);float: right;}
-
-.bg-profile{background-color: #3498DB !important;height: 150px;z-index: 1;}
-.bg-bottom{height: 100px;margin-left: 30px;}
-.img-profile{display: inline-block !important;background-color: #fff;border-radius: 6px;margin-top: -50%;padding: 1px;vertical-align: bottom;border: 2px solid #fff;-moz-box-sizing: border-box;box-sizing: border-box;color: #fff;z-index: 2;}
-.row-float{margin-top: -40px;}
-.explore a {color: green; font-size: 13px;font-weight: 600}
-.twitter a {color:#4099FF}
-.img-box{box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);border-radius: 1px;border: 0;}
-
-/* spacesList page css code end  */
+      		/* This class can be replaced using options for 3d hover */
+			.hover-in{
+				transition: .3s ease-out;
+			}
+			.hover-out{
+				transition: .3s ease-in;
+			}
 
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map find page css start */
@@ -83,14 +52,11 @@ body {
 .cards {
 	height: 18%;
 }
+
 .cardImg {
 	height: 85%;
 	width: 90%;
-	opacity: 0.8;	
-}
-.cardImg:HOVER {
-	height: 87%;
-	width: 92%;
+	
 }
 
 
@@ -101,17 +67,17 @@ body {
 }
 
 .img-temp {
-	margin-top: 3%;
-	margin-bottom: 5%;
-	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 100px;
+	background-position: center;
 }
 
 
 .img-rows{ margin-bottom: 20px;}
 
-.img{width: 100%;}
+.img{width: 100%;	background: rgba(220, 220, 220, 0.1); }
 
-.img:HOVER {opacity: 0.8;}
+.img:HOVER { background: rgba(220, 220, 220, 1.0);}
 
 .imglinks {
 	color: white;
@@ -119,16 +85,9 @@ body {
 	font: bold;
 	font-size: 19px;
 	font-stretch: normal;
-	font-family: monospace;			
-}
-
-.imglinks:HOVER {
-	color: #d4d4d4;	
-	text-decoration: underline;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);	
+	font-family: monospace;	
 	
 }
-
 
 
 /* footer css code  start*/ 
@@ -172,27 +131,44 @@ footer { background-color:#0c1a1e; min-height:350px; font-family: 'Open Sans', s
  .bottom_ul li a { color:#FFF;  font-size:12px;}
 /* footer css code  end*/ 
  
- /* Registration page code start */
- 	.registration{ margin-top:30px; margin-bottom: 30px;}
- 	.register{ margin-bottom: 25px; text-align: center;}
-        .file-input-wrapper {
-            height: 35px;
-            overflow: hidden;
-            position: absolute;
-            width: 123px;
-            background-color: white;
-            cursor: pointer;
-        }
-        
-        .file-input-wrapper > input[type="file"] {
-            font-size: 40px;
-            position: absolute;
-            top: 0;
-            right: 0;
-            opacity: 0;
-            cursor: pointer;
-        }        
- /* Registration page code end */
+/* spacesList page css code start  */
+
+.list-group {border-radius: 0;}
+.list-group .list-group-item {background-color: transparent;overflow: hidden;border: 0;border-radius: 0;padding: 0 16px;}
+.list-group .list-group-item .row-picture,
+.list-group .list-group-item .row-action-primary {float: left;display: inline-block;padding-right: 16px;padding-top: 8px;}
+.list-group .list-group-item .row-picture img,
+.list-group .list-group-item .row-action-primary img,
+.list-group .list-group-item .row-picture i,
+.list-group .list-group-item .row-action-primary i,
+.list-group .list-group-item .row-picture label,
+.list-group .list-group-item .row-action-primary label {display: block;width: 56px;height: 56px;}
+.list-group .list-group-item .row-picture img,
+.list-group .list-group-item .row-action-primary img {background: rgba(0, 0, 0, 0.1);padding: 1px;}
+.list-group .list-group-item .row-picture img.circle,
+.list-group .list-group-item .row-action-primary img.circle {border-radius: 100%;}
+.list-group .list-group-item .row-picture i,
+.list-group .list-group-item .row-action-primary i {background: rgba(0, 0, 0, 0.25);border-radius: 100%;text-align: center;line-height: 56px;font-size: 20px;color: white;}
+.list-group .list-group-item .row-picture label,
+.list-group .list-group-item .row-action-primary label {margin-left: 7px;margin-right: -7px;margin-top: 5px;margin-bottom: -5px;}
+.list-group .list-group-item .row-content {display: inline-block;width: calc(100% - 92px);min-height: 66px;}
+.list-group .list-group-item .row-content .action-secondary {position: absolute;right: 16px;top: 16px;}
+.list-group .list-group-item .row-content .action-secondary i {font-size: 20px;color: rgba(0, 0, 0, 0.25);cursor: pointer;}
+.list-group .list-group-item .row-content .action-secondary ~ * {max-width: calc(100% - 30px);}
+.list-group .list-group-item .row-content .least-content {position: absolute;right: 16px;top: 0px;color: rgba(0, 0, 0, 0.54);font-size: 14px;}
+.list-group .list-group-item .list-group-item-heading {color: rgba(0, 0, 0, 0.77);font-size: 20px;line-height: 29px;}
+.list-group .list-group-separator {clear: both;overflow: hidden;margin-top: 10px;margin-bottom: 10px;}
+.list-group .list-group-separator:before {content: "";width: calc(100% - 90px);border-bottom: 1px solid rgba(0, 0, 0, 0.1);float: right;}
+
+.bg-profile{background-color: #3498DB !important;height: 150px;z-index: 1;}
+.bg-bottom{height: 100px;margin-left: 30px;}
+.img-profile{display: inline-block !important;background-color: #fff;border-radius: 6px;margin-top: -50%;padding: 1px;vertical-align: bottom;border: 2px solid #fff;-moz-box-sizing: border-box;box-sizing: border-box;color: #fff;z-index: 2;}
+.row-float{margin-top: -40px;}
+.explore a {color: green; font-size: 13px;font-weight: 600}
+.twitter a {color:#4099FF}
+.img-box{box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);border-radius: 1px;border: 0;}
+
+/* spacesList page css code end  */
  
- /* */
- /* */
+ 
+ 

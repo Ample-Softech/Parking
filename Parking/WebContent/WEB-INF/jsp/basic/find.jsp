@@ -17,7 +17,7 @@
     	var fenway = {lat: parseFloat(${latitude}), lng: parseFloat(${longitude}) };
         var map = new google.maps.Map(document.getElementById('map'), {
             center: fenway,
-            zoom: 15,
+            zoom: 14,
             mapTypeId:google.maps.MapTypeId.ROADMAP
         });
 
@@ -74,7 +74,13 @@
 	              enableCloseButton: true
 	        });
 */
-	
+$(document).ready(function(){
+	$(".lsimg").hover3d({
+		selector: ".img",
+		/* shine: true, */
+		sensitivity: 6,
+	});				
+});
 	
     </script>
   </head>
@@ -99,9 +105,9 @@
 			<c:forEach var="p" items="${parking }" varStatus="status">
 		
 			<div class="row">
-          		<div class="col-xs-6 col-sm-2 col-md-2">
+          		<div class="lsimg col-xs-6 col-sm-2 col-md-2">
               		<a href="/Parking/Check.basic?loc=${p.area }&lat=${p.latitude }&lng=${p.longitude }">
-                   		<img src="${p.image }" class="img-responsive img-box img-thumbnail"  /> 
+                   		<img src="${p.image }" class="img-responsive img-box img-thumbnail img"  /> 
                   	</a>
              	</div>
           		<div class="col-xs-6 col-sm-10 col-md-10">

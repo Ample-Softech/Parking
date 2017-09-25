@@ -7,7 +7,6 @@
 	<title>Space Owners List</title>
 	<jsp:include page="/link.jsp"></jsp:include>
 	<link rel="stylesheet" href='<c:url value="https://www.w3schools.com/w3css/4/w3.css"></c:url>'  />
-	
 </head>
 <body>
 		<!-- MENU BAR -->
@@ -15,7 +14,7 @@
 
 <div class="container-fluid">
 <br><br>
-	<div class="container-fluid jumbotron">
+	<div class="container-fluid jumbotron myw">
 		<div class="text-center"><label style="margin-bottom: 25px;font-size: 25px;">Parking Owner</label></div>
 		<table class="w3-table w3-centered w3-hoverable w3-responsive w3-card-4">
 			<thead>

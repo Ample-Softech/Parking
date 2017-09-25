@@ -42,11 +42,12 @@
 .well {
 	
 }
+ .well {background: rgba(220, 220, 220, 0.7);}
 
 </style>
 
 </head>
-<body>
+<body class="animated flip">
 <%
 	if(session.getAttribute("userLog")!="login") {
 		response.sendRedirect("/Parking/LoginPage.basic");
@@ -60,23 +61,22 @@
 <div class="container register  well prfind">
 	<div class="row">
     	<div class="text-center col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-				<h2 > Parkink-Space <small> Please Provide Space for Parking. </small></h2>
+				<h2> Parkink-Space <small> Please Provide Space for Parking. </small></h2>
 				<hr class="colorgraph">
 				<div class="row">
 					<div class=" form col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-                    	    <input type="text" required="required" name="area1" id="area1" class="form-control input-lg" placeholder=" Street/Area " tabindex="1">
+                    	    <input type="text" pattern="[a-zA-Z][a-zA-Z0-9\s]*" required="required" name="area1" id="area1" class="form-control input-lg" placeholder=" Street/Area " tabindex="1">
 						</div>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-                        	<input type="text" required="required" name="city1" id="city1" class="form-control input-lg" placeholder=" Town/City " tabindex="1">
+                        	<input type="text" pattern="[a-zA-Z][a-zA-Z0-9\s]*" required="required" name="city1" id="city1" class="form-control input-lg" placeholder=" Town/City " tabindex="1">
 						</div>
 					</div>
-					
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-							<input type="text" required="required" name="pincode1" id="pincode1" class="form-control input-lg" placeholder=" Pincode " tabindex="2">
+							<input type="text" pattern="[0-9]{6}" required="required" name="pincode1" id="pincode1" class="form-control input-lg" placeholder=" Pincode " tabindex="2">
 						</div>
 					</div>				
 

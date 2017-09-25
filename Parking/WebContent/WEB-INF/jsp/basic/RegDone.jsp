@@ -23,6 +23,9 @@
 .fndn{
 	margin-top: 20px;
 }
+
+ .well {background: rgba(220, 220, 220, 0.7);}
+
 </style>
 
 </head>

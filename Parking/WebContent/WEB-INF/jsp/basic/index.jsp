@@ -4,11 +4,9 @@
 <html>
 	<head>
 		<title>Home Page</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    	<meta charset="utf-8">
 		
 		<jsp:include page="/link.jsp" />
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ5r7UKO1smUmapgSi3dLV9MWkbFMi45M&&libraries=places" async defer ></script>
+		
 		<script type="text/javascript">
 			$(document).ready(function() {    		
    		 		$("#searchPlace").click(function(){
@@ -28,6 +26,15 @@
 	       		window.location = "/Parking/Check.basic?loc="+loc+"&lat=" + lat + "&lng=" + lng;
 	       	//	alert(place.geometry.location.lat()+"  "+place.geometry.location.lng());	       		
 			}
+
+			$(document).ready(function(){
+				$(".cards").hover3d({
+					selector: ".cardImg",
+					/* shine: true, */
+					sensitivity: 7,
+				});				
+			});
+
 		</script>
 		<style type="text/css">
       		/* Optional: Makes the sample page fill the window. */
@@ -36,6 +43,8 @@
         		margin: 0;
         		padding: 0;
       		}		
+		 .searchbar {background: rgba(220, 220, 220, 0.5);}
+      		
 		</style>
 		
 		
@@ -65,7 +74,7 @@
 				<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 cards">
 					<div class="cardImg">
 						<a class="imglinks" href="/Parking/Check.basic?loc=Kothrud, Pune, Maharashtra&lat=18.5073985&lng=73.80765040000006">
-							<img class="img-responsive img-thumbnail img" src="images/kothrud.jpg" alt="Kothrud"></a>
+							<img class="img-thumbnail img" src="images/kothrud.jpg" alt="Kothrud"></a>
         				<div class="caption" style="color: white;">
           					<a class="imglinks" href="/Parking/Check.basic?loc=Kothrud, Pune, Maharashtra&lat=18.5073985&lng=73.80765040000006">Kothrud, Pune</a>
         				</div>	
@@ -122,7 +131,7 @@
 						<a class="imglinks" href="/Parking/Check.basic?loc=Senapati Bapat Road, Sheti Mahamandal, 30, Laxmi Society, Pune, Maharashtra&lat=18.5316664&lng=73.83010739999997">
 							<img class="img-responsive img-thumbnail img" src="images/SB.jpg" alt="SB Road"></a>
         				<div class="caption" style="color: white;">
-          					<a class="imglinks" href="/Parking/Check.basic?loc=Senapati Bapat Road, Sheti Mahamandal, 30, Laxmi Society, Pune, Maharashtra&lat=18.5316664&lng=73.83010739999997">Senapati-Bapat-Road, Pune</a>
+          					<a class="imglinks" href="/Parking/Check.basic?loc=Senapati Bapat Road, Sheti Mahamandal, 30, Laxmi Society, Pune, Maharashtra&lat=18.5316664&lng=73.83010739999997">SB Road, Pune</a>
         				</div>	
         			</div>
 				</div>
@@ -160,6 +169,5 @@
  		</div> 
 
  -->
- 
 	</body>
 </html>
