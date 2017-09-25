@@ -39,6 +39,7 @@
 <script type="text/javascript" src='<c:url value="/chosen/chosen.proto.js"></c:url>'></script>
 <script type="text/javascript" src='<c:url value="/chosen/chosen.proto.min.js"></c:url>'></script>
 <script src="js/jquery/jquery.hover3d.js"></script>
+<script src="js/jquery/anim.js"></script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ5r7UKO1smUmapgSi3dLV9MWkbFMi45M&&libraries=places" async defer ></script>
 <!-- 

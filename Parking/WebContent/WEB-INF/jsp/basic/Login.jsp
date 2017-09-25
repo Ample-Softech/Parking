@@ -26,7 +26,6 @@
 
 .myw {background: rgba(220, 220, 220, 0.7);}
 </style>
-
 </head>
 <body>
 

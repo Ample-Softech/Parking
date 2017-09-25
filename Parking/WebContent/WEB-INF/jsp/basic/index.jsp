@@ -34,7 +34,7 @@
 					sensitivity: 7,
 				});				
 			});
-
+			
 		</script>
 		<style type="text/css">
       		/* Optional: Makes the sample page fill the window. */
@@ -49,7 +49,7 @@
 		
 		
 	</head>
-	<body>
+	<body id="page_effect">
 
 		<!-- MENU BAR -->
 		<jsp:include page="/mainMenu.jsp" />		
