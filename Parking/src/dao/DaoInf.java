@@ -20,5 +20,7 @@ public interface DaoInf {
 	public boolean uploadImg(int id, String path);
 	public Parking getParking(int id);
 	public Users getUser(int id);
+	public List<Parking> getFilteredParkings(float lat, float lng);
+	
 	
 }

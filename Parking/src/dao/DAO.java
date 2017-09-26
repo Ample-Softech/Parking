@@ -23,6 +23,33 @@ public class DAO implements DaoInf {
 	private JdbcTemplate template;
 	private Session session;
 	
+
+	@Override
+	public List<Parking> getFilteredParkings(float lat, float lng) {
+		List<Parking> a1 = new ArrayList<>();
+		try {
+			this.session = sessionFactory.openSession();
+			this.session.beginTransaction();
+//			SELECT * FROM paidparking.parking where (LATITUDE >(18.4575324-0.02) and LATITUDE <(18.4575324+0.02))and(LONGITUDE >(73.86774639999999-0.02) and LONGITUDE <(73.86774639999999+0.02)) ORDER BY ABS(LONGITUDE - 73.86774639999999) LIMIT 1;
+			org.hibernate.Query queryResult = this.session.createQuery("FROM Parking where latitude >= :lat1 AND latitude <= :lat2 AND longitude >= :lng1 AND longitude <= :lng2 ORDER BY ABS(LONGITUDE - :lng)");
+//			queryResult.setFloat("lat", lat);
+			queryResult.setFloat("lng", lng);
+			queryResult.setFloat("lat1", (float) (lat-0.02));
+			queryResult.setFloat("lat2", (float) (lat+0.02));
+			queryResult.setFloat("lng1", (float) (lng-0.02));
+			queryResult.setFloat("lng2", (float) (lng+0.02));
+			a1 = (List<Parking>) queryResult.list(); 
+//			a1.forEach(System.out::println);
+		} catch (Exception e) {
+			this.exceptional();
+			System.err.println(e);
+		} finally {
+			this.closeSession();
+		}		
+		return a1;		
+	}
+
+	
 	@Override
 	public Parking getParking(int id) {
 		Parking p = null;
@@ -311,6 +338,7 @@ public class DAO implements DaoInf {
 	public DAO() {
 		System.out.println("DAO");
 	}
+
 
 
 

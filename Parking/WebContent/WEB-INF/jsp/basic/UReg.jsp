@@ -103,7 +103,7 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-6 col-md-6">
 						<div class="form-group">
-							<input type="text" pattern="[a-zA-Z][a-zA-Z0-9\s]*" name="city" id="city" required="required" class="form-control input-lg" placeholder="City" tabindex="5">
+							<input type="text" pattern="[a-zA-Z][a-zA-Z0-9\s]*" name="city" id="city" required="required" class="form-control input-lg" placeholder="City / District" tabindex="5">
 						</div>
 					</div>
 					<div class="col-xs-12 col-sm-6 col-md-6">

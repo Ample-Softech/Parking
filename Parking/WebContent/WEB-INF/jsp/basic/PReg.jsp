@@ -160,7 +160,7 @@ function GetLocation() {
     var lngd = document.getElementById("longituded");
 
     var geocoder = new google.maps.Geocoder();    
-    geocoder.geocode({ 'address': location }, function (results, status) {
+    geocoder.geocode({ 'address': location, 'componentRestrictions':{'country':'IN'}}, function (results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
             var latitude = results[0].geometry.location.lat();
             var longitude = results[0].geometry.location.lng();

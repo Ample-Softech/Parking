@@ -12,7 +12,9 @@
   <property name="hibernate.schema">paidparking</property>
   <property name="hibernate.show_sql">true</property>
   <property name="hibernate.hbm2ddl.auto">update</property>
-  <mapping resource="basic/Pojo/Parking.hbm.xml"/>
+  
+  <mapping resource="/basic/Pojo/Parking.hbm.xml"/>
   <mapping resource="/basic/Pojo/Users.hbm.xml"/>
+  
  </session-factory>
 </hibernate-configuration>

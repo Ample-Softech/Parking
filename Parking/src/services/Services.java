@@ -88,5 +88,10 @@ public class Services implements ServicesInf {
 		return this.dao.getUser(id);
 	}
 
+	@Override
+	public List<Parking> getFilteredParkings(float lat, float lng) {
+		return this.dao.getFilteredParkings(lat, lng);
+	}
+
 
 }

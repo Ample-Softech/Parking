@@ -12,9 +12,15 @@
   	System.out.println("Exception:- "+exception);
 %>
 
-	<label style="text-align: center; font-size: 22px; margin-top: 25%; font-family: Castellar;">
-		<u>ERROR</u>:- <%=exception.getMessage() %>
-	</label>
-	
+  	<jsp:include page="/mainMenu.jsp" />
+
+	<div class="container">
+		<div class="well" style="text-align: center; font-size: 22px; margin-top: 25%; font-family: Castellar;>
+			<label ">
+				<u>ERROR</u>:- <%=exception.getMessage() %>
+			</label>
+		</div>
+	</div>
+
 </body>
 </html>
