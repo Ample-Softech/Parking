@@ -24,10 +24,16 @@
 
 
 	.navbar1 {
-		margin-top: 1px;
+		margin-top: 0px;
 		margin-bottom: 0px;
 	}
 	
+.navbar-inverse {
+      background-color:#9933ff !important;
+      border:none;
+    }
+    
+            	
 body {
 	background-image: url("../images/PicsArt_1481705646271.jpg"); 
 	width: auto;

@@ -64,7 +64,7 @@ public class ControllerClass {
 	@RequestMapping(value="/checkpin", method=RequestMethod.GET)
 	public ModelAndView pincode(@RequestParam Map<String,String> requestParams) {
 		modelAndView=new ModelAndView("find");
-//		System.out.println("loc= "+requestParams.get("loc")+", lat= "+requestParams.get("lat")+", lng= "+requestParams.get("lng"));
+		System.out.println("loc= "+requestParams.get("loc")+", lat= "+requestParams.get("lat")+", lng= "+requestParams.get("lng"));
 		modelAndView.addObject("latitude", requestParams.get("lat"));
 		modelAndView.addObject("longitude", requestParams.get("lng"));		
 		modelAndView.addObject("loc", requestParams.get("loc"));
@@ -195,7 +195,7 @@ public class ControllerClass {
 	@RequestMapping(value="/Check", method=RequestMethod.GET)
 	public ModelAndView print(@RequestParam Map<String,String> requestParams) {
 		modelAndView=new ModelAndView("find");
-//		System.out.println("loc= "+requestParams.get("loc")+", lat= "+requestParams.get("lat")+", lng= "+requestParams.get("lng"));
+		System.out.println("loc= "+requestParams.get("loc")+", lat= "+requestParams.get("lat")+", lng= "+requestParams.get("lng"));
 		modelAndView.addObject("latitude", requestParams.get("lat"));
 		modelAndView.addObject("longitude", requestParams.get("lng"));		
 		modelAndView.addObject("loc", requestParams.get("loc"));
@@ -203,7 +203,7 @@ public class ControllerClass {
 		float lng = Float.parseFloat(requestParams.get("lng"));
 //		List<Parking> l1 = service.getParkings();
 
-		List<Parking> l1 = service.getParkings().stream().filter(p->p.getLongitude()>(lng-0.02) && p.getLongitude()<(lng+0.02)).sorted(new LngCmrtr()).collect(Collectors.toList());
+		List<Parking> l1 = service.getParkings().stream().filter(p->(p.getLatitude()>(lat-0.02) && p.getLatitude()<(lat+0.02))&&(p.getLongitude()>(lng-0.02) && p.getLongitude()<(lng+0.02))).sorted(new LngCmrtr()).collect(Collectors.toList());
 		modelAndView.addObject("parking", l1);
 		modelAndView.addObject("json", new Gson().toJson(l1));
 
