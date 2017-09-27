@@ -20,8 +20,8 @@ import basic.Pojo.Users;
 public class DAO implements DaoInf {
 	
 	private static SessionFactory sessionFactory = HibernateUtilities.getsSessionFactory();
-	private JdbcTemplate template;
 	private Session session;
+	private JdbcTemplate template;
 	
 
 	@Override
