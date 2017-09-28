@@ -6,25 +6,24 @@
         width: 100%;
         margin: 0;
         padding: 0;
-        overflow-x: hidden;
-        
       }
       #map {
   	    float: left;            
  		height: 93%;
         width: 60%;
+        background-image: inherit; 
       }
 
        .pana {
 	  	float: left;
-        height: 95.1%;
-        width: 40%;
+        height: 93%;
+        width: 39%;
    		margin: 0;
     	padding: 0;
-    	padding-right: 11px;
+    	padding-right: 0;
     	display: block; 
     	border:solid #000 2px;
-    	background-image: none;    	
+    	background-image: inherit;    	
     	
       }
        
@@ -46,17 +45,17 @@
  */
  
 	.contentList {
-		padding-top: 13px;
+		padding-top: 2%;
     	background-color: white;
     	overflow: scroll;
     	overflow-x: hidden;
     	height:	88%;
-    	margin-left: -2px;
+    	margin-left: -0.3%;
     	overflow-y: auto;    		
     	-webkit-overflow-scrolling: touch;    
 	}
 
-	.box{ height: auto;    }
+	.box{ height: auto;   width: auto; }
 	.header{ padding: 12px 10px 10px 10px ;}
 	.fixed{			}
 	.brand{  color: white; font-size: 17px; font-weight: bold; text-shadow: 2px 2px 5px black;}

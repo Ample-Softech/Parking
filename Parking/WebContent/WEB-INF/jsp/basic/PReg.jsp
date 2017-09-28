@@ -13,11 +13,6 @@
 
       /* Optional: Makes the sample page fill the window. */
       
-      #map {
- 		height: 250px;
-        width: 1168px;
-        margin: 0px 0px 0px 99px;  
-      }
       
         /* Register(Page) : Credit to bootsnipp.com for the css for the color graph */
 .colorgraph {
@@ -31,17 +26,21 @@
   background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
 }
 
+#map {
+	height: 250px;
+	width: 1168px;
+	margin-left: 99px;
+}
+
 .prfind {
-	margin-top: 20px;
-	margin-bottom: 0px;
+	margin-top: 2%;
+	margin-bottom: 0%;
 }
 
-.prinfo {
-}
+.prinfo {	}
 
-.well {
-	
-}
+.well {	}
+
  .well {background: rgba(220, 220, 220, 0.7);}
 
 </style>

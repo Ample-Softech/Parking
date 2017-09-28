@@ -21,7 +21,8 @@
 }
 
 .logPage {
-	margin-top: 20px;
+	margin-top: 5%;
+	margin-bottom: 10%;
 }
 
 .myw {background: rgba(220, 220, 220, 0.7);}
