@@ -264,8 +264,8 @@
     <div class="row setup-content" id="step-2">
         <div class="col-xs-12">
             <div class="col-md-12 well text-center">
-				<jsp:include page="/addSpace.jsp" />
-			</div>
+<%-- 				<jsp:include page="/addSpace.jsp" />
+ --%>			</div>
         </div>
     </div>
     
