@@ -41,7 +41,7 @@ public class ControllerClass {
 
 	@Autowired
 	@Qualifier("service")
-	Services service;
+	Services service; 
 
 	@Autowired
 	@Qualifier("modelAndView")
