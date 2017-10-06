@@ -162,17 +162,12 @@ public class DAO implements DaoInf {
 	@Override
 	public List<Users> spaceOwners() {
 		List<Users> a1 = new ArrayList<>();
-		List<Integer> uids = getParkings().stream().map(Parking::getUserId).distinct().collect(Collectors.toList());
 		try {
-			this.session = sessionFactory.openSession();
-			this.session.beginTransaction();
-			uids.forEach(id->a1.add((Users) this.session.get(Users.class, id)));
-//			a1.forEach(System.out::println);
+			String q = "SELECT * FROM users inner join parking on users.ID = parking.USERID group by users.ID";
+			a1 = template.query(q, new UserMapping());
 		} catch (Exception e) {
-			this.exceptional();
-			System.err.println(e);
+			System.err.println(e.getMessage());
 		} finally {
-			this.closeSession();
 		}		
 		return a1;		
 	}
@@ -291,21 +286,21 @@ public class DAO implements DaoInf {
 		@Override
 		public Users mapRow(ResultSet rs, int rn) throws SQLException {
 			Users u1 = new Users();
-			u1.setId(rs.getInt("id"));
-			u1.setFname(rs.getString("fname"));
-			u1.setLname(rs.getString("lname"));
-			u1.setGender(rs.getString("gender"));
-			u1.setUsername(rs.getString("username"));
-			u1.setPassword(rs.getString("password"));
-			u1.setDob(rs.getString("dob"));
-			u1.setLatitude(rs.getFloat("latitude"));
-			u1.setLongitude(rs.getFloat("longitude"));
-			u1.setArea(rs.getString("area"));
-			u1.setCity(rs.getString("city"));			
-			u1.setState(rs.getString("state"));
-			u1.setCountry(rs.getString("country"));
-			u1.setPincode(rs.getInt("pincode"));
-			u1.setUsertype(rs.getString("usertype"));
+			u1.setId(rs.getInt("ID"));
+			u1.setFname(rs.getString("FNAME"));
+			u1.setLname(rs.getString("LNAME"));
+			u1.setGender(rs.getString("GENDER"));
+			u1.setUsername(rs.getString("USERNAME"));
+			u1.setPassword(rs.getString("PASSWORD"));
+			u1.setDob(rs.getString("DOB"));
+			u1.setLatitude(rs.getFloat("LATITUDE"));
+			u1.setLongitude(rs.getFloat("LONGITUDE"));
+			u1.setArea(rs.getString("AREA"));
+			u1.setCity(rs.getString("CITY"));			
+			u1.setState(rs.getString("STATE"));
+			u1.setCountry(rs.getString("COUNTRY"));
+			u1.setPincode(rs.getInt("PINCODE"));
+			u1.setUsertype(rs.getString("USERTYPE"));
 			return u1;
 		}
 	}
@@ -323,6 +318,7 @@ public class DAO implements DaoInf {
 			p1.setLatitude(rs.getFloat("latitude"));
 			p1.setLongitude(rs.getFloat("longitude"));
 			p1.setImage(rs.getString("image"));
+			p1.setUserId(rs.getInt("userid"));
 			return p1;
 		}		
 	}

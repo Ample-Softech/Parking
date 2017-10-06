@@ -35,11 +35,11 @@
   <property generated="never" lazy="false" name="area" type="java.lang.String">
    <column name="AREA"/>
   </property>
+    <property generated="never" lazy="false" name="city" type="java.lang.String">
+   <column name="CITY"/>
+  </property>
   <property generated="never" lazy="false" name="state" type="java.lang.String">
    <column name="STATE"/>
-  </property>
-  <property generated="never" lazy="false" name="city" type="java.lang.String">
-   <column name="CITY"/>
   </property>
   <property generated="never" lazy="false" name="country" type="java.lang.String">
    <column name="COUNTRY"/>
