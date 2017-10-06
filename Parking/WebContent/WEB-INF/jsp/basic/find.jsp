@@ -20,6 +20,8 @@
             zoom: 14,
             mapTypeId:google.maps.MapTypeId.ROADMAP
         });
+   		var trafficLayer = new google.maps.TrafficLayer();
+          trafficLayer.setMap(map);
 
         var infowindow = new google.maps.InfoWindow();
         var service = new google.maps.places.PlacesService(map);
@@ -44,6 +46,7 @@
     		          			infowindow.open(map, this);
                 		});
      		      	}  		
+
 	      		} else {
         			window.alert('No results found');
       			}

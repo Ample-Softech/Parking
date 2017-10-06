@@ -8,7 +8,6 @@
         <p><i class="fa fa-map-pin"></i> Mangaldham Society, Mahatma Society, Kothrud, Pune, Maharashtra 411058, India</p>
         <p><i class="fa fa-phone"></i> Phone (India) : +91 9999 878 398</p>
         <p><i class="fa fa-envelope"></i> E-mail : hr@amplesofteck.com</p>
-        
       </div>
       <div class="col-md-2 col-sm-6 paddingtop-bottom">
         <h6 class="heading7">GENERAL LINKS</h6>
