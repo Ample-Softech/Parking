@@ -10,7 +10,7 @@
   <script src='<c:url value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></c:url>'></script>
 
 
-	  <link rel="icon" type="image/jpeg" href="pointer-icon.jpg">  
+	  <link rel="icon" type="image/jpeg" href='<c:url value="/images/pointer-icon.jpg"></c:url>' />  
 
  <link rel="stylesheet" href='<c:url value="/bootstrap/css/bootstrap.min.css"></c:url>'>
 <script type="text/javascript" src='<c:url value="/bootstrap/js/bootstrap.min.js"></c:url>'></script>
